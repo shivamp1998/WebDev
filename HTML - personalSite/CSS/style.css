@@ -3,7 +3,23 @@ body {
 }
 hr{
   border-style: dotted;
+  border-width: 10px;
   width: 10%;
-  border-top-style: none;
-  background-color: white;
+  border-style: dotted none none none;
+  border-color: grey;
+  background-color: powderblue;
+}
+h1,h3{
+  color: #66BFBF;
+}
+a{
+  text-decoration: none;
+  color: #66BFBF;
+  font-size: 20px;
+}
+a:hover{
+  color: darkblue;
+}
+a:active{
+  color:green;
 }
