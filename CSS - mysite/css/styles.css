@@ -8,15 +8,51 @@ h1{
   text-align: center;
   font-family: 'Sacramento', cursive;
 }
+h2{
+  font-family: 'Montserrat', sans-serif;
+}
+h3{
+
+  font-family: 'Montserrat', sans-serif;
+}
 .top-container{
-  background-color:#ccffbd;
+  background-color:#a4ebf3;
   position: relative;
   padding-top: 60px;
+}
+.middle-container{
+  background-color:#F4F9F9;
 }
 .top-cloud{
   position: relative;
   left: 200px;
 }
+.computer{
+  height: 300px;
+  width: 300px;
+}
+.gaming{
+  height: 300px;
+  width: 300px;
+}
+.profile img{
+  padding-top:10px;
+  height: 300px;
+  width: 300px;
+  border-radius: 300px;
+}
 .bottom-cloud {
   position: absolute;
+}
+.btn:link{
+  color:#e48257;
+}
+.btn:active{
+  color: red;
+}
+.btn:hover{
+  color: #f39189;
+}
+.bottom-container a:link{
+  color:#e48257;
 }
