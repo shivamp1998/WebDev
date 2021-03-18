@@ -89,6 +89,7 @@ h3{
 .btn a{
   color: #e48257;
   text-decoration: none;
+  display: block;
 }
 .footer-link{
   text-decoration: none;
