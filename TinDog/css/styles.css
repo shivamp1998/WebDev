@@ -42,12 +42,42 @@
 
 /*features*/
 #features{
-  text-align: center;
+  text-align:center;
+  padding: 80px 0;
 }
 .fa-check-circle,.fa-bullseye,.fa-heart{
   color: #ef8172;
 }
+.fa-check-circle:hover,.fa-bullseye:hover,.fa-heart:hover{
+  color: #ff4c68;
+}
 #features p{
   color: #8f8f8f;
+}
+
+/* testimonial section */
+#testimonials{
+  padding: 7% 15%;
+  text-align: center;
+  background-color: #ef8172;
+  color: #fff;
+}
+h2{
+  font-family: "Montserrat",sans-serif;
+  font-weight: bold;
+}
+.testimonial-img{
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  margin: 2% 2%;
+}
+#press{
+  background-color: #ef8172;
+  text-align: center;
+}
+#press img{
+  margin: 30px 30px;
+  height: 50px;
 
 }
