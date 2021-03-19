@@ -11,7 +11,9 @@
 }
 .navbar{
   padding: 0 0 4.5rem;
+
 }
+
 .container-fluid{
   padding: 3% 5%;
 }
@@ -37,6 +39,8 @@
 .phone-img{
   width: 60%;
   transform: rotate(25deg);
+  position: absolute;
+
 }
 /* Title section*/
 
@@ -44,6 +48,9 @@
 #features{
   text-align:center;
   padding: 80px 0;
+  z-index: 1;
+  position: relative;
+  background-color: white;
 }
 .fa-check-circle,.fa-bullseye,.fa-heart{
   color: #ef8172;
@@ -57,10 +64,12 @@
 
 /* testimonial section */
 #testimonials{
-  padding: 7% 15%;
   text-align: center;
   background-color: #ef8172;
   color: #fff;
+}
+.carousel-item{
+  padding: 7% 15%;
 }
 h2{
   font-family: "Montserrat",sans-serif;
@@ -77,7 +86,43 @@ h2{
   text-align: center;
 }
 #press img{
-  margin: 30px 30px;
+  margin: 80px 30px;
   height: 50px;
+}
+#pricing{
+  text-align: center;
+  padding: 7% 12%;
+}
 
+@media (max-width:900px){
+  .phone-img{
+    position: static;
+    transform:rotate(0deg);
+  }
+  #title{
+    text-align: center;
+  }
+}
+#cta {
+  background-color:  #ff4c68;
+  padding: 3% 12%;
+  text-align: center;
+}
+#cta h3{
+  font-family: "Montserrat",sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  color: white;
+}
+.cta-button{
+  margin: 5rem;
+}
+#footer{
+  text-align: center;
+  padding: 3% 7%;
+  font-style: "Montserrat";
+  color: #8f8f8f;
+}
+.links{
+  margin: 0 12px;
 }
