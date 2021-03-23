@@ -1,0 +1,23 @@
+body {
+  background-color: darkviolet;
+  margin: 0;
+}
+table{
+  width: 100%;
+  text-align: center;
+}
+.wintext{
+  font-family: "Dancing Script", cursive;
+  font-size: 8rem;
+  text-align: center;
+  margin: 0;
+  color: orange;
+}
+.player1,.player2{
+  font-size: 3rem;
+  color: lightblue;
+}
+.game-img{
+  width: 80%;
+  height: 400px;
+}
