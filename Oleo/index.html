@@ -1,153 +1,289 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <title>Oleo</title>
+    <script>
+      function setText() {
+        var year = new Date().getFullYear();
+        document.getElementById("company").innerText += " " + year;
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <title>Oleo</title>
-</head>
+  <body onload="setText()">
+    <section id="navbar">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light container-fluid"
+      >
+        <a class="navbar-brand" href="#">
+          <img src="images/logo-main.png" />
+          <img src="images/logo.png" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<body>
-  <section id="navbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="images/logo-main.png">
-        <img src="images/logo.png">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileView" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mobileView">
-        <ul class="navbar nav mr-auto">
-          <li class="navbar-link">
-            <form class="navbar-item form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </li>
-
-        </ul>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar nav ml-auto">
-          <li class="nav-link">
-            <img class="navbar-item form-inline" src="images/profile-img.png">
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle btn-primary btn-sm form-inline" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Daneil
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+        <div class="collapse navbar-collapse" id="mobileView">
+          <ul class="navbar nav mr-auto">
+            <li class="navbar-link">
+              <form
+                class="navbar-item form-inline my-2 my-lg-0"
+                id="formMainSearch"
+              >
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  id="inputSearchTop"
+                />
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar nav ml-auto">
+            <li class="nav-link">
+              <img
+                class="navbar-item form-inline"
+                src="images/profile-img.png"
+              />
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle btn-primary btn-sm form-inline"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Daneil
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <section id="slider">
+      <div id="carouselControl" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselControl"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselControl" data-slide-to="1"></li>
+          <li data-target="#carouselControl" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="image-slider1">
+              <h1 class="slider-text">Carousel 1</h1>
+              <p class="slider-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </p>
             </div>
-          </li>
-        </ul>
+          </div>
+          <div class="carousel-item">
+            <div class="image-slider2">
+              <h1 class="slider-text">Carousel 2</h1>
+              <p class="slider-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="image-slider3">
+              <h1 class="slider-text">Carousel 3</h1>
+              <p class="slider-text">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry
+              </p>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselControl"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselControl"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="discover" class="container-fluid">
+      <div class="d-flex justify-content-around flexContainer">
+        <div class="card">
+          <div class="blueBG" id="divDynamicMonth">1</div>
+          <div class="card-body">
+            <p class="card-text" id="numberAPI1">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="blueBG" id="divDynamicDay">1</div>
+          <div class="card-body">
+            <p class="card-text" id="numberAPI2">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="blueBG" id="divDynamicYear">1</div>
+          <div class="card-body">
+            <p class="card-text" id="numberAPI3">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
       </div>
 
-    </nav>
-  </section>
-  <section id="slider">
-    <div id="carouselControl" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselControl" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselControl" data-slide-to="1"></li>
-        <li data-target="#carouselControl" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="image-slider1">
-            <h1 class="slider-text">Carousel 1</h1>
-            <p class="slider-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+      <div class="secContainerTop">
+        <h3>Explore recommended services for you</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+          <a href="#">Click here to know more.</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="query">
+      <div class="row no-gutters">
+        <div class="col-md-6">
+          <div class="query-image1 padding-0">
+            <div class="query-text">
+              <h1>Questions?</h1>
+              <p>Learn about services through frequently asked questions</p>
+              <div class="btn btn-lg btn-primary">View FAQ</div>
+            </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="image-slider2">
-            <h1 class="slider-text">Carousel 2</h1>
-            <p class="slider-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="image-slider3">
-            <h1 class="slider-text">Carousel 3</h1>
-            <p class="slider-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <div class="col-md-6">
+          <div class="query-image2">
+            <div class="query-text padding-0">
+              <h1>Stay up-to-date</h1>
+              <p>Learn about our product update.</p>
+              <div class="btn btn-lg btn-primary">Explore Updates</div>
+            </div>
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselControl" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselControl" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </section>
+    </section>
 
-  <section id="discover">
-
-  </section>
-  <section id="query">
-    <div class="row no-gutters">
-      <div class="col-md-6">
-        <div class="query-image1 padding-0">
-          <div class="query-text">
-            <h1>Questions?</h1>
-            <p>Learn about services through frequently asked questions</p>
-            <div class="btn btn-lg btn-primary">View FAQ</div>
+    <section id="footer">
+      <div class="container-fluid">
+        <div class="footer-main" id="footerMain">
+          <div id="footerLeft">
+            <img src="Images/planet-earth.svg" alt="planet_earth_logo" />
+            <a href="#" class="foot"
+              >Current Culture: United States - English</a
+            >
           </div>
+          <div id="footerRight">
+            <a href="#" class="foot">Contact Us</a>
+            <a href="#" class="foot">Privacy and Cookies</a>
+            <a href="#" class="foot">Trademarkes</a>
+            <a href="#" class="foot">About our ads</a>
+            <a id="company" href="#" class="foot">@Microsoft</a>
+          </div>
+          <!-- <a href="#" class="">Current Culture: United States - English</a>
+      <a href="#" class="ml-auto">Contact Us</a>
+      <a href="#" class="ml-auto">Privacy and Cookies</a>
+      <a href="#" class="ml-auto">Trademarkes</a>
+      <a href="#" class="ml-auto">About our ads</a>
+      <a id="company" href="#" class="ml-auto">@Microsoft</a> -->
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="query-image2">
-          <div class="query-text padding-0">
-            <h1>Stay up-to-date</h1>
-            <p>Learn about our product update.</p>
-            <div class="btn btn-lg btn-primary">Explore Updates</div>
-          </div>
-        </div>
-      </div>
+    </section>
 
-    </div>
-  </section>
-  <section id="footer">
-    <div class="container-fluid">
-    <div class="footer-main">
-      <a href="#" class="foot1">Current Culture: United States - English</a>
-      <a href="#" class="foot">Contact Us</a>
-      <a href="#" class="foot">Privacy and Cookies</a>
-      <a href="#" class="foot">Trademarkes</a>
-      <a href="#" class="foot">About our ads</a>
-      <a href="#" class="foot">@Microsoft 2021</a>
-    </div>
-  </div>
-  </section>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
 
-</body>
-
+    <script src="scrtips.js"></script>
+  </body>
 </html>
