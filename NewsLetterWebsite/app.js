@@ -12,8 +12,7 @@ app.get('/',function(req,res){
 });
 app.post("/failure.html",function(req,res){
   res.redirect("/");
-  console.log("Hi");
-});
+});;
 app.use(bodyParser.urlencoded({extended:true}));
 app.post("/",function(req,res){
    const name = req.body.firstName;
