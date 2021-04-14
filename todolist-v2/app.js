@@ -33,37 +33,84 @@ const item2 = new TodoList({
 const item3 = new TodoList({
   name: "Go Work",
 });
-
-
-
+const day = date.getDate();
+const defaultItems = [item1,item2,item3];
+const d = date.getYear();
 app.get("/", function(req, res) {
   TodoList.find({},function(err,results){
-  const day = date.getDate();
+
   if(results.length === 0){
      TodoList.insertMany([item1,item2,item3],function(err){});
   }
-  const d = date.getYear();
-  res.render("list", {listTitle: day, newListItems: results, thisYear: d});
+
+  res.render("list", {listTitle: "Today", newListItems: results, thisYear: d});
 });
 });
 
 app.post("/", function(req, res){
   const item = req.body.newItem;
+  const listName = req.body.list;
+  // console.log(listName);
   const newItem = new TodoList({
     name: item,
   });
 
-  TodoList.insertMany([newItem],function(err){
-    res.redirect("/");
-  });
+  if(listName === "Today"){
+    TodoList.insertMany([newItem],function(err){
+      res.redirect("/");
+    });
+  }else{
+    List.findOne({name:listName},function(err,result){
+      result.items.push(newItem);
+      result.save();
+      res.redirect("/" + listName);
+    })
+  }
+
+
+
 
 });
 app.post("/delete",function(req,res){
-  TodoList.deleteOne({_id:req.body.checkbox},function(err){});
-  res.redirect("/");
+  const listName = req.body.listName;
+  if(listName === "Today"){
+    TodoList.deleteOne({_id:req.body.checkbox},function(err){});
+    res.redirect("/");
+  }else{
+    List.findOneAndUpdate({name: listName},{$pull:{items: {_id: req.body.checkbox}}},function(err,results){
+        res.redirect("/"+ listName);
+    })
+  }
+
 });
+
+const listSchema = new mongoose.Schema({
+  name: String,
+  items: [todoSchema]
+});
+
+const List = mongoose.model("List",listSchema);
+
+
+
 app.get("/:customListName", function(req,res){
-  const(req.params.customListName);
+  const customListName = req.params.customListName;
+  List.findOne({name: customListName},function(err,results){
+     if(!err){
+       if(!results){
+         const list = new List({
+           name: customListName,
+           items: defaultItems,
+         });
+        list.save();
+        res.redirect("/" + list.name)
+      }else {
+        res.render("list",{listTitle: customListName, thisYear: d, newListItems: results.items})
+      }
+     }
+  });
+
+  //res.render("list",{listTitle: req.params.customListName, newListItems:[], thisYear: d});
 });
 app.get("/about", function(req, res){
   res.render("about");
