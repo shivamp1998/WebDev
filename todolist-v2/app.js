@@ -50,7 +50,7 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res){
   const item = req.body.newItem;
   const listName = req.body.list;
-  // console.log(listName);
+  console.log(listName);
   const newItem = new TodoList({
     name: item,
   });
