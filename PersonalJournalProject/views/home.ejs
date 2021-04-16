@@ -3,7 +3,7 @@
 <p> <%= homeContent %> </p>
 
 <% content.forEach(function(element){ %>
-  <h1> <%= element.title %></h1>
-  <p> <%= element.body.substring(0,100) + "..." %><a href="post/<%= element.title %>">read more</a>  <p>
+  <h1> <%= element.topic %></h1>
+  <p> <%= element.content.substring(0,100) + "..." %><a href="post/<%= element.topic %>">read more</a>  <p>
 <% }); %>
 <%- include("partials/footer.ejs"); -%>
