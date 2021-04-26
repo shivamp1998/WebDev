@@ -21,11 +21,37 @@ app.get("/articles",(req,res)=>{
 });
 
 app.post("/articles",(req,res)=>{
-  console.log(req.body.title);
-  console.log(req.body.content);
+  const newArticle = new Article({
+    title: req.body.title,
+    content: req.body.content,
+  });
+  newArticle.save(function(err){
+    if(!err){
+      res.send("SuccessFully Added The Article");
+    }
+  });
 })
-
-
+/* REQUEST TARGETING SINGLE ROUTE*/
+app.route("/articles/:articleTitle")
+.get(function(req,res){
+  Article.findOne({title: req.params.articleTitle},function(err,result){
+    res.send(result);
+  })
+})
+.put(function(req,res){
+  Article.updateOne({title: req.params.articleTitle},{$set: {title: req.body.title, content: req.body.content}},function(err){
+    if(!err){
+      res.send("Update Successs");
+    }
+  })
+})
+.patch((req,res)=>{
+  Article.updateOne({title: req.params.articleTitle},{$set:req.body},function(err){
+    if(!err){
+      res.send("Updated Everything!");
+    }
+  })
+});
 
 app.get("/",function(req,res){
   res.send("Ready to Go!");
