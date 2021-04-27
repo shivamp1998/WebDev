@@ -2,7 +2,7 @@
 
 require("dotenv").config()
 const express = require("express");
-
+const md5 = require("md5");
 const app = express();
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -37,7 +37,7 @@ app.get("/secrets",(req,res)=>{
 app.post("/register",function(req,res){
   const newUser = new  User({
     email: req.body.username,
-    password: req.body.password
+    password: md5(req.body.password)
   });
   newUser.save(function(err){
     if(!err){
@@ -50,7 +50,7 @@ app.post("/login",function(req,res){
   let userName = req.body.username;
   User.findOne({email: userName},function(err,found){
     if(!err){
-      if(found.password == req.body.password){
+      if(found.password == md5(req.body.password)){
         res.render("secrets.ejs");
       }else res.Send("Fuckk of Mate! Will You?")
     }
