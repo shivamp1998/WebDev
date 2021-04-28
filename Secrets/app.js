@@ -50,10 +50,10 @@ app.post("/login",function(req,res){
   let userName = req.body.username;
   User.findOne({email: userName},function(err,found){
     if(!err){
-      if(found.password == md5(req.body.password)){
+      if(found.password == md5(req.body.password){
         res.render("secrets.ejs");
-      }else res.Send("Fuckk of Mate! Will You?")
-    }
+      }
+    }else console.log(err);
   })
 })
 
