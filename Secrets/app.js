@@ -82,6 +82,11 @@ app.post("/login",function(req,res){
       }
     })
 });
+app.get("/submit",function(req,res){
+  if(req.isAuthenticated())
+  res.render("submit.ejs");
+  else res.rediret("/login");
+})
 app.get("/logout",function(req,res){
   req.logout();
   res.redirect("/login");
