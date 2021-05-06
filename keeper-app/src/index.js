@@ -16,8 +16,12 @@ import ReactDOM from "react-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
+import notes from "../src/notes";
+function createNote(note){
+    return <Note key={note.key} title={note.title} content={note.content}/>
+}
 ReactDOM.render(<div>
     <Header/>
-    <Note/>
+    {notes.map(createNote)}
     <Footer/>
 </div>, document.getElementById("root"));

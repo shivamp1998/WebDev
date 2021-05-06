@@ -43,6 +43,7 @@ footer p {
   width: 240px;
   margin: 16px;
   float: left;
+  display: block;
 }
 .note h1 {
   font-size: 1.1em;
