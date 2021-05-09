@@ -60,7 +60,6 @@ app.get("/post/:postName",function(req,res){
   paramTitle = _.lowerCase(paramTitle);
   var postContent;
   Journal.find({topic: req.params.postName},function(err,posts){
-      console.log(posts);
     var posttitle = req.params.postName;
     posttitle = _.lowerCase(posttitle);
     postContent = posts[0].content;

@@ -5,10 +5,14 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 
 function App() {
+  const [notelist,AddNote] = React.useState([]);
+  function addNote(note){
+    
+  }
   return (
     <div>
       <Header />
-      <CreateArea />
+      <CreateArea onAdd={addNote}/>
       <Note key={1} title="Note title" content="Note content" />
       <Footer />
     </div>
