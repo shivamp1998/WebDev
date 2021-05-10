@@ -1,6 +1,8 @@
 import React from "react";
+import { textChangeRangeIsUnchanged } from "typescript";
 
 function CreateArea(props) {
+  const [isChanged,changeValue] = React.useState(false);
   const [note,setNote] = React.useState({
     title: "",
     content: ""
@@ -8,6 +10,7 @@ function CreateArea(props) {
 
   function handleChange(event){
     const {name,value} = event.target;
+    changeValue(true);
     setNote((prev)=>{
       return {
         ...prev,
