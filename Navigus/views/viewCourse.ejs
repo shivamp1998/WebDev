@@ -1,0 +1,7 @@
+<%- include("partials/header.ejs"); -%>
+<div class="viewCourse">
+  <% course.forEach(function(element){ %>
+      <a href="course/<%=element.name%>" class="btn btn-lg btn-primary"><%= element.name %></a>
+  <% }) %>
+</div>
+<%- include("partials/footer.ejs"); -%>
