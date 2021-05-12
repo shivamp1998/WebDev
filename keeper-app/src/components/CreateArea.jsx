@@ -1,33 +1,56 @@
-import React from "react";
-import { textChangeRangeIsUnchanged } from "typescript";
+import React, { useState } from "react";
+import Fab from '@material-ui/core/Fab';
+import Zoom from '@material-ui/core/Zoom';
 
+import AddBoxIcon from '@material-ui/icons/AddBox';
 function CreateArea(props) {
-  const [isChanged,changeValue] = React.useState(false);
-  const [note,setNote] = React.useState({
+  const [note, setNote] = useState({
     title: "",
     content: ""
   });
 
-  function handleChange(event){
-    const {name,value} = event.target;
-    changeValue(true);
-    setNote((prev)=>{
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setNote(prevNote => {
       return {
-        ...prev,
-        [name]:value
-      }
-    })
+        ...prevNote,
+        [name]: value
+      };
+    });
   }
-  function handleSubmit(event){
+
+  function submitNote(event) {
     props.onAdd(note);
+    setNote({
+      title: "",
+      content: ""
+    });
     event.preventDefault();
   }
+  const [newRender, RenderComponent] = useState(false);
+  function handleClick(){
+      RenderComponent(true);
+  }
+
   return (
     <div>
-      <form>
-        <input name="title" placeholder="Title" value={note.title} onChange={handleChange}/>
-        <textarea name="content" placeholder="Take a note..." rows="3" value={note.content} onChange={handleChange}/>
-        <button onClick={handleSubmit}>Add</button>
+      <form className="create-note">
+        {newRender && <input
+          name="title"
+          onChange={handleChange}
+          value={note.title}
+          placeholder="Title"
+        />}
+        <textarea
+          name="content"
+          onChange={handleChange}
+          value={note.content}
+          placeholder="Take a note..."
+          rows={newRender ? "3" : "1"}
+          onClick = {handleClick}
+        />
+        <Zoom in={newRender}><Fab onClick={submitNote}><AddBoxIcon/></Fab></Zoom>
       </form>
     </div>
   );
