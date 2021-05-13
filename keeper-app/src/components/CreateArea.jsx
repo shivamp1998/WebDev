@@ -28,7 +28,7 @@ function CreateArea(props) {
     });
     event.preventDefault();
   }
-  const [newRender, RenderComponent] = useState(false);
+  const [Render, RenderComponent] = useState(false);
   function handleClick(){
       RenderComponent(true);
   }
@@ -36,7 +36,7 @@ function CreateArea(props) {
   return (
     <div>
       <form className="create-note">
-        {newRender && <input
+        {Render && <input
           name="title"
           onChange={handleChange}
           value={note.title}
@@ -50,7 +50,7 @@ function CreateArea(props) {
           rows={newRender ? "3" : "1"}
           onClick = {handleClick}
         />
-        <Zoom in={newRender}><Fab onClick={submitNote}><AddBoxIcon/></Fab></Zoom>
+        <Zoom in={Render}><Fab onClick={submitNote}><AddBoxIcon/></Fab></Zoom>
       </form>
     </div>
   );
