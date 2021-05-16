@@ -7,13 +7,37 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" integrity="sha512-f8mUMCRNrJxPBDzPJx3n+Y5TC5xp6SmStstEfgsDXZJTcxBakoB5hvPLhAfJKa9rCvH+n3xpJ2vQByxLk4WP2g==" crossorigin="anonymous" />
     <title>Ristorante Con Fusion</title>
 </head>
 
 <body>
-
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Ristorante Con Fusion</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="Navbar">
+      <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><i class="fa fa-home"></i> Home</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="aboutus.html"><span class="fa fa-info "></span> About</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="#"><i class="fa fa-bars"></i> Menu</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="contactus.html"><i class="fa fa-id-card"></i> Contact</a>
+      </li>
+    </ul>
+    </div>
+  </div>
+  </nav>
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -68,7 +92,7 @@
                     <h5>Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="aboutus.html">About</a></li>
                         <li><a href="#">Menu</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
@@ -79,20 +103,20 @@
 		              121, Clear Water Bay Road<br>
 		              Clear Water Bay, Kowloon<br>
 		              HONG KONG<br>
-		              Tel.: +852 1234 5678<br>
-		              Fax: +852 8765 4321<br>
-		              Email: <a href="mailto:confusion@food.net">confusion@food.net</a>
+		              <i class="fa fa-phone"> Tel.: +852 1234 5678</i><br>
+		              <i class="fa fa-fax"> Fax: +852 8765 4321</i><br>
+		               <i class="fa fa-envelope"> Email:</i><a href="mailto:confusion@food.net">confusion@food.net</a>
 		           </address>
                 </div>
                 <div class="col-sm align-self-center">
-                    <div class="text-center">
-                        <a href="http://google.com/+">Google+</a>
-                        <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
-                        <a href="http://www.linkedin.com/in/">LinkedIn</a>
-                        <a href="http://twitter.com/">Twitter</a>
-                        <a href="http://youtube.com/">YouTube</a>
-                        <a href="mailto:">Mail</a>
-                    </div>
+                  <div class="text-center">
+                      <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fab fa-google-plus-g"></i></a>
+                      <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fab fa-facebook"></i></a>
+                      <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fab fa-linkedin"></i></a>
+                      <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fab fa-youtube"></i></a>
+                      <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                  </div>
                 </div>
            </div>
            <div class="row justify-content-center">
@@ -103,9 +127,9 @@
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
