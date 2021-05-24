@@ -36,10 +36,10 @@ app.post("/teacher/createCourse",(req,res)=>{
   });
 
   res.redirect("/teacher");
-  // Course.insertMany({newCourse},(err)=>{
-  //   if(!err)console.log("Success");
-  //   else console.log("Failure");
-  // })
+  Course.insertMany({newCourse},(err)=>{
+    if(!err)console.log("Success");
+    else console.log("Failure");
+  })
 });
 let date = new Date();
 app.get("/",(req,res)=>{
