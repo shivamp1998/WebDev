@@ -24,7 +24,7 @@ const courseSchema = new mongoose.Schema({
   }]
 });
 const Course = mongoose.model("Course",courseSchema);
-
+console.log(Coursea);
 app.post("/teacher/createCourse",(req,res)=>{
   const newCourse = new Course({
     name: req.body.courseName,
