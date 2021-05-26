@@ -69,8 +69,8 @@ Course.findOne({"name":"Math"},function(err,results){
   console.log(results);
 })
 app.post("/:custom/createquestions",function(req,res){
-
+    console.log(req.params);
 })
 app.listen(3000,function(){
-  console.log("server Started at 3000");
+  console.log("server Started");
 })
