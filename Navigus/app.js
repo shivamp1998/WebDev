@@ -37,8 +37,9 @@ app.post("/teacher/createCourse",(req,res)=>{
 
   res.redirect("/teacher");
   Course.insertMany({newCourse},(err)=>{
-    if(!err)console.log("Success");
-    else console.log("Failure");
+      if(!err)
+      return "Failure";
+      else return "No Fail";
   })
 });
 let date = new Date();
