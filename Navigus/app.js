@@ -32,7 +32,7 @@ app.post("/teacher/createCourse",(req,res)=>{
   newCourse.save((err)=>{
     if(!err){
       console.log("Added");
-    }else console.log("Error");
+    
   });
 
   res.redirect("/teacher");
