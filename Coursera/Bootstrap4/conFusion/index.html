@@ -49,7 +49,7 @@
                   <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                  <button class="btn btn-block btn-sm btn-warning">Reserve</button>
+                  <button class="btn btn-block btn-sm btn-warning">Reserve Table</button>
                 </div>
             </div>
         </div>
@@ -100,34 +100,48 @@
                   <img src="img/alberto.png" class="img-thumbnail align-self-center mr-3">
                   <div class="media-body ">
                     <h2 class="mt-0">Alberto Somayya</h2>
-                    <h4 class="d-none d-sm-block ">Executive Chef</h4>
+                    <h4 class="d-sm-block ">Executive Chef</h4>
                     <p class="d-none d-sm-block mb-0">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
                   </div>
                 </div>
             </div>
         </div>
+
         <div class="row row-content">
-              <div class="card offset-sm-2">
+          <div class="container col-sm-8">
+              <div class="card">
                 <div class="card-header bg-warning text-white">
                   <h1>Reserve a Table</h1>
                 </div>
                 <div class="card-body">
                   <form>
                     <div class="form-group row">
-                    <label class="form-group-label col-sm-4" for="persons">No of Guests</label>
-                    <input type="radio" id="person">1</input>
-                    <input type="radio" id="person">2</input>
-                    <input type="radio" id="person">3</input>
-                    <input type="radio" id="person">4</input>
-                    <input type="radio" id="person">5</input>
-                    <input type="radio" id="person">6</input>
-                    </div>
+                      <label for="people" class="col-sm-2 col-form-label">No of Guests</label>
+                      <div class="col-md-6">
+                      <input  type="radio" name="people">1</input>
+                      <input  type="radio" name="people"> 2</input>
+                      <input  type="radio" name="people"> 3</input>
+                      <input  type="radio" name="people"> 4</input>
+                      <input  type="radio" name="people"> 5</input>
+                      <input  type="radio" name="people"> 6</input>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="dateandtime" class="col-form-label col-md-2">Date and Time</label>
+                      <div class="offset-md-0 col-md-4">
+                        <input class="form-control" type="text" placeholder="Date" name="dateandtime"></input>
+                      </div>
+                      <div class="col-md-4">
+                        <input class="form-control" type="text" placeholder="Time" name="dateandtime"></input>
+                      </div>
+                  </div>
+                  <button class="btn offset-sm-2 btn-sm btn-primary col-md-2">Reserve</button>
                   </form>
                 </div>
               </div>
-
+          </div>
         </div>
-    </div>
+      </div>
 
 
     <footer class="footer">
