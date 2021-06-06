@@ -14,6 +14,35 @@
 </head>
 
 <body>
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4>Login</h4>
+            <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-sm-12">
+                  <label for="username" class="col-form-label col-sm-2">Username</label>
+                  <input type="text" placeholder="Enter your Username"></input>
+                </div>
+              <div class="form-group col-sm-12">
+                <label for=password class="col-form-label col-sm-2">Password</label>
+                <input type="password" placeholder="Enter Your Password"></input>
+              </div>
+              <div class="form-group col-12">
+                <button type="button" class="btn  btn-primary offset-sm-2">Login</button>
+                <button type="button" class="btn  btn-danger" data-dismiss="modal">Cancel</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#"><img class="img-fluid" src="img/logo.png" height="40" width="40"></a>
@@ -35,6 +64,9 @@
         <a class="nav-link" href="contactus.html"><i class="fa fa-id-card"></i> Contact</a>
       </li>
     </ul>
+    <span class="navbar-text ml-auto">
+      <a data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt"></i></a>
+    </span>
     </div>
   </div>
   </nav>
