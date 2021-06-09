@@ -32,7 +32,7 @@ app.post("/teacher/createCourse",(req,res)=>{
   newCourse.save((err)=>{
     if(!err){
       console.log("Added");
-    
+
   });
 
   res.redirect("/teacher");
@@ -42,6 +42,9 @@ app.post("/teacher/createCourse",(req,res)=>{
       else return "No Fail";
   })
 });
+app.post("/",(res,req)=>{
+  console.log("Failure");
+})
 let date = new Date();
 app.get("/",(req,res)=>{
   res.render("index.ejs",{Year: date.getFullYear()});
