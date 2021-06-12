@@ -45,7 +45,8 @@ app.post("/teacher/createCourse",(req,res)=>{
 app.post("/",(res,req)=>{
   console.log("Failure");
   res.send("What the fuck is going on?");
-  
+  const newVariable = "document.getElementbyId(\"demo\")";
+  return newVariable;
 })
 let date = new Date();
 app.get("/",(req,res)=>{
