@@ -46,6 +46,9 @@ app.post("/",(res,req)=>{
   console.log("Failure");
   res.send("What the fuck is going on?");
   const newVariable = "document.getElementbyId(\"demo\")";
+  if(newVariable === true)
+  console.log("Working!");
+  else console.log("Not Working!");
   return newVariable;
 })
 let date = new Date();
