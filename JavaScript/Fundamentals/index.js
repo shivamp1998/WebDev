@@ -1,4 +1,4 @@
-
+'use strict';
 //Coding Assignment 1
 // let marksHeight = 1.69;
 // let marksWeight = 78;
@@ -84,3 +84,54 @@
 // }
 //
 // console.log(checkWinner(averageForKoalas, averageForDolphis));
+
+
+// JavaScript Objects
+
+// const jonas = {
+//   firstName: 'Jonas',
+//   lastName: 'Schidmann',
+//   job: 'Teacher',
+//   birthYear: 1991,
+//   hasDriverLicense: false,
+//   friends:['Micheal','Peter','Steven'],
+//
+// //object method
+//   getAge : function (){
+//     return 2021 - this.birthYear;
+//   },
+//   getSummary: function(){
+//     return `${this.firstName} is a ${this.job} who was born in ${this.birthYear} and ${this.hasDriverLicense ? "has a driver license" : "does not have a drivers license"}`;
+//   }
+// };
+// alert(jonas.getSummary());
+// console.log(jonas.friends);
+// console.log(jonas['lastName']);
+//usage of bracket Notation of accessing data in objects
+// const interstedIn = prompt("Enter the Data You want to achieve for Jonas");
+// if(jonas[interstedIn]){
+//   alert(jonas[interstedIn]);
+// }else alert("Wrong Request!");
+//
+// alert(`${jonas.firstName} has ${jonas.friends.length} and his best friend is ${jonas.friends[0]}`);
+
+//Assignment 4
+// const person1 = {
+//   name: 'john',
+//   height: 1.75,
+//   weight: 57,
+//   BMI: function (){this.bmi =  this.weight / (this.height**2);}
+// };
+// const person2 = {
+//   name: 'Adam',
+//   height: 1.73,
+//   weight: 60,
+//   BMI: function (){this.bmi =  this.weight / (this.height**2);}
+// };
+//
+//
+// if(person1.BMI() > person2.BMI()){
+//   alert(`Body Mass Index of ${person1.name} is ${person1.bmi} and that is higher than ${person2.name} whose BMI is ${person2.bmi}`);
+// }else{
+//   alert(`Body Mass Index of ${person2.name} is ${person2.bmi} and that is higher than ${person1.name} whose BMI is ${person1.bmi}`);
+// }
