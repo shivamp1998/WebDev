@@ -135,3 +135,21 @@
 // }else{
 //   alert(`Body Mass Index of ${person2.name} is ${person2.bmi} and that is higher than ${person1.name} whose BMI is ${person1.bmi}`);
 // }
+
+
+function calcAge( birthYear ){
+  const age = 2037 - birthYear;
+  console.log(firstName);
+  function printAge(){
+    const output = `you are ${age} born in ${birthYear}`;
+    console.log(output);
+  }
+  printAge();
+  return age;
+}
+
+const firstName = 'Jonas';
+calcAge(1991);
+
+
+calcAge(1998);
