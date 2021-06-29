@@ -4,7 +4,24 @@ HTML stands for standard markup language for webpages
 
 <!DOCTYPE html><!-- The doctype declaration represents the document type and is case sensitive,This defines the webpage is going to be a HTML5 document -->
 <html lang="en"><!-- Root element which defines the whole document, the lang attribute of html defines the language of the document -->
+  <!-- HTML Head element -->
   <head>
+    <title>This is Used to define the title of the Website  </title>
+    <link rel="stylesheet" href="styles.css"><!-- this is used to link external CSS into webpage -->
+    <!-- Meta element is typically used to specify the character set, page description, keywords author of the document and viewport settings, this is
+    an important tag which browser uses to fetch meta data during the loading of the website it is not displayed within the website -->
+    <!-- defining the character set to be used -->
+    <meta charset="uft-8">
+    <!--defining the keywords for search engine -->
+    <meta name="keywords" content="HTML,CSS,JS">
+    <!--description of your webpage -->
+    <meta name="descrtion" content="Practice of HTML">
+    <!--Define the Author of the page -->
+    <meta name="author" content="Sarvesh Pandey">
+    <!-- Refresh Document Every 30 seconds -->
+    <meta http-equiv="refresh"   content="30">
+    <!--setting viewport for different devices on which the website is going to be used -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       *{
         font-family: sans-serif;
@@ -36,9 +53,9 @@ HTML stands for standard markup language for webpages
         background-color: crimson;
       }
     </style>
-
   </head>
-  <body>
+  <!-- End of HTML Head ELemen -->
+<body>
     <!--HTML attributes, href in anchor tag and src height width  and style all are attibutes of a tag-->
     <a href="https://google.com" style="display: block;">This is A link tab with Attribute that point to google.com </a>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" width="250" height="250"  alt="Google-logo-image" style="display: block;"></img>
@@ -256,9 +273,76 @@ HTML stands for standard markup language for webpages
     <p> No sript tag is used for browser that do not support javascript </p>
     <!-- End of HTML Javascript -->
 
+    <!-- HTML Layout Elements -->
+    <!-- This is more of CSS related topics as compared to HTML, HTML layout elements are not recommended to change layout of webpage, use CSS instead-->
+    <!-- End of HTML Layout -->
 
-    <!-- HTML head -->
-    <!-- End of HTML Heads -->
+    <!-- HTML Responsive-->
+    <p> Making a website responsive means, it should adjust accoring to the size of the screen, viewport is also used to ensure the same </p>
+    <!-- Responsive Text Styling by using a vw unit which stands for viewport width-->
+    <h1 style="font-size:5vw">This text will adjust according to screen width.</h1>
+    <!-- End of HTML Responsive -->
 
+
+    <!-- HTML computer Code -->
+    <p>Computer code is a way to display various input and output formats on webpages, not used generally...</p>
+    <code>
+      x = 11;
+      y = 12;
+      z = x + y;
+    </code>
+    <p>To copy this document Press <kbd>Ctrl + C</kbd></p>
+    <p> Message from computer <samp> Please close the task before continuing </samp> </p>
+    <!-- End of HTML Computer Code -->
+
+
+    <!--HTML semantics is same as html layeout basically a different tag is used to define a different part of webpage -->
+    <a href="https://www.w3schools.com/html/html5_semantic_elements.asp"> Detailed overview about all symantic tags.</a>
+    <!-- HTML semantics end -->
+
+    <!-- HTML entities -->
+    <p> Most commonly used html entities are &copy; and 1&nbsp;km/h</p>
+    <p> More examples of html entites and symbols &forall; &exist; &ni; &sum; </p>
+    <!--End HTML entities-->
+
+    <!-- HTML Forms -->
+    <p> And HTML form is used to collect User Input. </p>
+    <form action="index.html" method="post"> <!--The action attribute tells what action to be pefromed when submit is clicked  method attrb specifies http method to send the form-->
+      <label for="name">First Name:</label>
+      <input type="text" name="name" id="name" autocomplete="off" novalidate>
+      <label for="lastname">Last Name:</label>
+      <input type="text" name="lastName" id="lastname">
+      <p>Choose Your Gender: </p>
+      <label name="male" for="gender">Male</label>
+      <input type="radio" name="gender" id="gender">
+      <label name="female" for="gender">Female</label>
+      <input type="radio" name="gender" id="gender"><br><br>
+      <input type="submit" value="submit">
+    </form>
+    <!-- End of HTML Forms -->
+
+    <!-- HTML Media -->
+    <p> HTML multimedia is used on webpage to add sounds, music videos, movies and animations. </p>
+    <!-- HTML Video -->
+    <video width="200" height="200" controls>
+      <source src='' type=''>
+    </video>
+    <!-- HTML video ends-->
+    <!-- HTML Audio-->
+    <audio controls>
+      <source src="" type='audio/ogg'>
+    </audio>
+    <!-- HTML Audio Ends -->
+
+    <!-- HTML plug-ins-->
+    <p>Plugins are used to extend the standard functionality of the browser,using object tag or embed tag</p>
+    <object width="100%" height="300px" data="index.html"></object>
+    <!-- <embed width="100%" height="300px" data="index.html"></embed> -->
+    <!-- HTML plug-ins end-->
+    <!-- HTML youtube -->
+    <p> The Iframe tag is blocked from accessing many websites..</p>
+    <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=jNQXAC9IVRw"></iframe>
+    <!-- HTML Youtube ends-->
+    <!-- HTML Media Ends -->
   </body>
 </html>
