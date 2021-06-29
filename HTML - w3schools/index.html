@@ -4,7 +4,40 @@ HTML stands for standard markup language for webpages
 
 <!DOCTYPE html><!-- The doctype declaration represents the document type and is case sensitive,This defines the webpage is going to be a HTML5 document -->
 <html lang="en"><!-- Root element which defines the whole document, the lang attribute of html defines the language of the document -->
+  <head>
+    <style>
+      *{
+        font-family: sans-serif;
+        background-color: lightyellow;
+      }
+      a:link {
+        color: green;
+        text-decoration: none;
+        background-color: transparent;
+      }
+      a:hover{
+        color: yellow;
+        background-color: transparent;
+      }
+      table{
+        border-spacing: 5px;
+      }
+      table,td,th{
+        border: 1px solid red;
+        border-collapse: collapse;
+      }
+      th,td{
+        padding: 15px;
+      }
+      th{
+        text-align: left;
+      }
+      .para{
+        background-color: crimson;
+      }
+    </style>
 
+  </head>
   <body>
     <!--HTML attributes, href in anchor tag and src height width  and style all are attibutes of a tag-->
     <a href="https://google.com" style="display: block;">This is A link tab with Attribute that point to google.com </a>
@@ -43,10 +76,189 @@ HTML stands for standard markup language for webpages
 
     <!-- HTML STYLES -->
     <!-- HTML style attribute is used to provide different styles to html tags in a property:value format where property is a CSS property and value is its value -->
-    <h1 style="background-color: yellow;"> This heading is to denote the style Attribute. The Background is Yellow</h1>
-    <p style="color: green;font-size: 30px"> This paragraph is for denoting the style attribute. The color of the text is green, and font size is 30px </p>
+    <h1 style="background-color: yellow;font-family: sans-serif; text-align:left"> This heading is to denote the style Attribute. The Background is Yellow, and the font-family is sans-serif</h1>
+    <p style="color: green;font-size: 30px; text-align: center"> This paragraph is for denoting the style attribute. The color of the text is green, and font size is 30px </p>
+    <!-- End of HTML STYLES -->
 
 
+    <!-- HTML formatting Elements -->
+    <p> This whole paragraph will be formatted using HTML formatting tools. <em> This text is emphasized using em tag. </em> <i>This text is in italics.</i>
+      <small> This text is made small using small tag. </small>
+      The <mark style="background-color: green">Mark</mark> tag is used to highlight the text.
+      The <del>Del</del> tag is used to define text which has been deleted from a document.
+      The insert tag is used to <del>Delete</del> <ins>Insert</ins> text.
+      This Will show the use of <sub> Subscript </sub> and <sup> Superscript</sup> tags.
+      The <strong> Strong </strong> tag is used to boldly empasize a text.
+    </p>
+    <!-- End of HTML formatting Elements -->
+
+    <!--HTML blockquote -->
+    <blockquote cite="https://www.w3schools.com/html/html_quotation_elements.asp">
+      The HTML blockquote element defines a section that is quoted from  another source. Browser usually indent blockquote elements.
+    </blockquote>
+    <p> You can also use q for short quotatoins <q>This is one example for it </q></p>
+    <p>The abbr tag defines an abbreviation or an acronym in <abbr title="Hyper Text Markup Langugae">HTML</abbr></p>
+    <p>The HTML address tag is used to define the contact information for the author/owner.</p>
+    <address>
+      Written by Sarvesh Pandey.<br>
+      <cite><strong>Associate Software Developer,
+      VenturePact.</strong></cite>
+    </address>
+    <p>HTML cite tag is used to cite the work title as displayed above.</p>
+    <p>The Bdo tag is used for override the current direction of text. <bdo dir="rtl">this text will be displayed right to left.</bdo></p>
+    <!--End of HTML blockquotes <-->
+
+    <!-- HTML Colors -->
+    <p>There are Four ways to color and HTML element. Using color name, HEX , RGB values, HSL </p>
+    <p style="background-color: skyblue"> Changing background color of an element </p>
+    <p style="color: teal"> Changing the font color of text </p>
+    <p style="border: 2px solid tomato"> Changing the color of the border around element </p>
+    <p>Using all methods to change the color of h1 elements</p>
+    <h1 style="background-color:rgb(255, 81, 43);">RGB represent Red green blue light sources. rgb(255, 81, 43)</h1>
+    <h1 style="background-color:#ff1235;">HEX code in the form #rrggbb eg. #ff1235</h1>
+    <h1 style="background-color:hsl(18%, 50%, 99%);">HSL stands for hue, saturation and lightning hsl(18%, 50%, 99%)</h1>
+    <h1 style="background-color:rgba(11, 30, 71, 0.5);">It is same as RGB but with alpha attribute which defines opacity. rgba(11, 30, 71, 0.5</h1>
+    <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">Same as HSL but with a as alpha attribute which defines opacity. hsla(9, 100%, 64%, 0.5)</h1>
+
+    <!-- End of HTML colors -->
+
+    <!-- HTML CSS -->
+    <!-- <style>
+      *{
+        font-family: sans-serif;
+        background-color: lightyellow;
+      }
+      </style> -->
+      <!-- There are many ways to change css of html elements, above represent way is called internal css.
+      CSS is called internal CSS when it is defined using style attribute in html elements. And external CSS
+      when it is linked with an external file by using link tag.
+      CSS has many properties which can be changes using classes and ids, eg. font-family, font-size, background-color and many more....
+      -->
+    <!--End of  HTML CSS -->
+
+    <!-- HTML links -->
+    <p> HTML links are used to navigate between webpages inside an HTML document, it is achieved using anchor tag<p>
+    <a href="https://www.w3schools.com" target="_top"> This is an example of HTML link, this link will take you to google.com. By default unvisited link is underlined and blue.
+    A visited link is underlined and purple. An active link is underlined and red.
+    </a>
+
+    <p>
+      The target attribute specifies how the link document will open.<br>
+      _self: The document will open in the same window/tab as it was clicked.<br>
+      _blank: Opens the document in new window or tab.<br>
+      _parent: Opens the document in new parent frame.<br>
+      _top: Open the document in the full body of the window.
+    </p>
+    <p> An absoulte URL is URL of a webpage on the internet and the relative URL is location of webpage on the local server.</p>
+    <a href="https://www.google.com" title="This image will take you to google.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" height="50" width="300"></a>
+    <p>Using Image as an hyperlink. Click on the Image to go to google.com</p>
+
+    <p>Link to an email address using mailto tag <a href="mailto:shivampandey98@gmail.com"></a>Send Mail to Me!</p>
+    <button onclick = "document.location = 'https://www.google.com'" style="background-color: purple"> Button as a link, to use button as a link JS code is necessary, document.location="url", this button will take you to google.com </button>
+    <p>You can Change The color of the link using internal CSS</p>
+    <!-- End of HTML Links -->
+
+    <!-- HTML IMAGES -->
+    <img src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="flower" width="300" height="100" >
+    <p>Using HTML maps you can create clickable areas on a image </p>
+    <a href="https://www.w3schools.com/html/html_images_imagemap.asp"> To Read more about HTML MAPS, it is not widely used </a>
+    <p> HTML Background Images </p>
+    <div class="test" style="background-image: url('https://i.pinimg.com/736x/ea/5a/89/ea5a89506d366db2ccfd1683fddbaf40.jpg');height:500px;width: 100%;background-repeat: no-repeat;background-size: cover;background-attachment: fixed">
+    </div>
+    <p>HTML picture element is used to display different pictures on different devices using css media query.</p>
+    <!--End of HTML Images -->
+
+    <!-- HTML TABLES -->
+    <table style="width: 100%">
+      <caption>Student Information </caption>
+        <tr>
+          <th>First Name</th>
+          <th> Last Name </th>
+          <th>Age</th>
+        </tr>
+        <tr>
+          <td>Sarvesh</td>
+          <td>Pandey</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td>Priyam</td>
+          <td>Pandey</td>
+          <td> 17 </td>
+        </tr>
+        <tr>
+          <td>Sachin</td>
+          <td colspan="2">Mishra</td>
+        </tr>
+    </table>
+    <!--End of HTML Tables -->
+
+    <!-- HTML lists -->
+    <p>HTML lists Allow You to set a group of related items in a list </p>
+    <p>Ordered List</p>
+    <ol>
+      <li>Mango</li>
+      <li>Litchi</li>
+      <li>Orange</li>
+    </ol>
+    <p>Unordered List</p>
+    <p> in unordered list we can use different types of list styles using list-style-type css property, namely disc,circle,sqare, none</p>
+    <ul>
+      <li>Mango</li>
+      <li>Litchi</li>
+      <li>Orange</li>
+    </ul>
+    <p> Discription Lists </p>
+    <dl>
+      <dt>Mango</dt>
+      <dd>-King of Fruits, yellow/orange/green in color </dd>
+      <dt>Bananas</dt>
+      <dd>-Most Eaten fruit throughout the world</dd>
+    </dl>
+    <p><strong>dl is for description list, dt is for term and dd is for description </strong></p>
+    <!-- End of HTML Lists -->
+
+
+    <!-- HTML block and inline elements -->
+    <p>Every Element has a default display value depending on the type of element. </p>
+    <p> There are two display values in HTML: block and inline</p>
+    <p> A block element starts on a new line </p>
+    <p> An inline element starts on the same line.</p>
+    <div style="border: 1px solid green">This div is an example of block element</div>
+    <div>
+      <span style="background-color: red">This</span>
+      <span style="background-color: green">Is</span>
+      <span style="background-color: blue">Inline</span>
+    </div>
+    <!-- End of HTML block and inline elements -->
+    <!--HTML classes and IDs -->
+    <p class="para">Classes in HTML acts as a css and javascript selectors, it is a dot followed by a class name, this paragraph's class is named para, and It will be used to change bg color</p>
+    <!-- IDS also act in the same way, but the major difference is diffrent elements cannot have same IDs whereas different elements can have same class-->
+    <!-- End of HTML classes and Ids -->
+
+
+    <!--HTML iframes -->
+    <p> Iframe is used to display webpage within a webpage </p>
+    <iframe src="https://www.w3schools.com/html/html_iframe.asp" title="This iframe will show google.com" height="200" width ="100%" style="border:none" name="g_frame"></iframe>
+    <p><a href="https://www.w3schools.com/html/html_iframe.asp" target="g_frame"></a></p>
+    <!-- End of HTML Iframe -->
+
+    <!-- HTML Javascript -->
+    <p> Script tag is usedd to embedded JS in HTML </p>
+    <div id="magic">
+      <button onclick=clicked()>ClickHere!</button>
+    </div>
+    <script>
+      function clicked(){
+        document.getElementById("magic").innerHTML = '<p style="background-color:orange">You have Clicked This button</p>';
+      }
+    </script>
+    <p> No sript tag is used for browser that do not support javascript </p>
+    <!-- End of HTML Javascript -->
+
+
+    <!-- HTML head -->
+    <!-- End of HTML Heads -->
 
   </body>
 </html>
