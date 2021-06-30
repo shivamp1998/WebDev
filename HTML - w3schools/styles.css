@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: verdana;
+  background-color: red;
 }
 p.center {
   text-align: center;
@@ -21,6 +22,7 @@ h1,h2,p {
 h3,h5 {
   background-color: mediumSeaGreen;
 }
+/* CSS Background */
 .css-backgrounds p{
   text-align: center;
 }
@@ -36,6 +38,7 @@ h3,h5 {
   background: rgba(0,128,0,0.3) url("https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?size=626&ext=jpg") no-repeat cover;
   background-clip: border-box;
 }
+/*CSS borders and outlines */
 .css-borders p{
   text-align: center;
   height: 30px;
@@ -59,31 +62,391 @@ h3,h5 {
 }
 p.dotted {
   border-style: dotted;
+  outline-style: dotted;
 }
 p.dashed {
+  outline-style: dashed;
   border-style:dashed;
 }
 p.solid {
+  outline-style: solid;
   border-style: solid;
 }
 p.double {
+  outline-style: double;
   border-style: double;
 }
 p.groove {
+  outline-style: groove;
   border-style: groove;
 }
 p.ridge {
+  outline-style: ridge;
+  outline: 3px ridge blue;
+  outline-offset: 15px;
   border-width: 3px;
   border-style: inset;
   border-color: red;
 }
 p.inset {
+  outline-style: inset;
   border-style: inset;
 }
 p.outset {
+  outline-style: outset;
   border-width: thick;
   border-style: outset;
 }
-p.mixed{
+p.mixed {
   border-style: solid dotted groove ridge;
+}
+/*CSS margins */
+.css-margins p {
+  text-align: center;
+}
+.css-margins {
+  height: 200px;
+  width: 100%;
+  background-color: #D62AD0;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin: 10px 15px 12px 15px;
+}
+/* CSS Padding */
+.css-padding p {
+  text-align: center;
+  height: 200px;
+  width: 100%;
+  background-color: #F7DBF0;
+  padding-top: 30px;
+  padding-right: 20px;
+  padding-left: 15px;
+  padding-bottom: 12px;
+}
+
+/* Text Formatting */
+.text-formatting h1 {
+  text-transform: uppercase;
+  color: #4CAF50;
+  text-align: center;
+}
+.text-formatting p {
+text-align: justify;
+text-decoration: none;
+text-transform: capitalize;
+border: 1px solid grey;
+text-indent: 50px;
+letter-spacing: 3px;
+line-height: 1.8;
+word-spacing: 10px;
+/* text-shadow: 2px 2px red; */
+}
+
+/* CSS fonts */
+.css-fonts p {
+  font-size: 50px;
+}
+.serif {
+  font-family: serif;
+}
+
+.sans-serif {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.monospace {
+  font-family: monospace;
+  font-variant:normal;
+}
+
+.cursive {
+  font-style: normal;
+  font-family: "Cursive",sans-serif;
+}
+
+.fantasy {
+  font-style: oblique;
+  font-family: fantasy;
+}
+.google-font {
+  font-family: "Sofia",sans-serif;
+}
+
+/*CSS LINKS */
+.link:hover {
+  color: #66DE93;
+}
+a.link:link {
+  color: #A3A847;
+}
+
+.link:visited {
+  color: #FFC074;
+}
+.link:active {
+  color: #39A2DB;
+}
+
+.btn-link {
+  margin: 20px;
+  border: solid 1px green;
+  background-color: white;
+  text-decoration: none;
+  height: 30px;
+  width: 90px;
+}
+.btn-link:hover {
+  color: white;
+  background-color: green;
+  text-decoration: none;
+  cursor: wait;
+}
+/*CSS display*/
+
+.f {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  display: block;
+}
+.s {
+  height: 200px;
+  width: 200px;
+  background-color: blue;
+  display: inline-block;
+}
+.t {
+  height: 200px;
+  width: 200px;
+  background-color: green;
+  display: inline-block;
+}
+.hidden {
+  display: none;
+}
+/*CSS MAX-WIDTH*/
+div.wi1 {
+  width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+div.wi2 {
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73ad21;
+}
+/*CSS Position*/
+div.static {
+  position: static;
+  border: 3px solid red;
+}
+div.relative {
+  position: relative;
+  top: 5px;
+  border: 3px solid green;
+}
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid yellow;
+}
+div.nrelative{
+  border: 2px solid purple;
+}
+div.absolute {
+  position: absolute;
+  top: 20px;
+  z-index: 1;
+}
+div.sticky {
+  position: sticky;
+  top: 2px;
+  background-color: green;
+  border: 2px solid #4CAF50;
+}
+div.overflow-text1 {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  width: 50%;
+  height: 100px;
+  overflow: scroll;
+  border: 1px solid #ccc;
+}
+div.overflow-text2 {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  width: 50%;
+  height: 100px;
+  overflow: visible;
+  border: 1px solid #ccc;
+}
+div.overflow-text3 {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  width: 50%;
+  height: 100px;
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+div.overflow-text4 {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  width: 50%;
+  height: 100px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+.flt-img {
+  height: 91px;
+  width: 88px;
+  float: left;
+  margin-right: 15px;
+}
+
+/* CSS Align */
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  text-align: center;
+}
+/*CSS combinators */
+div.combinators > p {
+  background-color: yellow;
+}
+div.combinators + p {
+  background-color: red;
+}
+div.combinators ~ p {
+  background-color: green;
+}
+
+
+/*CSS Pseudo element */
+.pseudo p::first-letter {
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+.pseudo p::first-line {
+  color: #0000ff;
+  font-variant: small-caps;
+}
+::marker{
+  color: green;
+  font-size: 25px;
+}
+::selection {
+  color: red;
+  background: yellow;
+}
+
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* CSS ATTRIBUTE SELECTOR */
+a[target]  {
+  background-color: pink;
+}
+a[target="_blank"] {
+  background-color: pink;
+}
+[title~="anotherdiv"] {
+  border: 5px solid maroon;
+  height: 30px;
+  width: 100%;
+}
+[class|="fa"] {
+  color: red;
+}
+[class^="fa"] {
+  color: red;
+}
+
+/* CSS forms */
+input {
+  width: 100%;
+}
+input[type=text] {
+  width: 100%;
+  padding: 10px 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+input[type="text"]:focus {
+  background-color: powderblue;
+}
+/* CSS counter */
+body{
+  counter-reset: menu;
+}
+.counter h2::before {
+  counter-increment: menu;
+  content:counter(menu) ".";
+}
+/*CSS important */
+p {
+  background-color: lightblue !important;
+}
+
+/* css rounded corners*/
+[class^="rounded"] {
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+}
+.rounded1 {
+  background-color: red;
+  border-radius: 25px 0 0 0;
+}
+.rounded2 {
+  background-color: green;
+  border-radius: 0 25px 0 0;
+}
+.rounded3 {
+  background-color: yellow;
+  border-radius: 0 0 25px;
+}
+/* border-image*/
+.border-img {
+  border: 10px solid lightblue;
+  border-image: url("https://www.w3schools.com/css/border.png") 30 round;
+}
+/* Multiple background */
+.background {
+  height: 300px;
+  width: 100%;
+  background-color: lightpink;
+  background-repeat: no-repeat;
+  background-position: right bottom, left top;
+  background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-tulips-blooming-in-field-royalty-free-image-1584131603.jpg"), url("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg");
 }

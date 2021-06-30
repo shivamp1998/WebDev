@@ -7,6 +7,9 @@ HTML stands for standard markup language for webpages.
   <!-- HTML Head element -->
   <head>
     <title>This is Used to define the title of the Website  </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://kit.fontawesome.com/d5f7dfd482.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"><!-- this is used to link external CSS into webpage -->
     <!-- Meta element is typically used to specify the character set, page description, keywords author of the document and viewport settings, this is
     an important tag which browser uses to fetch meta data during the loading of the website it is not displayed within the website -->
@@ -19,12 +22,12 @@ HTML stands for standard markup language for webpages.
     <!--Define the Author of the page -->
     <meta name="author" content="Sarvesh Pandey">
     <!-- Refresh Document Every 30 seconds -->
-    <meta http-equiv="refresh"   content="30">
+    <!-- <meta http-equiv="refresh"   content="30"> -->
     <!--setting viewport for different devices on which the website is going to be used -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Internal CSS -->
     <style>
-      *{
+      * {
         font-family: sans-serif;
         background-color: lightyellow;
       }
@@ -33,24 +36,28 @@ HTML stands for standard markup language for webpages.
         text-decoration: none;
         background-color: transparent;
       }
-      a:hover{
+      a:hover {
         color: yellow;
         background-color: transparent;
       }
-      table{
+      table {
         border-spacing: 5px;
+        overflow-x: auto;
       }
       table,td,th{
         border: 1px solid red;
         border-collapse: collapse;
       }
+      th:hover,td:hover {
+        background-color: grey;
+      }
       th,td{
         padding: 15px;
       }
-      th{
+      th {
         text-align: left;
       }
-      .para{
+      .para {
         background-color: crimson;
       }
     </style>
@@ -213,7 +220,7 @@ HTML stands for standard markup language for webpages.
     <!-- HTML lists -->
     <p>HTML lists Allow You to set a group of related items in a list </p>
     <p>Ordered List</p>
-    <ol>
+    <ol >
       <li>Mango</li>
       <li>Litchi</li>
       <li>Orange</li>
@@ -260,18 +267,7 @@ HTML stands for standard markup language for webpages.
     <p><a href="https://www.w3schools.com/html/html_iframe.asp" target="g_frame"></a></p>
     <!-- End of HTML Iframe -->
 
-    <!-- HTML Javascript -->
-    <p> Script tag is usedd to embedded JS in HTML </p>
-    <div id="magic">
-      <button onclick=clicked()>ClickHere!</button>
-    </div>
-    <script>
-      function clicked(){
-        document.getElementById("magic").innerHTML = '<p style="background-color:orange">You have Clicked This button</p>';
-      }
-    </script>
-    <p> No sript tag is used for browser that do not support javascript </p>
-    <!-- End of HTML Javascript -->
+
 
     <!-- HTML Layout Elements -->
     <!-- This is more of CSS related topics as compared to HTML, HTML layout elements are not recommended to change layout of webpage, use CSS instead-->
@@ -350,24 +346,173 @@ HTML stands for standard markup language for webpages.
     <div class="css-backgrounds">
         <p>CSS backgrounds</p>
     </div>
+    <!-- CSS borders -->
     <div class="css-borders">
       <p class="all">Border on all sides </p>
       <p class="bottom"> Border only on bottom side </p>
       <p class="rounded"> Rounded borders </p>
       <p class="left"> Borders on left </p>
       <!-- Types of Borders -->
-      <p class="dotted"> Dotted Borders </p>
-      <p class="dashed"> Dashed Borders </p>
-      <p class="solid"> Solid Borders </p>
-      <p class="double"> Double Borders </p>
-      <p class="groove">   Groove Border </p>
-      <p class='ridge'> Ridge Border </p>
-      <p class="inset"> Inset Border </p>
-      <p class="outset"> Outset Border </p>
-      <p class="mixed"> Mixed Border </p>
-    </div
+      <p class="dotted"> Dotted Borders and outline</p>
+      <p class="dashed"> Dashed Borders and outline</p>
+      <p class="solid"> Solid Borders and outline</p>
+      <p class="double"> Double Borders and outline</p>
+      <p class="groove">   Groove Border and outline</p>
+      <p class='ridge'> Ridge Border and outline</p>
+      <p class="inset"> Inset Border and outline</p>
+      <p class="outset"> Outset Border and outline</p>
+      <p class="mixed"> Mixed Border and outline</p>
+    </div>
+    <!-- CSS margins -->
     <div class="css-margins">
       <p> CSS margins </p>
     </div>
+    <!-- CSS padding -->
+    <div class="css-padding">
+      <p> CSS padding </p>
+    </div>
+    <!-- CSS text formatting -->
+    <div class="text-formatting">
+      <h1>text formatting</h1>
+      <p> This is a sample text, which will be formatted using CSS components, The heading  and the paragraphs
+        both will be formatted using CSS properties.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum </p>
+    </div>
+    <!-- CSS fonts -->
+    <div class="css-fonts new">
+      <p class="serif">This is serif.</p>
+      <p class="sans-serif"> This is Sans-Serif.</p>
+      <p class="monospace"> This is monospace.</p>
+      <p class="cursive"> This is cursive.</p>
+      <p class="fantasy"> This is fantasy.</p>
+      <p class="google-font"> This is a google Font.</p>
+    </div>
+    <!-- CSS ICONS -->
+    <div>
+      <i class="fas fa-cloud fa-5x"></i>
+      <i class="fas fa-heart fa-5x"></i>
+      <i class="fas fa-car fa-5x"></i>
+      <i class="fas fa-file fa-5x"></i>
+      <i class="fas fa-bars fa-5x"></i>
+    </div>
+    <!-- CSS LINKS -->
+    <div class="css-links">
+      <a class="link" target="_blank" href="https://www.google.com">Text Link</a>
+      <a href="https://www.google.com"><button class="btn-link">Button Link</button></a>
+    </div>
+    <!-- CSS DISPLAY -->
+    <div class="css-display">
+      <div class="f"></div>
+      <div class="s"></div>
+      <div class="t"></div>
+    </div>
+
+    <!--CSS MAX-WIDTH -->
+    <div class="wi1">This is content with width specified</div>
+    <div class="wi2">This is content with max-width specified</div>
+
+    <!-- CSS Positioning -->
+    <div class='static'>
+      <p>This is static</p>
+    </div>
+    <div class="relative">
+      <p>This is relative</p>
+    </div>
+    <div class="fixed">
+      <p>This is fixed</p>
+    </div>
+    <div class="nrelative">
+      <p class="absolute">This is position absolute</p>
+    </div>
+    <div class="sticky">
+      This is position sticky
+    </div>
+    <!-- CSS overflow -->
+    <div class="overflow-text1">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+    </div>
+    <div class="overflow-text2">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+    </div>
+    <div class="overflow-text3">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+    </div>
+    <div class="overflow-text4">
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
+    </div>
+    <!--CSS FLOAT-->
+    <div class="flt">
+      <img class='flt-img' src="https://www.w3schools.com/css/pineapple.jpg">
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
+    </div>
+    <!-- CSS align -->
+    <div class="center">
+      <h1>This item is center aligned</h1>
+    </div>
+    <!-- CSS combinators -->
+    <div class="combinators">
+      <p>first</p>
+      <p>second</p>
+      <p>Third</p>
+    </div>
+    <p>Fourth</p>
+    <p>Fifth</p>
+    <!-- HTML Javascript -->
+
+
+    <!-- CSS pseudo Element -->
+    <div class="pseudo">
+      <p> This is the element for the test of pseudo element</p>
+    </div>
+
+    <!-- Dropdown -->
+    <div class="dropdown">
+      <span>Mouse over me</span>
+      <div class="dropdown-content">
+      <p>Hello World!</p>
+    </div>
+    </div>
+
+
+    <!-- CSS attribute selector -->
+    <div title="anotherdiv">
+      hello
+    </div>
+
+    <!-- CSS counter -->
+    <div class="counter">
+      <h1> Our Menu </h1>
+      <h2> Pizza </h2>
+      <h2> Burger </h2>
+      <h2> Pasta </h2>
+    </div>
+
+    <!-- Rounded corners -->
+    <div class="rounded1">Hi</div>
+    <div class="rounded2">HI</div>
+    <div class="rounded3">HI</div>
+    <!-- Border Image -->
+    <div class="border-img">
+      Hi
+    </div>
+    <!-- Multiple background -->
+    <div class="background">
+      hi
+    </div>
+    <!-- <p> Script tag is usedd to embedded JS in HTML </p>
+    <div id="magic">
+      <button onclick=clicked()>ClickHere!</button>
+    </div>
+    <script>
+      function clicked(){
+        document.getElementById("magic").innerHTML = '<p style="background-color:orange">You have Clicked This button</p>';
+      }
+      document.querySelector(".f").addEventListener("click",function(){
+        if(document.querySelector(".f").classList.toggle("hidden"));
+      })
+
+    </script>
+    <p> No sript tag is used for browser that do not support javascript </p> -->
+    <!-- End of HTML Javascript -->
+
   </body>
 </html>
