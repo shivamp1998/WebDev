@@ -1,5 +1,5 @@
 <!--HTML from w3schools
-HTML stands for standard markup language for webpages
+HTML stands for standard markup language for webpages.
 -->
 
 <!DOCTYPE html><!-- The doctype declaration represents the document type and is case sensitive,This defines the webpage is going to be a HTML5 document -->
@@ -11,17 +11,18 @@ HTML stands for standard markup language for webpages
     <!-- Meta element is typically used to specify the character set, page description, keywords author of the document and viewport settings, this is
     an important tag which browser uses to fetch meta data during the loading of the website it is not displayed within the website -->
     <!-- defining the character set to be used -->
-    <meta charset="uft-8">
+    <meta charset="UTF-8">
     <!--defining the keywords for search engine -->
     <meta name="keywords" content="HTML,CSS,JS">
     <!--description of your webpage -->
-    <meta name="descrtion" content="Practice of HTML">
+    <meta name="description" content="Practice of HTML">
     <!--Define the Author of the page -->
     <meta name="author" content="Sarvesh Pandey">
     <!-- Refresh Document Every 30 seconds -->
     <meta http-equiv="refresh"   content="30">
     <!--setting viewport for different devices on which the website is going to be used -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Internal CSS -->
     <style>
       *{
         font-family: sans-serif;
@@ -58,14 +59,14 @@ HTML stands for standard markup language for webpages
 <body>
     <!--HTML attributes, href in anchor tag and src height width  and style all are attibutes of a tag-->
     <a href="https://google.com" style="display: block;">This is A link tab with Attribute that point to google.com </a>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" width="250" height="250"  alt="Google-logo-image" style="display: block;"></img>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" width="250" height="250"  alt="Google-logo-image" style="display: block;"/>
     <!-- img tag has two types of src attribute value, Absolute and relative, here I have used absolute value -->
     <h1 title="This is the heading of the document">Welcome to the test webpage</h1>
     <!--End of HTML Attributes-->
 
     <!-- HTML Headings -->
     <!-- There are six types of HTML heading h1,h2,h3,h4,h5,h6. They differ in size -->
-    <h1> This is Heading 1 </h1>
+    <h1 class="heading1"> This is Heading 1 </h1>
     <h2> This is Heading 2 </h2>
     <h3> This is Heading 3 </h3>
     <h4> This is Heading 4 </h4>
@@ -75,12 +76,11 @@ HTML stands for standard markup language for webpages
     <!-- End of HTML Headings -->
 
     <!-- HTML paragraphs -->
-    <p> The P tag defines HTML paragraphs, like how this is a paragraph.
-        The Browser Ignores any extra space given in between paragraph tag.<br>
-        Line break is used to display the content in the next line.
-      <hr> HR tag for horizontal rule, this is a non-closing tag
-    </p>
     <p>
+     The P tag defines HTML paragraphs, like how this is a paragraph.
+        The Browser Ignores any extra space given in between paragraph tag.
+        Line break is used to display the content in the next line.
+       HR tag for horizontal rule, this is a non-closing tag
       But if it is absoultely necessary to have whitespaces and extraspaces in P tag, then U can used PRE tag, like this:
       <pre>
         The woods are lovely, dark, and deep,
@@ -99,7 +99,7 @@ HTML stands for standard markup language for webpages
 
 
     <!-- HTML formatting Elements -->
-    <p> This whole paragraph will be formatted using HTML formatting tools. <em> This text is emphasized using em tag. </em> <i>This text is in italics.</i>
+    <p class="center big"> This whole paragraph will be formatted using HTML formatting tools. <em> This text is emphasized using em tag. </em> <i>This text is in italics.</i>
       <small> This text is made small using small tag. </small>
       The <mark style="background-color: green">Mark</mark> tag is used to highlight the text.
       The <del>Del</del> tag is used to define text which has been deleted from a document.
@@ -133,7 +133,7 @@ HTML stands for standard markup language for webpages
     <p>Using all methods to change the color of h1 elements</p>
     <h1 style="background-color:rgb(255, 81, 43);">RGB represent Red green blue light sources. rgb(255, 81, 43)</h1>
     <h1 style="background-color:#ff1235;">HEX code in the form #rrggbb eg. #ff1235</h1>
-    <h1 style="background-color:hsl(18%, 50%, 99%);">HSL stands for hue, saturation and lightning hsl(18%, 50%, 99%)</h1>
+    <h1 style="background-color:hsl(5, 50%, 99%);">HSL stands for hue, saturation and lightning hsl(18%, 50%, 99%)</h1>
     <h1 style="background-color:rgba(11, 30, 71, 0.5);">It is same as RGB but with alpha attribute which defines opacity. rgba(11, 30, 71, 0.5</h1>
     <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">Same as HSL but with a as alpha attribute which defines opacity. hsla(9, 100%, 64%, 0.5)</h1>
 
@@ -167,7 +167,7 @@ HTML stands for standard markup language for webpages
       _top: Open the document in the full body of the window.
     </p>
     <p> An absoulte URL is URL of a webpage on the internet and the relative URL is location of webpage on the local server.</p>
-    <a href="https://www.google.com" title="This image will take you to google.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" height="50" width="300"></a>
+    <a href="https://www.google.com" title="This image will take you to google.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1920px-Google_2015_logo.svg.png" height="50" width="300" alt="google"></a>
     <p>Using Image as an hyperlink. Click on the Image to go to google.com</p>
 
     <p>Link to an email address using mailto tag <a href="mailto:shivampandey98@gmail.com"></a>Send Mail to Me!</p>
@@ -241,7 +241,7 @@ HTML stands for standard markup language for webpages
     <p> There are two display values in HTML: block and inline</p>
     <p> A block element starts on a new line </p>
     <p> An inline element starts on the same line.</p>
-    <div style="border: 1px solid green">This div is an example of block element</div>
+    <div style="border: 1px solid green">This div is an example of block display element</div>
     <div>
       <span style="background-color: red">This</span>
       <span style="background-color: green">Is</span>
@@ -256,7 +256,7 @@ HTML stands for standard markup language for webpages
 
     <!--HTML iframes -->
     <p> Iframe is used to display webpage within a webpage </p>
-    <iframe src="https://www.w3schools.com/html/html_iframe.asp" title="This iframe will show google.com" height="200" width ="100%" style="border:none" name="g_frame"></iframe>
+    <iframe src="https://www.w3schools.com/html/html_iframe.asp" title="This iframe will show google.com" height="200" width ="100" style="border:none" name="g_frame"></iframe>
     <p><a href="https://www.w3schools.com/html/html_iframe.asp" target="g_frame"></a></p>
     <!-- End of HTML Iframe -->
 
@@ -309,13 +309,13 @@ HTML stands for standard markup language for webpages
     <p> And HTML form is used to collect User Input. </p>
     <form action="index.html" method="post"> <!--The action attribute tells what action to be pefromed when submit is clicked  method attrb specifies http method to send the form-->
       <label for="name">First Name:</label>
-      <input type="text" name="name" id="name" autocomplete="off" novalidate>
+      <input type="text" name="name" id="name" autocomplete="off">
       <label for="lastname">Last Name:</label>
       <input type="text" name="lastName" id="lastname">
       <p>Choose Your Gender: </p>
-      <label name="male" for="gender">Male</label>
-      <input type="radio" name="gender" id="gender">
-      <label name="female" for="gender">Female</label>
+      <label  for="gender">Male</label>
+      <input type="radio" name="gender">
+      <label  for="gender">Female</label>
       <input type="radio" name="gender" id="gender"><br><br>
       <input type="submit" value="submit">
     </form>
@@ -325,24 +325,49 @@ HTML stands for standard markup language for webpages
     <p> HTML multimedia is used on webpage to add sounds, music videos, movies and animations. </p>
     <!-- HTML Video -->
     <video width="200" height="200" controls>
-      <source src='' type=''>
+      <source src='video.mp4' type='video/mp4'>
     </video>
     <!-- HTML video ends-->
     <!-- HTML Audio-->
     <audio controls>
-      <source src="" type='audio/ogg'>
+      <source src="audio.mp3" type='audio/ogg'>
     </audio>
     <!-- HTML Audio Ends -->
 
     <!-- HTML plug-ins-->
     <p>Plugins are used to extend the standard functionality of the browser,using object tag or embed tag</p>
-    <object width="100%" height="300px" data="index.html"></object>
+    <object width="100" height="300" data="index.html"></object>
     <!-- <embed width="100%" height="300px" data="index.html"></embed> -->
     <!-- HTML plug-ins end-->
     <!-- HTML youtube -->
     <p> The Iframe tag is blocked from accessing many websites..</p>
-    <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=jNQXAC9IVRw"></iframe>
+    <iframe width="100" height="315" src="https://www.youtube.com/watch?v=jNQXAC9IVRw"></iframe>
     <!-- HTML Youtube ends-->
     <!-- HTML Media Ends -->
+
+
+    <!-- CSS Divisions Begin-->
+    <div class="css-backgrounds">
+        <p>CSS backgrounds</p>
+    </div>
+    <div class="css-borders">
+      <p class="all">Border on all sides </p>
+      <p class="bottom"> Border only on bottom side </p>
+      <p class="rounded"> Rounded borders </p>
+      <p class="left"> Borders on left </p>
+      <!-- Types of Borders -->
+      <p class="dotted"> Dotted Borders </p>
+      <p class="dashed"> Dashed Borders </p>
+      <p class="solid"> Solid Borders </p>
+      <p class="double"> Double Borders </p>
+      <p class="groove">   Groove Border </p>
+      <p class='ridge'> Ridge Border </p>
+      <p class="inset"> Inset Border </p>
+      <p class="outset"> Outset Border </p>
+      <p class="mixed"> Mixed Border </p>
+    </div
+    <div class="css-margins">
+      <p> CSS margins </p>
+    </div>
   </body>
 </html>

@@ -1,0 +1,89 @@
+/* css selector */
+/*External CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: verdana;
+}
+p.center {
+  text-align: center;
+  color: teal;
+}
+.big {
+  font-size: 50px;
+}
+
+h1,h2,p {
+  background-color: lightyellow;
+}
+
+h3,h5 {
+  background-color: mediumSeaGreen;
+}
+.css-backgrounds p{
+  text-align: center;
+}
+.css-backgrounds{
+  height: 300px;
+  width: 100%;
+  background-color: dodgerblue;
+  opacity: 0.7;
+  background-image: url("https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: none;
+  background: rgba(0,128,0,0.3) url("https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?size=626&ext=jpg") no-repeat cover;
+  background-clip: border-box;
+}
+.css-borders p{
+  text-align: center;
+  height: 30px;
+  margin-top: 3px;
+}
+.all {
+  border: 2px solid red;
+}
+.bottom {
+  border-bottom: 2px solid blue;
+}
+.rounded {
+  border: 3px solid green;
+  border-radius: 5px;
+  height: 30px;
+}
+.left {
+  border-left: 5px solid blue;
+  background-color: lightblue;
+  margin-top: 3px;
+}
+p.dotted {
+  border-style: dotted;
+}
+p.dashed {
+  border-style:dashed;
+}
+p.solid {
+  border-style: solid;
+}
+p.double {
+  border-style: double;
+}
+p.groove {
+  border-style: groove;
+}
+p.ridge {
+  border-width: 3px;
+  border-style: inset;
+  border-color: red;
+}
+p.inset {
+  border-style: inset;
+}
+p.outset {
+  border-width: thick;
+  border-style: outset;
+}
+p.mixed{
+  border-style: solid dotted groove ridge;
+}
