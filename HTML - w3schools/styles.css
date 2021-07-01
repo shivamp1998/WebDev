@@ -450,3 +450,20 @@ p {
   background-position: right bottom, left top;
   background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-tulips-blooming-in-field-royalty-free-image-1584131603.jpg"), url("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg");
 }
+
+/* Gradient */
+.gradient  {
+  height: 200px;
+  width: 100%;
+  background-image: linear-gradient(lightgreen, green);
+}
+.gradient2 {
+  background-image: linear-gradient(to right, red, yellow);
+  height: 200px;
+  width: 100%;
+}
+.gradient3 {
+  height: 200px;
+  width: 100%;
+    background-image: linear-gradient(to bottom right,blue, purple) ;
+}

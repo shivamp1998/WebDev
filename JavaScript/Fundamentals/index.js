@@ -137,19 +137,32 @@
 // }
 
 
-function calcAge( birthYear ){
-  const age = 2037 - birthYear;
-  console.log(firstName);
-  function printAge(){
-    const output = `you are ${age} born in ${birthYear}`;
-    console.log(output);
-  }
-  printAge();
-  return age;
-}
+// function calcAge( birthYear ){
+//   const age = 2037 - birthYear;
+//   console.log(firstName);
+//   function printAge(){
+//     const output = `you are ${age} born in ${birthYear}`;
+//     console.log(output);
+//   }
+//   printAge();
+//   return age;
+// }
+//
+// const firstName = 'Jonas';
+// calcAge(1991);
+//
+//
+// calcAge(1998);
 
-const firstName = 'Jonas';
-calcAge(1991);
-
-
-calcAge(1998);
+// 
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian','Pizzeria','Vegetarian','Organic'],
+//   starterMenu: ['Focaccia','Bruschetta','Garlic','Bread','Caprese Salad'],
+// }
+//
+//
+// const arr = [1,2,3];
+// const newArr = ['a','b','c',...arr];
+// console.log(newArr);
