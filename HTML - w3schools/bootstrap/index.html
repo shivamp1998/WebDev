@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="refresh" content="30">
+    <meta charset="utf-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Bootstrap W3 schools</title>
+    <link rel="stylesheet" href='styles.css'>
+  </head>
+  <body onload="refresh(1000);">
+    <!--bootstrap container -->
+    <div class='container bg-dark border text-white text-center'>
+      <h1>This is an example of container</h1>
+    </div>
+    <div class="container-fluid bg-warning pt-3 text-white text-center">
+      <h1>This is an example of container-fluid</h1>
+    </div>
+    <div class="container-sm bg-danger">Container-sm</div>
+    <div class="container-md bg-success">Container-md</div>
+    <div class="container-lg bg-primary">Container-lg</div>
+  </body>
+  <!--bootstrap Grid Basic-->
+  <div class='row text-center'>
+    <div class="col-md-1 bg-success">Col</div>
+    <div class="col-md-1 bg-info">Col</div>
+    <div class="col-md-1 bg-warning">Col</div>
+    <div class="col-md-1 bg-light">Col</div>
+    <div class="col-md-1 bg-dark">Col</div>
+    <div class="col-md-1 bg-warning">Col</div>
+    <div class="col-md-1 bg-success">Col</div>
+    <div class="col-md-1 bg-danger">Col</div>
+    <div class="col-md-1 bg-primary">Col</div>
+    <div class="col-md-1 bg-success">Col</div>
+    <div class="col-md-1 bg-secondary">Col</div>
+    <div class="col-md-1 bg-danger">Col</div>
+  </div>
+  <div class="row text-center">
+    <div class='col-md-6 bg-danger'>col</div>
+    <div class="col-md-6 bg-info">Col</div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-8 bg-warning">Col</div>
+    <div class="col-md-4 bg-success">Col</div>
+  </div>
+  <!-- Bootstrap typographic content-->
+  <p class="lead">This is a test paragraph with bootstrap class lead applies</p>
+  <p class="text-monospace">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+  <!-- Bootstrap colors -->
+  <div class="text-center">
+    <h2 class="text-warning">This is a test Text</h2>
+    <h2 class="text-info">This is a test Text</h2>
+    <h2 class="text-success">This is a test Text</h2>
+    <h2 class="text-primary">This is a test Text</h2>
+    <h2 class="text-danger">This is a test Text</h2>
+    <h2 class="text-secondary">This is a test Text</h2>
+    <h2 class="text-dark">This is a test Text</h2>
+    <h2 class="text-light bg-dark">This is a test Text</h2>
+  </div>
+
+  <!--Bootstrap Table -->
+  <table class="table text-center table-bordered table-hover table-dark">
+    <thead class="thead-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="table-success">
+      <td>Sarvesh</td>
+      <td>Pandey</td>
+      <td>shivampandey98@gmail.com</td>
+    </tr>
+    <tr class="table-primary">
+      <td>Priyam</td>
+      <td>Pandey</td>
+      <td>pandeypriyam02@gmail.com</td>
+    </tr>
+    <tr class="table-danger">
+      <td>Sachin</td>
+      <td>Mishra</td>
+      <td>mishrasachin01@gmail.com</td>
+    </tr>
+    </tbody>
+  </table>
+  <!--Bootstrap images -->
+  <div class="row">
+    <div class="col-md-4" >
+      <img src="img1.jpg" class="rounded float-left .img-fluid">
+    </div>
+    <div class="col-md-4" >
+      <img src="img2.jpg" class="rounded-circle .mx-auto d-block .img-fluid">
+    </div>
+    <div class="col-md-4" ">
+      <img src="img3.jfif" class="img-thumbnail float-right .img-fluid">
+    </div>
+  </div>
+  <!--Bootstrap Jumbotron-->
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>This is an example of bootstrap jumbotron</h1>
+      <p>It is used to highlight specific content on your webpage</p>
+    </div>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1>This is an example of full width jumbotron</h1>
+      <p>This is also usedd in creating responsive webpages</p>
+    </div>
+  </div>
+
+  <!-- Bootstrap Alerts -->
+<div class="alert alert-success alert-dismissible">
+  <button class="close" type="button" data-dismiss="alert">&times;</button>
+  <strong> Success! </strong> Download Complete.
+</div>
+<div class="alert alert-warning fade show alert-dismissible">
+  <button class="close" data-dismiss="alert">&times;</button>
+  <strong> Warning! </strong> Click this like to know more. <a class="alert-link">Click Here!</a>
+</div>
+
+<!-- bootstrap buttons -->
+<div class="text-center">
+    <button type="button" class="btn">Basic</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+</div>
+<div class="text-center mt-3 p-3">
+  <button class="btn btn-outline-primary" type="button">Outline Primary</button>
+  <button class="btn btn-outline-warning" type="button">Outline Warning</button>
+  <button class="btn btn-outline-success" type="button">Outline Success</button>
+</div>
+
+<div class="text-center">
+  <button type="button" class="btn btn-warning btn-lg">lg button</button>
+  <button type="button" class="btn btn-success btn-sm">sm button</button>
+  <button type="button" class="btn btn-danger">default button</button>
+</div>
+
+<div class="text-center">
+  <button type="button" class="btn btn-block btn-lg btn-primary mt-3">Block</button>
+</div>
+
+<div class="text-center mt-3">
+  <button type="button" class="btn btn-dark active">active Button</button>
+  <button type="button" class="btn btn-dark disabled">disabled Button</button>
+</div>
+<div class="text-center mt-3">
+  <button type="button" class="btn btn-primary">
+    <span class="spinner-border spinner-border-sm"></span>
+    Loading
+  </button>
+  <button type='button' class="btn btn-secondary">
+    <span class="spinner-grow spinner-grow-sm"></span>
+    Loading
+  </button>
+</div>
+<div class="text-center mt-3">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-warning">Samsung</button>
+    <button type="button" class="btn btn-success">Xiaomi</button>
+  </div>
+</div>
+<div class="text-center mt-4">
+  <div class="btn-group-vertical">
+      <button type="button" class="btn btn-lg btn-primary">Apple</button>
+      <button type="button" class="btn btn-lg btn-primary">Samsung</button>
+      <button type="button" class="btn btn-lg btn-primary">Xiaomi</button>
+  </div>
+</div>
+<div class="text-center mt-3">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Apple</button>
+    <button type="button" class="btn btn-primary">Samsung</button>
+    <button type="button" class="btn btn-primary">Xaiomi</button>
+    <div class="btn-group">
+      <button type="button" class='btn btn-primary dropdown-toggle' data-toggle='dropdown'>Sony</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Tablet</a>
+        <a class="dropdown-item" href="#">Smartphone</a>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <div class="text-center mt-3">
+   <div class='btn-group'>
+     <button type="button" class="btn btn-primary">Sony</button>
+     <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+       <span class="caret"></span>
+     </button>
+     <div class="dropdown-menu">
+       <a class="dropdown-item" href="#">Tablet</a>
+       <a class="dropdown-item" href="#">Smartphone</a>
+     </div>
+   </div>
+ </div>
+
+ <!-- Bootstrap badges -->
+ <div class="badges text-center mt-3">
+   <span class="badge badge-pill badge-primary">Primary</span>
+   <span class="badge badge-pill badge-warning">Warning</span>
+   <span class="badge badge-pill badge-success">Sucess</span>
+   <button type="button" class='btn btn-primary'>Message <span class="badge badge-light">4</span>
+ </div>
+
+<!-- Bootstrap progress bars -->
+<div class="progress mt-3 text-center">
+  <div class="progress-bar" style="width: 70%">70%</div>
+</div>
+<div class="progress mt-3" style="height: 80px">
+  <div class="progress-bar progress-bar-striped" style="width: 83%;height: 80px">83%</div>
+</div>
+
+<div class="progress mt-3">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:33%">33%</div>
+</div>
+
+<div class="progress mt-3">
+  <div class="progress-bar bg-warning" style="width: 10%">10%</div>
+  <div class="progress-bar bg-primary" style="width: 10%">10%</div>
+  <div class="progress-bar bg-danger" style="width: 40%">40%</div>
+</div>
+<div class="text-center mt-3">
+  <div class="spinner-border text-muted"></div>
+  <div class="spinner-border text-danger"></div>
+  <div class="spinner-border text-primary"></div>
+  <div class="spinner-grow text-success"></div>
+</div>
+
+<!--Bootsrap pagination -->
+<div class="text-center">
+  <ul class="pagination mt-3 justify-content-center">
+    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item "><a class="page-link" href="#">1</a></li>
+    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</div>
+
+<ul class="breadcrumb justify-content-center">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item"><a href="#">Contact</a></li>
+  <li class="breadcrumb-item"><a href="#">Services</a></li>
+  <li class="breadcrumb-item active">About</li>
+</ul>
+</html>
