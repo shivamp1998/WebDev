@@ -154,7 +154,7 @@
 //
 // calcAge(1998);
 
-// 
+//
 // const restaurant = {
 //   name: 'Classico Italiano',
 //   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -165,4 +165,74 @@
 //
 // const arr = [1,2,3];
 // const newArr = ['a','b','c',...arr];
-// console.log(newArr);
+// console.log(newArr
+
+
+//Destructuring nested Arrays//
+// const [a,b,[c,d]] = [1,2,[3,4]];
+// console.log(c);
+
+//default values
+const [e=1,f=1,g] = [,9,10];
+console.log(e,f,g);
+
+//Destructuring object
+
+const restaurant = {
+  name: "Indian Bistro",
+  location: "Mira-Bhayander Road, Mira Road, Mumbai",
+  categories: ['Indian','Italian','Pizzeria'],
+  starterMenu:['SouthIndian','NorthIndian','Maharashtrian'],
+  mainMenu:['Garlic','Salad','Pizza','Pasta'],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0,
+      close: 24,
+    },
+  },
+};
+// const {name,openingHours} = restaurant;
+// console.log(openingHours);
+//
+// const {name: newname, openingHours: hours} = restaurant;
+// console.log(newname);
+
+//Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = {
+//   a: 23,
+//   b: 7,
+//   c: 14
+// };
+// // ({a,b} = obj);
+// // console.log(a,b);
+// //
+// // const {fri: {open, close}} = openingHours;
+// // console.log(open,close);
+
+const a = [5,6,7];
+const arr = [...a,1,2,3];
+
+console.log(arr);
+
+const newMenu = [...restaurant.mainMenu,'Gnocci'];
+console.log(newMenu);
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+
+//Iterables are arrays,strings,maps, sets but not Arrays
+
+const str = 'Jonas';
+const letters = [...str,' ','s'];
+console.log(letters);
