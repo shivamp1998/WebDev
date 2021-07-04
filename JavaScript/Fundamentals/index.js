@@ -173,32 +173,32 @@
 // console.log(c);
 
 //default values
-const [e=1,f=1,g] = [,9,10];
-console.log(e,f,g);
+// const [e=1,f=1,g] = [,9,10];
+// console.log(e,f,g);
 
 //Destructuring object
 
-const restaurant = {
-  name: "Indian Bistro",
-  location: "Mira-Bhayander Road, Mira Road, Mumbai",
-  categories: ['Indian','Italian','Pizzeria'],
-  starterMenu:['SouthIndian','NorthIndian','Maharashtrian'],
-  mainMenu:['Garlic','Salad','Pizza','Pasta'],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0,
-      close: 24,
-    },
-  },
-};
+// const restaurant = {
+//   name: "Indian Bistro",
+//   location: "Mira-Bhayander Road, Mira Road, Mumbai",
+//   categories: ['Indian','Italian','Pizzeria'],
+//   starterMenu:['SouthIndian','NorthIndian','Maharashtrian'],
+//   mainMenu:['Garlic','Salad','Pizza','Pasta'],
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0,
+//       close: 24,
+//     },
+//   },
+// };
 // const {name,openingHours} = restaurant;
 // console.log(openingHours);
 //
@@ -219,20 +219,83 @@ const restaurant = {
 // // const {fri: {open, close}} = openingHours;
 // // console.log(open,close);
 
-const a = [5,6,7];
-const arr = [...a,1,2,3];
-
-console.log(arr);
-
-const newMenu = [...restaurant.mainMenu,'Gnocci'];
-console.log(newMenu);
-
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// const a = [5,6,7];
+// const arr = [...a,1,2,3];
+//
+// console.log(arr);
+//
+// const newMenu = [...restaurant.mainMenu,'Gnocci'];
+// console.log(newMenu);
+//
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
 
 //Iterables are arrays,strings,maps, sets but not Arrays
 
-const str = 'Jonas';
-const letters = [...str,' ','s'];
-console.log(letters);
+// const str = 'Jonas';
+// const letters = [...str,' ','s'];
+// console.log(letters);
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+
+const {players:[players1,players2]} = game;
+const [gk,...fieldplayers] = players1;
+
+const allplayers = [...players1,...players2];
+
+const playersFinal = [...players1,'Thiago','Coutinho','Persic'];
+const {odds:{team1,x:draw,team2}} = game;
+
+function printGoals (...player){
+  for(let i=0;i<player.length;i++){
+    if(game.scored.includes(player[i]))
+    console.log(`${player[i]} scored 1 goal`);
+    else console.log(`${player[i]} scored 0 goals`);
+  }
+}
+
+printGoals('Lewandowski','Neuer');
+console.log(team1,draw,team2);
+
+console.log(team1 > team2 && "Team 2 wins" || team1 < team2 && "Team 1 wins");

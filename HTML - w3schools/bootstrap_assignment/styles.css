@@ -1,0 +1,21 @@
+.carousel-item img {
+  width: 100%;
+  min-height: 550px;
+}
+
+.newimg img{
+  width: 115%;
+  margin-top: 15px;
+}
+
+.text {
+  font-size: 25.6px;
+  margin-left: 80px;
+  margin-top: 15px;
+}
+
+.foot {
+  margin-top: 15px;
+  color: white;
+  padding: 12px 0;
+}
