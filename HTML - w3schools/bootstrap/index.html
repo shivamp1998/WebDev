@@ -268,11 +268,226 @@
 
 <!-- list group item -->
 <div class="text-center">
-  <ul class="list-group">
+  <ul class="list-group list-group-flush">
     <li class="list-group-item active">First Item</li>
+    <li class="list-group-item">Second Item</li>
+    <li class="list-group-item disabled">Third Item</li>
+  </ul>
+  <div class="list-group">
+    <a href='#' class="list-group-item list-group-action">First Item</a>
+    <a href="#" class="list-group-item list-group-action">Second Item</a>
+    <a href="#" class="list-group-item list-group-action">Third Item</a>
+  </div>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item">First Item</li>
     <li class="list-group-item">Second Item</li>
     <li class="list-group-item">Third Item</li>
   </ul>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-success">Success</li>
+    <li class="list-group-item list-group-item-warning">Warning</li>
+    <li class="list-group-item list-gorup-item-info">Info</li>
+  </ul>
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-betweeen align-items-center">Inbox<span class="badge badge-primary badge-pill">20</span></li>
+  </ul>
 </div>
+
+<!--Bootstrap cArds -->
+<div class="text-center">
+  <div class="card">
+    <div class="card-header">
+      HOME
+    </div>
+  </div>
+  <div class="card mt-2">
+    <div class="card-header bg-success">HEADER</div>
+    <div class="card-body">BODY</div>
+    <div class="card-footer bg-warning">FOOTER</div>
+  </div>
+  <div class="card mt-2">
+    <div class="card-body">
+      <h4 class="card-title">This is Title</h4>
+      <div class="card-text">This is a sample text</div>
+      <a class="card-link" href="https://www.google.com">Google.com</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="img1.jpg" height="50px" width="50px">
+    <div class="card-img-overlay">
+      <h4 class="card-title">This is title</h4>
+      <p class="card-text">This is a sample text</p>
+      <a class="btn btn-primary stretched-link">View Profile</a>
+    </div>
+  </div>
+</div>
+<div class="card-columns">
+  <div class="card bg-primary">
+    <div class="card-body">
+      <p class="card-text">This is a Primary Text</p>
+    </div>
+  </div>
+  <div class="card bg-warning">
+    <div class="card-body">
+      <p class="card-text">This is a Warning Text</p>
+    </div>
+  </div>
+</div>
+
+<div class="card-deck">
+  <div class="card bg-success">
+    <div class="card-body">
+      <p class="card-text">This is a Success Text</p>
+    </div>
+  </div>
+  <div class="card bg-info">
+    <div class='card-body'>
+      <p class='card-text'> This is Info TExt</p>
+    </div>
+  </div>
+</div>
+
+<div class="card-group">
+  <div class="card bg-primary">
+    <div class="text-center card-body">
+      <p class="card-text">This is another Text</p>
+    </div>
+  </div>
+  <div class="card bg-secondary">
+    <div class="card-body text-center">
+      <p class="card-text">This is Just Another Text</p>
+    </div>
+  </div>
+  <div class="card bg-danger">
+    <div class="card-body">
+      <p class="card-text">This is another Sample Text</p>
+    </div>
+  </div>
+</div>
+
+<!--Bootstrap Dropdowns -->
+<div class="text-center">
+  <div class="dropdown dropright">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown Button</button>
+    <div class="dropdown-menu dropdown-menu-right">
+      <div class="dropdown-header">this is dropdown Header</div>
+      <a href="#" class="dropdown-item active">First Item</a>
+      <a href='#' class="dropdown-item">Second Item</a>
+      <a href="#" class="dropdown-item disabled">Third Item</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Fourth Item</a>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn btn-primary" type="button">Samsung</button>
+    <button class="btn btn-primary" type='button'>Apple</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Microsoft</button>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">First Item</a>
+          <a href="#" class="dropdown-item">Second Item</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+    <div class="dropdown-menu">
+      <a href="#" class="dropdown-item">First Item</a>
+      <a href="#" class="dropdown-item">Second Item</a>
+    </div>
+  </div>
+</div>
+
+<!--Bootstrap Collapse -->
+<div class="text-center">
+  <button type="button" data-toggle="collapse" data-target="#demo" class="btn btn-success">Click Me!</button>
+  <div id="demo" class="collapse">
+    This is just an Sample text to check the collapse feature.
+  </div>
+</div>
+
+<!--Accordian -->
+<div id="accordian" class="text-center">
+  <div class="card">
+    <div class="card-header">
+      <a href="#first" data-toggle="collapse" class="card-link">First Accord</a>
+    </div>
+    <div id="first" class="collapse" data-parent="#accordian">
+      <div class="card-body">Test This First</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <a href="#second" data-toggle="collapse" class="card-link">Second Accord</a>
+    </div>
+    <div id="second" data-parent="#accordian" class="collapse">
+      <div class="card-body"><h1>Just To check Wheter the first one worked!</h1></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <a href="#third" class="card-link" data-toggle="collapse">Third Accord</a>
+    </div>
+    <div id="third" class='collapse' data-parent="#accordian">
+      <div class="card-body"><h1>This is another test </h1></div>
+    </div>
+  </div>
+</div>
+<!-- nav menus -->
+<ul class="nav justify-content-end">
+  <li class="nav-item" href="#">
+    <a class="nav-link" >Home</a>
+  </li>
+  <li class="nav-item" href="#">
+    <a class="nav-link">Contact</a>
+  </li>
+  <li class="nav-item" href="#">
+    <a class="nav-link">About us</a>
+  </li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Home</a>
+  </li>
+  <li class="nav-item"><a class="nav-link">Contact</a></li>
+  <li class="nav-item">
+    <a class="nav-link">About Us</a>
+  </li>
+</ul>
+
+<ul class="nav nav-pills nav-justified">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Home</a>
+  </li>
+  <li class="nav-item"><a class="nav-link">Contact</a></li>
+  <li class="nav-item">
+    <a class="nav-link">About Us</a>
+  </li>
+</ul>
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Home</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="dropdown-toggle nav-link" data-toggle='collapse' href="#data">Dropdown</a>
+    <div class="dropdown-menu" id="data">
+      <a class="dropdown-item">First</a>
+      <a class="dropdown-item">Second</a>
+    </div>
+
+  </li>
+
+  </div>
+</ul>
+
+
+
+
 
 </html>
