@@ -177,30 +177,42 @@
 // console.log(e,f,g);
 
 //Destructuring object
-
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0,
+    close: 24,
+  },
+};
+const properties = Object.keys(openingHours);
+for (const item of properties) {
+  console.log(item);
+}
+// const days = ['mon','tue','wed','thu','fri','sat'];
+// for(const item of days){
+//   console.log(openingHours[item]?.open && "YES");
+// }
 // const restaurant = {
 //   name: "Indian Bistro",
 //   location: "Mira-Bhayander Road, Mira Road, Mumbai",
 //   categories: ['Indian','Italian','Pizzeria'],
 //   starterMenu:['SouthIndian','NorthIndian','Maharashtrian'],
 //   mainMenu:['Garlic','Salad','Pizza','Pasta'],
-//   openingHours: {
-//     thu: {
-//       open: 12,
-//       close: 22,
-//     },
-//     fri: {
-//       open: 11,
-//       close: 23,
-//     },
-//     sat: {
-//       open: 0,
-//       close: 24,
-//     },
-//   },
-// };
+//   openingHours,
+//   };
+//   console.log(restaurant);
+//   console.log(openingHours.fri?.open);
+
 // const {name,openingHours} = restaurant;
 // console.log(openingHours);
+
 //
 // const {name: newname, openingHours: hours} = restaurant;
 // console.log(newname);
@@ -278,24 +290,56 @@ const game = {
   },
 };
 
-
-const {players:[players1,players2]} = game;
-const [gk,...fieldplayers] = players1;
-
-const allplayers = [...players1,...players2];
-
-const playersFinal = [...players1,'Thiago','Coutinho','Persic'];
-const {odds:{team1,x:draw,team2}} = game;
-
-function printGoals (...player){
-  for(let i=0;i<player.length;i++){
-    if(game.scored.includes(player[i]))
-    console.log(`${player[i]} scored 1 goal`);
-    else console.log(`${player[i]} scored 0 goals`);
-  }
+for (const [no,score] of game.scored.entries() ){
+  console.log(`goal ${no + 1  } is scored by ${score}`);
 }
+let avg = 0;
+for (const data of Object.values(game.odds)){
+  avg +=  data;
+}
+console.log(avg/Object.values(game.odds).length);
+for(const odd of game.odds)
 
-printGoals('Lewandowski','Neuer');
-console.log(team1,draw,team2);
+for (const odd of odds) {
+  console.log(`odds of victory of ${game[Object.keys(game.odds)} are ${Object.values(game.odds)}`);
+}
+//
+//
+// const {players:[players1,players2]} = game;
+// const [gk,...fieldplayers] = players1;
+//
+// const allplayers = [...players1,...players2];
+//
+// const playersFinal = [...players1,'Thiago','Coutinho','Persic'];
+// const {odds:{team1,x:draw,team2}} = game;
+//
+// function printGoals (...player){
+//   for(let i=0;i<player.length;i++){
+//     if(game.scored.includes(player[i]))
+//     console.log(`${player[i]} scored 1 goal`);
+//     else console.log(`${player[i]} scored 0 goals`);
+//   }
+// }
+//
+// printGoals('Lewandowski','Neuer');
+// console.log(team1,draw,team2);
+//
+// console.log(team1 > team2 && "Team 2 wins" || team1 < team2 && "Team 1 wins");
 
-console.log(team1 > team2 && "Team 2 wins" || team1 < team2 && "Team 1 wins");
+
+//for of loop
+
+// let arr = ['shivam','priyam','sachin','sourav'];
+// for (const item of arr) {
+//   console.log(item);
+// }
+//
+// for(const item of arr.entries()){
+//   console.log(item);
+// }
+//basically it generates a new array of each element containing its index and the item item name
+//using destructuring
+//
+// for(const [i,j] of arr.entries()){
+//   console.log(i+1 +" no Item is: " + j);
+// }
