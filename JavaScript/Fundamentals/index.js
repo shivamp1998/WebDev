@@ -290,19 +290,17 @@ const game = {
   },
 };
 
-for (const [no,score] of game.scored.entries() ){
-  console.log(`goal ${no + 1  } is scored by ${score}`);
-}
-let avg = 0;
-for (const data of Object.values(game.odds)){
-  avg +=  data;
-}
-console.log(avg/Object.values(game.odds).length);
-for(const odd of game.odds)
+// for (const [no,score] of game.scored.entries() ){
+//   console.log(`goal ${no + 1  } is scored by ${score}`);
+// }
+// let avg = 0;
+// for (const data of Object.values(game.odds)){
+//   avg +=  data;
+// }
+// console.log(avg/Object.values(game.odds).length);
+// for(const odd of game.odds)
 
-for (const odd of odds) {
-  console.log(`odds of victory of ${game[Object.keys(game.odds)} are ${Object.values(game.odds)}`);
-}
+
 //
 //
 // const {players:[players1,players2]} = game;
