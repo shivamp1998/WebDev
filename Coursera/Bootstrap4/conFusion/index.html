@@ -12,13 +12,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css" integrity="sha512-f8mUMCRNrJxPBDzPJx3n+Y5TC5xp6SmStstEfgsDXZJTcxBakoB5hvPLhAfJKa9rCvH+n3xpJ2vQByxLk4WP2g==" crossorigin="anonymous" />
     <title>Ristorante Con Fusion</title>
 </head>
-
 <body>
   <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-            <h4>Login</h4>
+            <h4>LOGIN</h4>
             <button type="button" class="close" data-dismiss="modal">&times</button>
         </div>
         <div class="modal-body">
@@ -65,11 +64,64 @@
       </li>
     </ul>
     <span class="navbar-text ml-auto">
-      <a data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt"></i></a>
+      <a data-toggle="modal" data-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
     </span>
     </div>
   </div>
   </nav>
+  <div id="reserveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Reserve a Table</h4>
+          <button type="button" class="close" data-dismiss="modal">&times</button>
+        </div>
+        <div class='modal-body'>
+          <form>
+            <div class="form-group row">
+              <label for="guest" class="col-md-2">Number of guests</label>
+              <div class="col-md-10">
+                <input type="radio" name="val"> 1</input>
+                <input type="radio" name="val"> 2</input>
+                <input type="radio" name="val"> 3</input>
+                <input type="radio" name="val"> 4</input>
+                <input type="radio" name="val"> 5</input>
+                <input type="radio" name="val"> 6</input>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="section" class="col-md-2">Section</label>
+              <div class="col-md-10">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-success active">
+                    <input type="radio" name="op" id="op1" checked>Non-Smoking
+                  </label>
+                  <label class="btn btn-danger">
+                    <input type="radio" name="op" id="op2" checked>Smoking
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="dateandtime" class="col-md-2">Date and Time</label>
+              <div class="col-md-4">
+                <input type="text" class='form-control' placeholder="Date">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Time">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 offset-md-2">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-primary" type="button"> Rerserve </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -81,7 +133,7 @@
                   <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                  <button class="btn btn-block btn-sm btn-warning" data-toggle="tooltip" data-html = "true" title="<h1>Hello</h1>" data-placement="bottom">Reserve Table</button>
+                  <a class="btn btn-warning btn-block" data-toggle="modal" data-target="#reserveModal">Rerserve a table</a>
                 </div>
             </div>
         </div>
@@ -264,11 +316,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script>
-  $(document).ready(()=>{
-    $('[data-toggle="tooltip"]').tooltip();
-  })
-</script>
 </body>
 
 </html>
