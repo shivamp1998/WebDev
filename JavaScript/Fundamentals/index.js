@@ -341,3 +341,29 @@ const game = {
 // for(const [i,j] of arr.entries()){
 //   console.log(i+1 +" no Item is: " + j);
 // }
+
+
+const orderSet = new Set([1,2,3,3,4,5]);
+console.log(orderSet);
+console.log(orderSet.has(3));
+orderSet.add(6);
+console.log(orderSet);
+orderSet.delete(1);
+console.log(orderSet);
+
+for(const order of orderSet){
+  console.log(order);
+}
+
+const staff = ['watier','chef','waiter','manager','chef','waiter'];
+const staffUnique = new Set(staff);
+console.log(staffUnique);
+console.log(staffUnique.size)
+console.log(staff.length);
+
+const rest = new Map();
+rest.set('name','shivampandey');
+rest.set(1,'Delhi,India');
+rest.set(2,'Mumbai, India').set(true,'we are Open').set(false,'we are closed');
+
+console.log(rest.get('name'));
