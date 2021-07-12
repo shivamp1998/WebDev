@@ -48,3 +48,8 @@ body{
   left: 0;
   min-height: 300px;
 }
+#carouselButton {
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+}
