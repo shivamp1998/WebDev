@@ -17,7 +17,7 @@
 .jumbotron{
   padding: 70px 30px;
   margin: 0;
-  background-color: #9575cd;
+  background-color: #9575cd !important;
 }
 .address{
   font-size: 80px;
@@ -52,4 +52,18 @@ body{
   right: 0px;
   bottom: 0px;
   position: absolute;
+}
+.modal-header {
+  background-color: #512da8;
+  color: white;
+}
+.modal-body {
+  background-color:  #d1c4e9;
+}
+.remember {
+  color: black;
+  font-weight: 550;
+}
+.times {
+  color: #d1c4e9 !important;
 }
