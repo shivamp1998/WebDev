@@ -367,3 +367,15 @@ rest.set(1,'Delhi,India');
 rest.set(2,'Mumbai, India').set(true,'we are Open').set(false,'we are closed');
 
 console.log(rest.get('name'));
+
+const question = new Map([
+  ['what is your name', 'sarvesh'],
+  ['Is this your first time on github', 'Yes'],
+  [true,'I\'ll print this when I\'m in need'],
+])
+
+console.log(question.get(true));
+
+for(const [key,value] of question ){
+  console.log(key,value); 
+}
