@@ -9,6 +9,6 @@ function solveRect(l,b) {
       console.log(rectangle.area(l,b),rectangle.perimter(l,b));
     }
   });
-}
+} 
 
 solveRect(2,4);
