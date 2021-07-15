@@ -342,40 +342,68 @@ const game = {
 //   console.log(i+1 +" no Item is: " + j);
 // }
 
+//
+// const orderSet = new Set([1,2,3,3,4,5]);
+// console.log(orderSet);
+// console.log(orderSet.has(3));
+// orderSet.add(6);
+// console.log(orderSet);
+// orderSet.delete(1);
+// console.log(orderSet);
+//
+// for(const order of orderSet){
+//   console.log(order);
+// }
+//
+// const staff = ['watier','chef','waiter','manager','chef','waiter'];
+// const staffUnique = new Set(staff);
+// console.log(staffUnique);
+// console.log(staffUnique.size)
+// console.log(staff.length);
+//
+// const rest = new Map();
+// rest.set('name','shivampandey');
+// rest.set(1,'Delhi,India');
+// rest.set(2,'Mumbai, India').set(true,'we are Open').set(false,'we are closed');
+//
+// console.log(rest.get('name'));
+//
+// const question = new Map([
+//   ['what is your name', 'sarvesh'],
+//   ['Is this your first time on github', 'Yes'],
+//   [true,'I\'ll print this when I\'m in need'],
+// ])
+//
+// console.log(question.get(true));
+//
+// for(const [key,value] of question ){
+//   console.log(key,value);
+// }
 
-const orderSet = new Set([1,2,3,3,4,5]);
-console.log(orderSet);
-console.log(orderSet.has(3));
-orderSet.add(6);
-console.log(orderSet);
-orderSet.delete(1);
-console.log(orderSet);
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
 
-for(const order of orderSet){
-  console.log(order);
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+console.log(`An event happened every ${90/gameEvents.size} minutes`);
+for( const [time,eve] of gameEvents ){
+  if( time <=45)
+  console.log(`[first Half] ${time} : ${eve}`);
+  else console.log(`[Second half] ${time} : ${eve}`);
 }
 
-const staff = ['watier','chef','waiter','manager','chef','waiter'];
-const staffUnique = new Set(staff);
-console.log(staffUnique);
-console.log(staffUnique.size)
-console.log(staff.length);
-
-const rest = new Map();
-rest.set('name','shivampandey');
-rest.set(1,'Delhi,India');
-rest.set(2,'Mumbai, India').set(true,'we are Open').set(false,'we are closed');
-
-console.log(rest.get('name'));
-
-const question = new Map([
-  ['what is your name', 'sarvesh'],
-  ['Is this your first time on github', 'Yes'],
-  [true,'I\'ll print this when I\'m in need'],
-])
-
-console.log(question.get(true));
-
-for(const [key,value] of question ){
-  console.log(key,value); 
-}
+gameEvents.delete(64);
+console.log(gameEvents);
+console.log(events);
