@@ -7,8 +7,23 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
 
+var app = express();
+function auth(req,res,next) {
+  console.log(req.headers);
+  var authHeader = req.headers.authorization;
+  if(!authHeader) {
+    var err = new Error('You are not Authenticated');
+      res.setHeader('WWW-Authenticate','Basic');
+      err.statusCode = 401;
+      return next(err);
+  }
+  var auth = new Buffer(authHeader.split(' ')[1],'base64').toString().split(':');
+  var username = auth[0];
+  var passowrd = auth[1];
+  if()
+}
+app.use(auth);
 const mongoose = require('mongoose');
 const Dishes = require('./models/dishes');
 const url = 'mongodb://localhost:27017/conFusion';
