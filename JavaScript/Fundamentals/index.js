@@ -380,30 +380,138 @@ const game = {
 //   console.log(key,value);
 // }
 
-const gameEvents = new Map([
-  [17, '⚽️ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽️ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽️ GOAL'],
-  [80, '⚽️ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+// const gameEvents = new Map([
+//   [17, '⚽️ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽️ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽️ GOAL'],
+//   [80, '⚽️ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
+//
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+//
+// console.log(`An event happened every ${90/gameEvents.size} minutes`);
+// for( const [time,eve] of gameEvents ){
+//   if( time <=45)
+//   console.log(`[first Half] ${time} : ${eve}`);
+//   else console.log(`[Second half] ${time} : ${eve}`);
+// }
+//
+// gameEvents.delete(64);
+// console.log(gameEvents);
+// console.log(events);
 
-const events = [...new Set(gameEvents.values())];
-console.log(events);
 
-console.log(`An event happened every ${90/gameEvents.size} minutes`);
-for( const [time,eve] of gameEvents ){
-  if( time <=45)
-  console.log(`[first Half] ${time} : ${eve}`);
-  else console.log(`[Second half] ${time} : ${eve}`);
+const airline = 'TAP Air portugal';
+const plane = "A320";
+console.log(airline.length);
+console.log(airline.indexOf('r'));
+console.log(airline .lastIndexOf('A'));
+
+
+console.log(airline.slice(4));
+console.log(airline.slice(4,7));
+console.log(airline[airline.indexOf('r')]);
+console.log(airline.slice(airline.lastIndexOf('r')));
+
+
+console.log(airline.slice(-1,0));
+
+
+function checkMiddleSeat(seat) {
+  if(seat[seat.length - 1] == 'B' || seat[seat.length - 1] == 'E')
+  console.log("Yes its a Middle Seat");
+  else console.log("Not a middle Seat");
 }
 
-gameEvents.delete(64);
-console.log(gameEvents);
-console.log(events);
+const newseat = function(seat) {
+  if(seat.slice(-1) == 'B' || seat.slice(-1) == 'E')
+  console.log("Yes its a middle seat");
+  else console.log("Not a middle seat");
+}
+
+
+newseat("21A");
+checkMiddleSeat("22B");
+
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+const email = 'shivampandey98@gmail.com';
+let testemail = "shivampandey98@Gmail.COM     ";
+
+testemail = testemail.toLowerCase();
+testemail = testemail.trim();
+
+console.log(testemail);
+
+if(email === testemail) {
+  console.log("Yes both emails are same!");
+}
+
+
+
+const priceGB = "288,95$";
+
+
+const annoucement = "All boarding passengers must come to boarding door 23, Boarding door 23";
+
+
+console.log(annoucement.replaceAll('door','gate'));
+
+
+console.log(annoucement.includes('boarding') ? "Yes it does" : "What the hell are you talking about?");
+console.log(annoucement.startsWith("All"));
+console.log(annoucement.endsWith("23"));
+
+
+const checkBaggage = (items) => {
+  if(items.includes('gun') || items.includes("pocket knife"))
+    console.log("Person not allowed inside the plane");
+  else console.log("Person is free to board the plane");
+}
+checkBaggage('I have a laptop, some foot and a pocket knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+
+console.log('a+very+nice+string'.split('+'));
+
+const [firstname,lastname] = 'shivam pandey'.split(" ");
+console.log(firstname);
+console.log(lastname);
+
+const fullname = ['Mr',firstname, lastname.toUpperCase()].join(" ");
+console.log(fullname);
+
+const maskedCredit = function(number){
+  const numString = String(number);
+  let creditNumber = numString.slice(-4);
+  console.log(creditNumber.padStart(numString.length,'*'));
+}
+
+maskedCredit(1234567890);
+
+const message = 'This is going to repeat 10 times';
+console.log(message.repeat(10));
+
+
+
+var testCases = ['first_name','underscore_case','some_variable','calculate_age'];
+var newArray = [];
+const capatalizeFunction = function(testCases) {
+  for(const test of testCases) {
+    const [first,second] = test.split('_');
+    newArray.push(first + second[0].toUpperCase() + second.slice(1,test.length));
+  }
+}
+capatalizeFunction(testCases);
+console.log(newArray);
