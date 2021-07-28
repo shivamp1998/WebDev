@@ -6,8 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-
-  constructor() { }
+  serverActiveStatus = false;
+  testStyle = "color:blue";
+  serverCreationStatus = "No Server Was Created!";
+  inputText = "This shit value";
+  constructor() {
+    setTimeout(()=> {
+      this.serverActiveStatus = true;
+    });
+  }
+  onClickEvent () {
+    this.serverCreationStatus = "A Server Is created!";
+  }
+  onInput(event: Event) {
+    console.log(event);
+    this.inputText = (<HTMLInputElement>event.target).value;
+  }
 
   ngOnInit(): void {
   }

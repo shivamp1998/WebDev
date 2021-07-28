@@ -1,2 +1,8 @@
-<app-server></app-server>
-<app-server></app-server>
+<button class="btn btn-primary" [disabled]="!serverActiveStatus" (click) = "onClickEvent()">Add server</button>
+<h1> I'm in the servers component </h1>
+<h2 [style]="testStyle"> Is this property binding working correctly</h2>
+
+<!-- <input type="text" class="form-control" (input)="onInput($event)"> -->
+<input type="text" class="form-control" [(ngModel)] = "inputText"> 
+<h1>{{inputText}}</h1>
+<h1 > {{serverCreationStatus}} </h1>
