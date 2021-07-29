@@ -3,6 +3,16 @@
 <h2 [style]="testStyle"> Is this property binding working correctly</h2>
 
 <!-- <input type="text" class="form-control" (input)="onInput($event)"> -->
-<input type="text" class="form-control" [(ngModel)] = "inputText"> 
-<h1>{{inputText}}</h1>
-<h1 > {{serverCreationStatus}} </h1>
+<input type="text" class="form-control" [(ngModel)] = "serverName">
+<!-- <h1>{{inputText}}</h1> -->
+<h1 *ngIf="serverCreated; else serverCreation"> {{serverCreationStatus}} </h1>
+<ng-template #serverCreation>
+<p>No server was created</p>
+</ng-template>
+
+
+
+<!--
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button class="btn btn-primary" (click) ='userName=""' [disabled] ="userName === ''" >Reset</button> -->

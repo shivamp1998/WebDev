@@ -10,19 +10,26 @@ export class ServersComponent implements OnInit {
   testStyle = "color:blue";
   serverCreationStatus = "No Server Was Created!";
   inputText = "This shit value";
+  serverName = "server 1";
+  userName = '';
+  serverCreated = false;
   constructor() {
     setTimeout(()=> {
       this.serverActiveStatus = true;
     });
+
   }
   onClickEvent () {
-    this.serverCreationStatus = "A Server Is created!";
+    this.serverCreationStatus = "A Server Is created! with the name" + this.serverName ;
+    this.serverCreated =  true;
   }
   onInput(event: Event) {
     console.log(event);
-    this.inputText = (<HTMLInputElement>event.target).value;
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
-
+  reset() {
+    this.userName = '';
+  }
   ngOnInit(): void {
   }
 
