@@ -1,2 +1,6 @@
 <p [ngStyle] = "{backgroundColor: getColor()}"> Server with ID {{serverId}} is {{serverStatus}} </p>
-<p [ngStyle] = "{backgroundColor: getColor()}"> Server with ID {{serverId}} is {{serverStatus}} </p>
+<p [ngStyle] = "{backgroundColor: getColor()}" [ngClass] = "{online: serverStatus === 'online'}"> Server with ID {{serverId}} is {{serverStatus}} </p>
+
+<button class="btn btn-primary" (click) = "onClick()"> Display Details </button>
+<p [ngClass] = "{hidden : clicked === true}"> This is a paragraph with content of my choice</p>
+<app-server *ngFor = "click of buttonClicks"></app-server>
