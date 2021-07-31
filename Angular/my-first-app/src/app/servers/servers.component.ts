@@ -14,6 +14,7 @@ export class ServersComponent implements OnInit {
   userName = '';
   serverCreated = false;
   constructor() {
+    
     setTimeout(()=> {
       this.serverActiveStatus = true;
     });
