@@ -1,0 +1,5 @@
+<div class="row">
+  <game-control (startGameEvent) = "gameStarted($event)"></game-control>
+  <app-even *ngFor="let number of evenNumber" [number] = "number"></app-even>
+  <app-odd *ngFor="let number of oddNumber" [number] ="number"></app-odd>
+</div>

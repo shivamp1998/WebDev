@@ -6,5 +6,13 @@ import { Component, EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  evenNumber = [];
+  oddNumber = [];
+  gameStarted(event: number) {
+    if(event%2 ==0) {
+      this.evenNumber.push(event);
+    }else {
+      this.oddNumber.push(event);
+    }
+  }
 }
