@@ -3,6 +3,8 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
+const passport = require('passport');
+
 mongoose.connect('mongodb://localhost:27017/authapp',{useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>console.log('Mongodb connected'))
 .catch((err)=> console.log(err));
@@ -61,5 +63,21 @@ router.post('/register',(req,res)=> {
      }
     })
   }
+});
+//login handle
+router.post('/login',(req,res,next)=> {
+  passport.authenticate('local',{
+    successRedirect: '/dashboard',
+    failureRedirect: '/users/login',
+    failureFlash: true
+  })(req,res,next);
+})
+
+//logout handle
+router.get('/logout',(req,res,next)=> {
+  req.logout();
+  req.flash('success_msg','You are logged out!');
+  res.redirect('/users/login');
+
 })
 module.exports = router;
