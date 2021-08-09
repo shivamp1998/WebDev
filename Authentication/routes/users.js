@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-
-
+const User = require('../models/User');
+const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/authapp',{useNewUrlParser: true, useUnifiedTopology: true})
+.then(()=>console.log('Mongodb connected'))
+.catch((err)=> console.log(err));
 router.get('/login',(req,res)=> {
   res.render('login');
 })
@@ -24,9 +28,38 @@ router.post('/register',(req,res)=> {
   }
 
   if(errors.length > 0) {
-    res.render('register', {error, name, email, pass});
+    res.render('register', {errors, name, email, password, password2});
   }else {
-    res.send('Pass!');
+    //Validation pass
+    User.findOne({email: email})
+    .then(user=>{
+     if(user){
+       //user exists
+       errors.push({msg: "User Already Exists"});
+       res.render('register', {errors, name, email, password, password2});
+     }else {
+       const newUser = new User({
+         name,
+         email,
+         password
+       })
+       //hash password2
+       bcrypt.genSalt(10,(err,salt)=> {
+         bcrypt.hash(newUser.password, salt, (error,hash)=> {
+           if(err) throw err;
+           newUser.password = hash;
+           newUser.save()
+           .then((user)=> {
+             req.flash('success_msg', 'You are now Registered and can Login!');
+
+             res.redirect('/users/login');
+           })
+           .catch(err => console.log(err))
+         })
+       });
+
+     }
+    })
   }
 })
 module.exports = router;

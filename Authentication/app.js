@@ -1,16 +1,27 @@
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
-const mongoose = require('mongoose');
+const flash = require('connect-flash');
+const session = require('express-session')
 const app = express();
-//mongoose connect
-mongoose.connect('mongodb://localhost:27017/authapp',{useNewUrlParser: true, useUnifiedTopology: true})
-.then(()=>console.log('Mongodb connected'))
-.catch((err)=> console.log(err));
+
 //ejs
 app.use(expressLayout);
 app.set('view engine','ejs');
 app.use(express.urlencoded({extended: false}));
-
+//express session
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+//connect flash
+app.use(flash());
+//global variables
+app.use((req,res,next)=> {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  next();
+});
 
 //routes
 app.use('/',require('./routes/index'));
