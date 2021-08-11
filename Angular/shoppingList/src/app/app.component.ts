@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shoppingList';
+  itemType = "";
+  catchClick(event: string) {
+    this.itemType = event;
+  }
 }
