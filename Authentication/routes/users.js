@@ -13,6 +13,9 @@ router.get('/login',(req,res)=> {
 })
 router.get('/register',(req,res)=> {
   res.render('register');
+});
+router.get('/update',(req,res,next)=> {
+  res.render('update')
 })
 //register handler
 router.post('/register',(req,res)=> {
@@ -64,6 +67,11 @@ router.post('/register',(req,res)=> {
     })
   }
 });
+//update page handler
+router.post('/update',(req,res,next)=> {
+
+})
+
 //login handle
 router.post('/login',(req,res,next)=> {
   passport.authenticate('local',{
@@ -80,4 +88,5 @@ router.get('/logout',(req,res,next)=> {
   res.redirect('/users/login');
 
 })
+
 module.exports = router;

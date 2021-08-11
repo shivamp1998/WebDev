@@ -1,0 +1,22 @@
+<div class="row mt-5">
+
+  <div class="col-md-6 md-auto">
+    <h1 class="text-center"> Edit Profile </h1>
+    <div class="card card-body">
+      <div class="text-center mb-3">
+
+        <form action="/users/update" method="POST">
+          <div class="form-group">
+            <label for="updatedName">Update Name </label>
+            <input type="text" name="updatedName" id="updatedName" placeholder="Updated Name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="updatedName">Update Email</label>
+            <input type="text" name="updatedEmail" id="updatedEmail" placeholder="Updated Email" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-warning">Confirm</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
