@@ -5,7 +5,7 @@ const session = require('express-session')
 const app = express();
 const passport = require('passport');
 //mongoose connect
-
+const port = process.env.PORT || 3000;
 //ejs
 app.use(expressLayout);
 app.set('view engine','ejs');
@@ -35,6 +35,6 @@ app.use((req,res,next)=> {
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
   console.log('Server Started at port 3000!');
 })
