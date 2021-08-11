@@ -4,8 +4,11 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const {ensureAuthenticated} = require('../config/auth');
+const uri = require('../config/keys').MongoURI;
 
-mongoose.connect('mongodb://localhost:27017/authapp',{useNewUrlParser: true, useUnifiedTopology: true})
+
+mongoose.connect(uri,{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 .then(()=>console.log('Mongodb connected'))
 .catch((err)=> console.log(err));
 router.get('/login',(req,res)=> {
@@ -14,9 +17,9 @@ router.get('/login',(req,res)=> {
 router.get('/register',(req,res)=> {
   res.render('register');
 });
-router.get('/update',(req,res,next)=> {
+router.get('/update',ensureAuthenticated,(req,res)=> {
   res.render('update')
-})
+});
 //register handler
 router.post('/register',(req,res)=> {
   const {name,email,password,password2} = req.body;
@@ -67,13 +70,20 @@ router.post('/register',(req,res)=> {
     })
   }
 });
+var loggedEmail;
 //update page handler
 router.post('/update',(req,res,next)=> {
-
+    console.log(req.body.name);
+    User.findOneAndUpdate({email:loggedEmail},{$set:{name: req.body.updatedName}},(err,doc)=> {
+      if(err) throw err;
+      console.log(doc);
+      res.redirect('/dashboard');
+    })
 })
 
 //login handle
 router.post('/login',(req,res,next)=> {
+  loggedEmail = req.body.email;
   passport.authenticate('local',{
     successRedirect: '/dashboard',
     failureRedirect: '/users/login',

@@ -4,6 +4,8 @@ const flash = require('connect-flash');
 const session = require('express-session')
 const app = express();
 const passport = require('passport');
+//mongoose connect
+
 //ejs
 app.use(expressLayout);
 app.set('view engine','ejs');
