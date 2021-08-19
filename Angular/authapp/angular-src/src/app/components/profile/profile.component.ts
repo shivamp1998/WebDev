@@ -7,17 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: Object = {};
+  user:any ;
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.authService.getProfile().subscribe(profile => {
-      this.user = profile.user;
-    }),
+    this.authService.getProfile().subscribe(response => {
+      this.user = JSON.parse(JSON.stringify(response)).user;
+    },
     err => {
       console.log(err);
       return false;
-    }
+    })
   }
 
 }

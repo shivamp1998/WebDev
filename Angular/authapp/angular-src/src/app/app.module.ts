@@ -15,12 +15,15 @@ import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
+import {AuthGuard} from './guards/auth.guard';
+import { UpdateComponent } from './components/update/update.component'
 const appRoutes:Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard]},
+  {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
+  {path: 'update', component: UpdateComponent,canActivate:[AuthGuard]}
 ]
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ const appRoutes:Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,7 @@ const appRoutes:Routes = [
     FlashMessagesModule.forRoot(),
     HttpClientModule
   ],
-  providers: [ValidateService,AuthService],
+  providers: [ValidateService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
