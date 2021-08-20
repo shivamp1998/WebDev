@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary btn-block" (click) = "onlyOdd = !onlyOdd">Add Odd Nos.</button>
+    </div>
+    <div class="col-md-12">
+      <ul class="list-group" *ngIf="onlyOdd">
+        <li class="list-group-item" *ngFor="let odd of oddNumbers" [ngStyle] = "{backgroundColor: 'green'}">{{odd}}</li>
+      </ul>
+      <ul class="list-group" *ngIf="!onlyOdd" [ngClass] = '{odd: !onlyOdd}'>
+        <li class="list-group-item" *ngFor="let even of evenNumbers">{{even}}</li>
+      </ul>
+    </div>
+  </div>
+  <h1 basic-directive> this is styled by basic directive</h1>
+</div>
