@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {DropdownDirective} from './shared/dropdown.directive';
 import { AppComponent } from './app.component';
 import { Header } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
