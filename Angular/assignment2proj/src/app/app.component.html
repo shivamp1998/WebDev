@@ -7,10 +7,18 @@
       <ul class="list-group" *ngIf="onlyOdd">
         <li class="list-group-item" *ngFor="let odd of oddNumbers" [ngStyle] = "{backgroundColor: 'green'}">{{odd}}</li>
       </ul>
-      <ul class="list-group" *ngIf="!onlyOdd" [ngClass] = '{odd: !onlyOdd}'>
+      <ul class="list-group" *appUnless="onlyOdd" [ngClass] = '{odd: !onlyOdd}'>
         <li class="list-group-item" *ngFor="let even of evenNumbers">{{even}}</li>
       </ul>
     </div>
   </div>
   <h1 basic-directive> this is styled by basic directive</h1>
+  <h1 appBetterHighlight [newBackground]= "'teal'" [defaultBackground]="'orange'"> this is example of better directive </h1>
+
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase = '1'> value is 1 </p>
+    <p *ngSwitchCase = '2 '> value is  2 </p>
+    <p *ngSwitchCase = '3'> value is 3 </p>
+    <p *ngSwitchDefault> value is default </p>
+  </div>
 </div>

@@ -10,7 +10,5 @@ export class BasicDirective{
   ngOnInit() {
     this.elementref.nativeElement.style.backgroundColor = "green";
   }
-  ngOnChanges() {
-    console.log("Some Element Changes");
-  }
+
 }
