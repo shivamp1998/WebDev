@@ -15,7 +15,7 @@ export class AuthService {
   registerUser(user: any) {
       let headers = new Headers();
       headers.append('Content-Type','application/json');
-      return this.http.post('http://localhost:3000/users/register',user)
+      return this.http.post('users/register',user)
       .map(res => res);
   }
   updateUser(user: any) {
@@ -24,13 +24,13 @@ export class AuthService {
       'Content-Type': 'application/json',
       'Authorization': this.authToken
     });
-    return this.http.post('http://localhost:3000/users/update',user,{headers: headers});
+    return this.http.post('users/update',user,{headers: headers});
   }
 
   authenticateUser(user: any) {
     let headers = new Headers();
     headers.append('Content-type','application/json');
-    return this.http.post('http://localhost:3000/users/authenticate',user).map(res => res);
+    return this.http.post('users/authenticate',user).map(res => res);
   }
 
   getProfile() {
@@ -39,7 +39,7 @@ export class AuthService {
       'Content-Type': 'application/json',
       'Authorization': this.authToken
     });
-    return this.http.get('http://localhost:3000/users/profile', {headers: headers});
+    return this.http.get('users/profile', {headers: headers});
   }
   storeUserData(token:any,user:any){
     localStorage.setItem('id_token',token);
