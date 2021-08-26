@@ -1,0 +1,96 @@
+
+  <div class="container">
+    <form (ngSubmit) = "onSubmit(f)" #f="ngForm">
+      <div class="form-group">
+        <div class="row">
+          <label class="label-form-label col-md-3" for="name" >Name</label>
+          <div class="col-md-9">
+            <input type="text" name="name" id="name" class="form-control" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="label-form-label col-md-3" for="street">Street</label>
+          <div class="col-md-4">
+            <input type="text" name="street" id="street" class="form-control" ngModel>
+          </div>
+          <label class="label-form-label col-md-1" for="city">City</label>
+          <div class="col-md-4">
+            <input type="text" name="city" id="city" class="form-control" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="label-form-label col-md-3" for="pincode">Pincode</label>
+          <div class="col-md-4">
+            <input type="text" name="pincode" id="pincode" class="form-control" ngModel>
+          </div>
+          <label class="label-form-label col-md-1" for="phone">Phone</label>
+          <div class="col-md-4">
+            <input type="text" name="phone" id="phone" class="form-control" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="label-form-label col-md-3">Objective</label>
+          <div class="col-md-9">
+            <textarea name="message" rows="5" cols="80" class="form-control" ngModel></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="label-form-label col-md-3" for='cname'>College Name</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="cname" id="cname" ngModel>
+          </div>
+          <label class="label-form-label col-md-2" for="dname">Degree Name</label>
+          <div class="col-md-4">
+            <input type="text" class="form-control" for="dname" id="dname" name="dname" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="label-form-label col-md-3" for="syear">Start Year</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="syear" id="syear" ngModel>
+          </div>
+          <label class="label-form-label col-md-2" for="eyear">End Year</label>
+          <div class="col-md-4">
+            <input type="text" class="form-control" name="eyear" id="eyear" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label for="jtitle" class="label-form-label col-md-3">Job title</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="jtitle" for="jtitle" ngModel>
+          </div>
+          <label for="companyname" class="label-form-label col-md-2">Company Name </label>
+          <div class="col-md-4">
+            <input type="text" class="form-control" name="companyname" id="companyname" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="label-form-label col-md-3" for="csyear">Start Year</label>
+          <div class="col-md-3">
+            <input type="text" class="col-md-3" name="csyear" class="form-control" ngModel>
+          </div>
+          <label class="label-form-label col-md-2" for="ceyear">End Year</label>
+          <div class="col-md-4">
+            <input type="text" class="col-md-4" name="ceyear" class="form-control" ngModel>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary offset-md-4 col-md-4 mt-5" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
