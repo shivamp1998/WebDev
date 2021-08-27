@@ -27,7 +27,10 @@ const appRoutes:Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
-  {path: 'update', component: UpdateComponent,canActivate:[AuthGuard]}
+  {path: 'update', component: UpdateComponent,canActivate:[AuthGuard]},
+  {path: 'resume', component: ResumeComponent},
+  {path: 'resumeform',component: ResumeformComponent},
+  {path: 'resumedisplay', component: ResumedisplayComponent}
 ]
 @NgModule({
   declarations: [

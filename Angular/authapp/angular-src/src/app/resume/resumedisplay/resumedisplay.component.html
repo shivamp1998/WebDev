@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="main">
+    <h1> {{data.value.name}} </h1>
+    <p>[{{data.value.street}}] | [{{data.value.city}} {{data.value.pincode}}] | [shivampandey98@gmail.com] | [{{data.value.phone}}]</p>
+    <br>
+    <h3> Objective </h3>
+    <p> {{data.value.message}}</p>
+    <br>
+    <h3> Education </h3>
+    <ul>
+      <li>[{{data.value.cname}}] </li>
+      <li> [{{data.value.dname}}] [{{data.value.eyear}}] </li>
+      <li> [{{data.value.major}}] </li>
+      <li> [{{data.value.gpa}}] </li>
+    </ul>
+    <br>
+    <h3>Expericence</h3>
+    <h6>[{{data.value.csyear}}] - [{{data.value.ceyear}}]</h6>
+    <h6>[{{data.value.jtitle}}] | [{{data.value.companyname}}] | [{{data.value.location}}] </h6>
+    <p> {{data.value.jobdesc}} </p>
+  </div>
+  <button type="button" class="btn btn-success" #elref id="printButton" (click) = "onPrint()">Print</button>
+</div>
