@@ -18,7 +18,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {AuthGuard} from './guards/auth.guard';
 import { UpdateComponent } from './components/update/update.component';
 import { ResumeComponent } from './resume/resume.component';
-import { ResumedisplayComponent } from './resumedisplay/resumedisplay.component'
+import { ResumeformComponent } from './resume/resumeform/resumeform.component';
+import { ResumedisplayComponent } from './resume/resumedisplay/resumedisplay.component';
+
 const appRoutes:Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
@@ -38,7 +40,8 @@ const appRoutes:Routes = [
     ProfileComponent,
     UpdateComponent,
     ResumeComponent,
-    ResumedisplayComponent
+    ResumeformComponent,
+    ResumedisplayComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,8 +12,7 @@ export class ResumeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(t: NgForm) {
-    console.log("submitted!");
-    console.log(t.value);
+  handleEvent(event: NgForm) {
+    console.log(event.value);
   }
 }
