@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef  } from '@angular/core';
+import { Component, OnInit, ElementRef,ViewChild } from '@angular/core';
 import { NgForm }   from '@angular/forms';
 
 @Component({
@@ -9,10 +9,12 @@ import { NgForm }   from '@angular/forms';
 export class ResumeComponent implements OnInit {
   formData: NgForm;
   constructor() { }
-
+  view: boolean = false;
   ngOnInit(): void {
   }
   handleEvent(event: NgForm) {
     this.formData = event;
+
   }
+
 }

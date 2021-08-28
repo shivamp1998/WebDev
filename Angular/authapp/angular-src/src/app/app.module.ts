@@ -20,6 +20,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ResumeformComponent } from './resume/resumeform/resumeform.component';
 import { ResumedisplayComponent } from './resume/resumedisplay/resumedisplay.component';
+import { MainresumeComponent } from './components/mainresume/mainresume.component';
 
 const appRoutes:Routes = [
   {path: '', component: HomeComponent},
@@ -30,7 +31,8 @@ const appRoutes:Routes = [
   {path: 'update', component: UpdateComponent,canActivate:[AuthGuard]},
   {path: 'resume', component: ResumeComponent},
   {path: 'resumeform',component: ResumeformComponent},
-  {path: 'resumedisplay', component: ResumedisplayComponent}
+  {path: 'resumedisplay', component: ResumedisplayComponent},
+  {path: 'mainresume',component: MainresumeComponent}
 ]
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ const appRoutes:Routes = [
     ResumeComponent,
     ResumeformComponent,
     ResumedisplayComponent,
+    MainresumeComponent,
   ],
   imports: [
     BrowserModule,
