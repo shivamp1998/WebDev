@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -20,19 +20,17 @@ import { UpdateComponent } from './components/update/update.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ResumeformComponent } from './resume/resumeform/resumeform.component';
 import { ResumedisplayComponent } from './resume/resumedisplay/resumedisplay.component';
-import { MainresumeComponent } from './components/mainresume/mainresume.component';
 
 const appRoutes:Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard]},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
   {path: 'update', component: UpdateComponent,canActivate:[AuthGuard]},
-  {path: 'resume', component: ResumeComponent},
+  {path: 'resume', component: ResumeComponent, canActivate:[AuthGuard]},
   {path: 'resumeform',component: ResumeformComponent},
   {path: 'resumedisplay', component: ResumedisplayComponent},
-  {path: 'mainresume',component: MainresumeComponent}
 ]
 @NgModule({
   declarations: [
@@ -47,17 +45,17 @@ const appRoutes:Routes = [
     ResumeComponent,
     ResumeformComponent,
     ResumedisplayComponent,
-    MainresumeComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     FlashMessagesModule.forRoot(),
     HttpClientModule
   ],
-  providers: [ValidateService,AuthService,AuthGuard],
+  providers: [ValidateService,AuthService,AuthGuard,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

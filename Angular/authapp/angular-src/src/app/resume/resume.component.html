@@ -1,2 +1,5 @@
-<app-resumeform (resumeEvent)="handleEvent($event)" *ngIf="!view" ></app-resumeform>
-<app-resumedisplay [data] ="formData"></app-resumedisplay>
+<app-resumeform (resumeEvent)="handleEvent($event)" [hidden]="view" (submit)="handleView()"></app-resumeform>
+<app-resumedisplay [data] ="formData" [hidden]="!view"></app-resumedisplay>
+<!-- <div class="text-center">
+  <button class="btn btn-primary" (click)="view=!view">Show Resume</button>
+</div> -->

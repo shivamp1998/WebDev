@@ -14,7 +14,9 @@ export class ResumeComponent implements OnInit {
   }
   handleEvent(event: NgForm) {
     this.formData = event;
-
+  }
+  handleView() {
+    this.view=!this.view;
   }
 
 }
