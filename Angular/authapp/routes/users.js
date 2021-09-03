@@ -13,7 +13,6 @@ router.post('/register',(req,res,next)=> {
   });
 
   User.addUser(newUser,(err,user)=> {
-    User.find
     if(err)
       res.json({success: false, msg: "Failed to Register User"});
     else

@@ -2,30 +2,35 @@
   <div class="container">
     <form (ngSubmit) = "onSubmit(f)" #f="ngForm">
       <div class="form-group">
+        <h1> Personal Details</h1>
         <div class="row">
           <label class="label-form-label col-md-3" for="name" >Name</label>
-          <div class="col-md-9">
+          <div class="col-md-4">
             <input type="text" name="name" id="name" class="form-control" ngModel>
+          </div>
+          <label class="label-form-label col-md-1" for="role">Current Role</label>
+          <div class="col-md-4">
+            <input type="text" name="role" id="role" class="form-control">
           </div>
         </div>
       </div>
       <div class="form-group">
         <div class="row">
-          <label class="label-form-label col-md-3" for="street">Street</label>
-          <div class="col-md-4">
-            <input type="text" name="street" id="street" class="form-control" ngModel>
-          </div>
-          <label class="label-form-label col-md-1" for="city">City</label>
+          <label class="label-form-label col-md-3" for="city">City</label>
           <div class="col-md-4">
             <input type="text" name="city" id="city" class="form-control" ngModel>
           </div>
+          <label class="label-form-label col-md-1" for="country">Country</label>
+          <div class="col-md-4">
+            <input type="text" name="country" id="country" class="form-control" ngModel>
+          </div>
         </div>
       </div>
       <div class="form-group">
         <div class="row">
-          <label class="label-form-label col-md-3" for="pincode">Pincode</label>
+          <label class="label-form-label col-md-3" for="github">GitHub</label>
           <div class="col-md-4">
-            <input type="text" name="pincode" id="pincode" class="form-control" ngModel>
+            <input type="text" name="github" id="github" class="form-control" ngModel>
           </div>
           <label class="label-form-label col-md-1" for="phone">Phone</label>
           <div class="col-md-4">
@@ -42,6 +47,7 @@
         </div>
       </div>
       <div class="form-group">
+        <h1> Education </h1>
         <div class="row">
           <label class="label-form-label col-md-3" for='cname'>College Name</label>
           <div class="col-md-3">
@@ -60,25 +66,28 @@
           <div class="col-md-3">
             <input type="text" class="form-control" name="major" id="major" ngModel>
           </div>
-          <label class="label-form-label col-md-2" for="eyear">End Year</label>
+          <label class="label-form-label col-md-2" for="gpa">GPA</label>
           <div class="col-md-4">
-            <input type="text" class="form-control" name="eyear" id="eyear" ngModel>
+            <input type="text" class="form-control" name="gpa" id="gpa" ngModel>
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <div class="row">
-          <label class="label-form-label col-md-3" for="gpa">GPA</label>
-            <div class="col-md-3">
-              <input type="text" class="form-control" name="gpa" id="gpa" ngModel>
-            </div>
-          <label class="label-form-label col-md-2" for="location">Job Location</label>
+          <label class="label-form-label col-md-3" for="unisyear">Start Year</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="unisyear" id="unisyear">
+          </div>
+          <label class="label-form-label col-md-2" for="unieyear">End Year</label>
           <div class="col-md-4">
-            <input type="text" class="form-control" name="location" id="location" ngModel>
+            <input type="text" class="form-control" name="unieyear" id="unieyear">
           </div>
         </div>
       </div>
+
       <div class="form-group">
+        <h1>Experience</h1>
         <div class="row">
           <label for="jtitle" class="label-form-label col-md-3">Job title</label>
           <div class="col-md-3">
