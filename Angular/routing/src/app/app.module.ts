@@ -11,7 +11,7 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
-
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     {path: ':id/edit', component: EditServerComponent},
     {path: ':id', component: ServerComponent}
   ]},
-
+  {path: '**', component: ErrorPageComponent}
 
 
 ];
@@ -34,7 +34,8 @@ const appRoutes: Routes = [
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
