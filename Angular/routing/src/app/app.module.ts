@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     {path: ':id/edit', component: EditServerComponent},
     {path: ':id', component: ServerComponent}
   ]},
-  {path: '**', component: ErrorPageComponent}
+  {path: '**', component: ErrorPageComponent, data: {message:"Data is currently not present in the website"}}
 
 
 ];
@@ -40,7 +40,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   providers: [ServersService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
