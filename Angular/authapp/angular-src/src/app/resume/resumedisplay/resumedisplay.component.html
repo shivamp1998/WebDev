@@ -1,25 +1,78 @@
 <div class="container">
-  <div class="main">
-    <h1> {{data.value.name}} </h1>
-    <p>[{{data.value.street}}] | [{{data.value.city}} {{data.value.pincode}}] | [shivampandey98@gmail.com] | [{{data.value.phone}}]</p>
-    <br>
-    <h3> Objective </h3>
-    <p> {{data.value.message}}</p>
-    <br>
-    <h3> Education </h3>
-    <ul>
-      <li>[{{data.value.cname}}] </li>
-      <li> [{{data.value.dname}}] [{{data.value.eyear}}] </li>
-      <li> [{{data.value.major}}] </li>
-      <li> [{{data.value.gpa}}] </li>
-    </ul>
-    <br>
-    <h3>Expericence</h3>
-    <h6>[{{data.value.csyear}}] - [{{data.value.ceyear}}]</h6>
-    <h6>[{{data.value.jtitle}}] | [{{data.value.companyname}}] | [{{data.value.location}}] </h6>
-    <p> {{data.value.jobdesc}} </p>
+  <div class="row">
+    <div class="col-md-3 aside">
+      <h1> {{data.value.name}}</h1>
+      <h6> {{data.value.currentRole}}</h6>
+    </div>
+    <div class="col-md-9">
+      <h4>{{data.value.objective}}</h4>
+    </div>
   </div>
-  <div class="text-center">
-    <button class="btn btn-success" #elref (click)="onPrint()">Print</button>
+  <div class="row">
+    <div class="col-md-3 cover">
+      <h4> Personal Info</h4>
+    </div>
+    <div class="col-md-9">
+      <h4 class="nextside">Experience</h4>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-md-3 aside">
+      <h6>Phone</h6>
+      <p>{{data.value.phone}}<p>
+      <h6>Email</h6>
+      <p>{{data.value.email}}<p>
+      <h6>City</h6>
+      <p>{{data.value.city}}</p>
+      <h6>Country</h6>
+      <p>{{data.value.country}}</p>
+      <h6>GitHub link</h6>
+      <p>{{data.value.github}}</p>
+    </div>
+    <div class="col-md-9 row" *ngFor="let experience of data.value.experienceBlocks">
+      <div class="col-md-3">{{experience.startDate}} - {{experience.endDate}}</div>
+      <div class="col-md-9">
+        <h3> {{experience.company}} | {{experience.city}} | {{experience.country}}</h3>
+        <h4> {{experience.title}}  </h4>
+        <h6> {{experience.description}}</h6>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 cover">
+      <h4>Skills</h4>
+    </div>
+    <div class="col-md-9">
+      <h4 class="nextside">Education</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 aside">
+      <span class="badge badge-dark" *ngFor="let skill of data.value.skills">{{skill.skill}}</span>
+    </div>
+    <div class="col-md-9 row" *ngFor="let education of data.value.educationBlocks">
+      <div class="col-md-3">{{education.startYear}} - {{education.endYear}}</div>
+      <div class="col-md-9">
+        <h3> {{education.institute}} | {{education.location}}</h3>
+        <h4> {{education.course}}  </h4>
+        <h6> {{education.grade}}</h6>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-md-3 aside">
+    </div>
+    <div class="col-md-9">
+      <h4 class="nextside">Achievements</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-md-3 aside"></div>
+    <div class="col-md-9" *ngFor="let achieve of data.value.achievements">
+      <h3> {{achieve.achievementName}} </h3>
+      <p> {{achieve.achievementDesc}}</p>
+    </div>
+  </div>
+
 </div>

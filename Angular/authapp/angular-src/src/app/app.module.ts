@@ -9,7 +9,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import {FlashMessagesModule} from "angular2-flash-messages";
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
@@ -20,7 +20,6 @@ import { UpdateComponent } from './components/update/update.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ResumeformComponent } from './resume/resumeform/resumeform.component';
 import { ResumedisplayComponent } from './resume/resumedisplay/resumedisplay.component';
-
 const appRoutes:Routes = [
   {path: '', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
@@ -50,6 +49,7 @@ const appRoutes:Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes, {useHash: true}),
     FlashMessagesModule.forRoot(),

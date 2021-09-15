@@ -1,4 +1,4 @@
-
+<!--
   <div class="container">
     <form (ngSubmit) = "onSubmit(f)" #f="ngForm">
       <div class="form-group">
@@ -48,23 +48,6 @@
       </div>
       <div class="form-group">
         <div class="form-row">
-          <label class="label-form-label col-md-3" for="skills">Skills</label>
-
-          <div class="col-md-2">
-            <input type="text" class="form-control" for="skill1" id="skills">
-          </div>
-          <div class="col-md-2">
-            <input type="text" class="form-control" for="skill2" id="skills">
-          </div>
-          <div class="col-md-2">
-            <input type="text" class="form-control" for="skill3" id="skills">
-          </div>
-          <div class="col-md-2">
-            <input type="text" class="form-control" for="skill4" id="skills">
-          </div>
-          <div class="col-md-1">
-            <input type="text" class="form-control" for="skill5" id="skills">
-          </div>
 
         </div>
       </div>
@@ -173,7 +156,234 @@
         </div>
       </div>
       <div class="form-group">
+        <h1>Achievements</h1>
+        <div class="row">
+          <label class="label-form-label col-md-3" for="achieve">Type</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" name="achieve" id="achieve">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="label-form-label col-md-3" for="achieve-desc">Description</label>
+          <div class="col-md-9">
+            <textarea type='text' name="achieve-desc" id="achieve-disc" class="form-control" rows="5" cols="80"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
         <button class="btn btn-primary offset-md-4 col-md-4 mt-5" type="submit">Submit</button>
       </div>
     </form>
+  </div> -->
+
+
+  <div class="container">
+    <form (ngSubmit)="save()" [formGroup] = "resumeForm">
+      <div class="card">
+        <div class="card-header">
+          <h4> Personal Details </h4>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <div class="row">
+              <label class="label-form-label col-md-3" for="name">Name</label>
+              <div class="col-md-3">
+                <input type="text" class="form-control"  id="name" formControlName="name" placeholder="Enter Your Full name">
+              </div>
+              <label class="label-form-label col-md-2" for="currentRole">Current Role</label>
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="currentRole" formControlName="currentRole" placeholder="Ex. Sofware Engineer, Quality Assuarance">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                <label class="label-form-label col-md-3" for="city"> City </label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" formControlName="city" id="city" placeholder="Ex. Delhi, Mumbai">
+                </div>
+                <label for="country" class="label-form-label col-md-2">Country</label>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" formControlName="country" id="country" placeholder="Ex. India, USA">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                  <label class="label-form-label col-md-3" for="email">Email</label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" formControlName="email" id="email" placeholder="Ex. abc@example.com">
+                  </div>
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <label class="label-form-label col-md-3" for="github">GitHub</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" id="github" formControlName="github" placeholder="Ex. github.com/abc123">
+                </div>
+                <label class="label-form-label col-md-2" for="phone">Phone</label>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" formControlName="phone" id="phone" placeholder="Ex. +91 9000290022">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <label class="col-md-3 label-form-label" for="objective">Objective</label>
+                <div class="col-md-9">
+                  <textarea class="form-control" formControlName="objective" cols="80" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+                <label class="label-form-label col-md-3">Skills</label>
+                  <div formArrayName="skills"*ngFor="let skill of skills.controls; let i = index">
+                    <div [formGroupName]="i">
+                        <input type="text" class="form-control ml-3" placeholder="Ex. Java" formControlName="skill">
+                    </div>
+                </div>
+              </div>
+        </div>
+        <button type="button" class="btn btn-default btn-block" (click)="addSkills()">Add Skills</button>
+
+      </div>
+
+
+
+
+    <div formArrayName="experienceBlocks" *ngFor="let experience of experienceBlocks.controls; let i = index">
+      <div [formGroupName]="i">
+        <div class="card mt-4">
+          <div class="card-header">
+            <h4>Experience</h4>
+          </div>
+          <div class="card-body">
+                  <div class="form-group">
+                    <div class="row">
+                      <label class="label-form-label col-md-3" for="{{'title'+ i}}">Position</label>
+                      <div class="col-md-3">
+                        <input type="text" id="{{'title'+i}}" formControlName="title" placeholder="Ex. Software Engineer" class="form-control">
+                      </div>
+                      <label class="label-form-label col-md-2" for="{{'company' + i}}">Company</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Ex. Venturepact" formControlName="company" id="{{'company' + i}}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <label class="label-form-label col-md-3" for="{{'city' + i}}">City</label>
+                      <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="Ex. Delhi,Mumbai" formControlName="city" id="{{'city' + i}}">
+                      </div>
+                      <label class="label-form-label col-md-2" for="{{'Country' + i}}">Country</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Ex. India" formControlName="country" id="{{'country' + i}}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <label class="label-form-label col-md-3" for="{{'startdate' + i}}">Start Date</label>
+                      <div class="col-md-3">
+                        <input type="text" formControlName="startDate" class="form-control" placeholder="Ex. July 2021" id="{{'startdate' + i}}">
+                      </div>
+                      <label class="label-form-label col-md-2" for="{{'enddate' + i}}">End Date</label>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Ex. July 2022" formControlName="endDate" id="{{'enddate' + i}}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <label class="label-form-label col-md-3" for="{{'desc' + i}}">Description</label>
+                      <div class="col-md-9">
+                        <textarea class="form-control" formControlName="description" cols="80" rows="5" id="{{'desc' + i}}"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-default btn-block" (click)="addExperience()">Add Experience</button>
+
+      <div formArrayName="educationBlocks" *ngFor="let education of educationBlocks.controls; let i = index">
+        <div [formGroupName]="i">
+          <div class="card mt-4">
+            <div class="card-header">
+              <h4>Education</h4>
+            </div>
+            <div class="card-body">
+              <div class="form-group row">
+                <label class="label-form-label col-md-3" for="{{'inst' + i}}">Institute Name</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Ex. LPU" formControlName="institute" id="{{'inst' + i}}">
+                </div>
+                <label class="label-form-label col-md-2" for="{{'cname' + i}}">Course Name</label>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Ex. B.Tech" id="{{'cname' + i}}" formControlName="course">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 label-form-label" for="{{'loc' + i}}">Location</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Ex. Mumbai, Delhi" formControlName="location" id="{{'loc' + i}}">
+                </div>
+                <label class="col-md-2 label-form-label" for="{{'per' + i}}">CGPA/Percentage</label>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Ex. 8.81 / 88%" formControlName="grade" id="{{'per' + i}}">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="label-form-label col-md-3" for="{{'sy' + i}}">Start Year</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Ex. 2018" formControlName="startYear" id="{{'sy' + i}}">
+                </div>
+                <label class="label-form-label col-md-2" for="{{'ey' + i}}">End Year</label>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Ex. 2022" formControlName="endYear" id="{{'ey' + i}}">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-default btn-block" (click)="addEducation()">Add Education</button>
+
+
+      <div formArrayName="achievements" *ngFor="let achieve of achievements.controls; let i=index">
+        <div [formGroupName]="i">
+          <div class="card mt-4">
+            <div class="card-header">
+              <h4>Achievements</h4>
+            </div>
+            <div class="card-body">
+              <div class="form-group row">
+                <label class="label-form-label col-md-3" for="{{'aname' + i}}">Achievement Name </label>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" formControlName="achievementName" id="{{'aname' + i}}">
+                </div>
+            </div>
+            <div class="form-group row">
+              <label class="label-form-label col-md-3" for="{{'ad' + i}}">Achievement Description </label>
+              <div class="col-md-9">
+                <textarea class="form-control" formControlName="achievementDesc" cols=40 rows=5 id="{{'ad' + i}}"></textarea>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-default btn-block" (click)="addAchievements()">Add Achievement</button>
+      <div class="form-group text-center mt-5">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+
+    </form>
+
   </div>

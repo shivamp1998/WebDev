@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef,ViewChild } from '@angular/core';
-import { NgForm }   from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray }   from '@angular/forms';
 
 @Component({
   selector: 'app-resume',
@@ -7,12 +7,12 @@ import { NgForm }   from '@angular/forms';
   styleUrls: ['./resume.component.css']
 })
 export class ResumeComponent implements OnInit {
-  formData: NgForm;
+  formData: FormGroup;
   constructor() { }
   view: boolean = false;
   ngOnInit(): void {
   }
-  handleEvent(event: NgForm) {
+  handleEvent(event: FormGroup) {
     this.formData = event;
   }
   handleView() {

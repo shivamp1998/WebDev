@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Input} from '@angular/core';
-import {NgForm} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, FormArray }   from '@angular/forms';
 @Component({
   selector: 'app-resumedisplay',
   templateUrl: './resumedisplay.component.html',
@@ -8,7 +8,7 @@ import {NgForm} from "@angular/forms";
 export class ResumedisplayComponent implements OnInit {
 
   constructor() { }
-  @Input() data: NgForm;
+  @Input() data: FormGroup;
   @ViewChild('elref') element: ElementRef;
   ngOnInit(): void {
   }
