@@ -5,3 +5,9 @@ h1 {
 p{
   color: grey;
 }
+
+.main {
+  margin: auto;
+  width: 50%;
+  box-shadow: 20px 20px 50px 10px grey;
+}

@@ -32,7 +32,7 @@ export class AuthService {
     headers.append('Content-type','application/json');
     return this.http.post('users/authenticate',user).map(res => res);
   }
-
+  
   getProfile() {
     this.loadToken();
     let headers = new HttpHeaders({

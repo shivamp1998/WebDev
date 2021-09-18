@@ -6,13 +6,12 @@ import { FormBuilder, FormGroup, Validators, FormArray }   from '@angular/forms'
   styleUrls: ['./resumedisplay.component.css']
 })
 export class ResumedisplayComponent implements OnInit {
-
   constructor() { }
   @Input() data: FormGroup;
   @ViewChild('elref') element: ElementRef;
   ngOnInit(): void {
   }
-  onPrint() {
+  onprint() {
     this.element.nativeElement.style.display = "none";
     window.print();
   }

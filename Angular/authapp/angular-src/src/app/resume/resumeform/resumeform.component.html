@@ -179,7 +179,7 @@
   </div> -->
 
 
-  <div class="container">
+  <div class="container mt-5">
     <form (ngSubmit)="save()" [formGroup] = "resumeForm">
       <div class="card">
         <div class="card-header">
@@ -239,13 +239,14 @@
               </div>
             </div>
             <div class="form-group row">
-                <label class="label-form-label col-md-3">Skills</label>
+                <label class="label-form-label col-md-3">Skills </label>
                   <div formArrayName="skills"*ngFor="let skill of skills.controls; let i = index">
                     <div [formGroupName]="i">
                         <input type="text" class="form-control ml-3" placeholder="Ex. Java" formControlName="skill">
                     </div>
                 </div>
               </div>
+
         </div>
         <button type="button" class="btn btn-default btn-block" (click)="addSkills()">Add Skills</button>
 
@@ -258,7 +259,7 @@
       <div [formGroupName]="i">
         <div class="card mt-4">
           <div class="card-header">
-            <h4>Experience</h4>
+            <h4>Experience <span class="close" (click)="deleteExperience(i)">&times;</span></h4>
           </div>
           <div class="card-body">
                   <div class="form-group">
@@ -315,7 +316,7 @@
         <div [formGroupName]="i">
           <div class="card mt-4">
             <div class="card-header">
-              <h4>Education</h4>
+              <h4>Education <span class="close" (click)="deleteEducation(i)">&times;</span></h4>
             </div>
             <div class="card-body">
               <div class="form-group row">
@@ -359,7 +360,8 @@
         <div [formGroupName]="i">
           <div class="card mt-4">
             <div class="card-header">
-              <h4>Achievements</h4>
+              <h4>Achievements <span class="close" (click)="deleteAchievements(i)">&times;</span></h4>
+
             </div>
             <div class="card-body">
               <div class="form-group row">

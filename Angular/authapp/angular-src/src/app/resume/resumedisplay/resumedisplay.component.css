@@ -6,9 +6,12 @@
   background-color: #5a7ba1;
   color: white;
 }
+
 .cover {
   background-color: #003a75;
   color: white;
+  padding-left: 14.5px;
+  margin: 0 -14px 0 -14px;
 }
 .h6 {
   font-weight: bolder;
@@ -23,5 +26,4 @@
   border: 2px solid blue;
   border-left-style: none;
   border-right-style: none;
-
 }

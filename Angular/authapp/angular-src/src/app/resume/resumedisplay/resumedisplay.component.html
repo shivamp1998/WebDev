@@ -1,5 +1,51 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
+  <div class="col-md-3 aside">
+    <h1> {{data.value.name}}</h1>
+    <h6> {{data.value.currentRole}}</h6>
+    <h4 class="cover">Personal Info </h4>
+    <h6>Phone</h6>
+    <p>{{data.value.phone}}<p>
+    <h6>Email</h6>
+    <p>{{data.value.email}}<p>
+    <h6>City</h6>
+    <p>{{data.value.city}}</p>
+    <h6>Country</h6>
+    <p>{{data.value.country}}</p>
+    <h6>GitHub link</h6>
+    <p>{{data.value.github}}</p>
+    <h4 class="cover">Skills</h4>
+    <span class="badge badge-dark" *ngFor="let skill of data.value.skills">{{skill.skill}} </span>&nbsp;&nbsp;&nbsp;
+  </div>
+  <div class="col-md-9">
+      <h4>{{data.value.objective}}</h4>
+      <h4 class="nextside">Experience</h4>
+      <div class="row" *ngFor="let experience of data.value.experienceBlocks">
+        <div class="col-md-3">{{experience.startDate}} - {{experience.endDate}}</div>
+        <div class="col-md-9">
+          <h3> {{experience.company}} | {{experience.city}} | {{experience.country}}</h3>
+          <h4> {{experience.title}}  </h4>
+          <h6> {{experience.description}}</h6>
+        </div>
+      </div>
+      <h4 class="nextside">Education</h4>
+      <div class="row" *ngFor="let education of data.value.educationBlocks">
+        <div class="col-md-3">{{education.startYear}} - {{education.endYear}}</div>
+        <div class="col-md-9">
+          <h3> {{education.institute}} | {{education.location}}</h3>
+          <h4> {{education.course}}  </h4>
+          <h6> Grade: {{education.grade}}</h6>
+        </div>
+      </div>
+      <h4 class="nextside">Achievements</h4>
+      <div *ngFor="let achieve of data.value.achievements">
+        <h3> {{achieve.achievementName}} </h3>
+        <p> {{achieve.achievementDesc}}</p>
+      </div>
+ </div>
+
+
+  <!-- <div class="row">
     <div class="col-md-3 aside">
       <h1> {{data.value.name}}</h1>
       <h6> {{data.value.currentRole}}</h6>
@@ -37,8 +83,10 @@
         <h6> {{experience.description}}</h6>
       </div>
     </div>
+</div>
 
-  </div>
+
+
   <div class="row">
     <div class="col-md-3 cover">
       <h4>Skills</h4>
@@ -56,7 +104,7 @@
       <div class="col-md-9">
         <h3> {{education.institute}} | {{education.location}}</h3>
         <h4> {{education.course}}  </h4>
-        <h6> {{education.grade}}</h6>
+        <h6> Grade: {{education.grade}}</h6>
       </div>
     </div>
   </div>
@@ -73,6 +121,10 @@
       <h3> {{achieve.achievementName}} </h3>
       <p> {{achieve.achievementDesc}}</p>
     </div>
+  </div> -->
   </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-success mt-5" (click)="onprint()" #elref>Print</button>
 
+  </div>
 </div>

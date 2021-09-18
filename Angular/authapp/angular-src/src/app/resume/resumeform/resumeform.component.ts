@@ -66,7 +66,10 @@ export class ResumeformComponent implements OnInit {
     return this.resumeForm.get('achievements') as FormArray;
   }
   addAchievements() {
-    this.achievements.insert(0, this.buildAchievements());
+    this.achievements.push(this.buildAchievements());
+  }
+  deleteAchievements(index: any){
+    this.achievements.removeAt(index);
   }
   get skills():FormArray {
     return this.resumeForm.get('skills') as FormArray;
@@ -74,22 +77,32 @@ export class ResumeformComponent implements OnInit {
   addSkills(){
     this.skills.push(this.buildSkills());
   }
+  deleteSkills(index: any){
+    this.skills.removeAt(index);
+  }
   get experienceBlocks(): FormArray {
     return this.resumeForm.get('experienceBlocks') as FormArray;
   }
   addExperience() {
     console.log("click")
-    this.experienceBlocks.insert(0, this.buildExperienceBlock());
+    this.experienceBlocks.push(this.buildExperienceBlock());
+  }
+  deleteExperience(index: any) {
+    this.experienceBlocks.removeAt(index);
   }
   get educationBlocks(): FormArray {
     return this.resumeForm.get('educationBlocks') as FormArray;
   }
   addEducation() {
-    this.educationBlocks.insert(0, this.buildEducationBlock());
+    this.educationBlocks.push(this.buildEducationBlock());
+  }
+  deleteEducation(index: any) {
+    this.educationBlocks.removeAt(index);
   }
   save() {
     console.log(this.resumeForm.value);
     this.resumeEvent.emit(this.resumeForm);
   }
+
 
 }
