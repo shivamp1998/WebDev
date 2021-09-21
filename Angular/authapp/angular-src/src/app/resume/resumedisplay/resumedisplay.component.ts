@@ -14,6 +14,7 @@ export class ResumedisplayComponent implements OnInit {
   onprint() {
     this.element.nativeElement.style.display = "none";
     window.print();
+    console.log("Printing");
   }
 
 }
