@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 mongoose.connect("mongodb+srv://shivampandey98:pandey69@cluster0.7zied.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false},()=>{
   console.log("database connected!");
+  console.log("MongodbConnected");
 })
 
 app.use(passport.initialize());
