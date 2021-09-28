@@ -18,5 +18,6 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getRecipes();
     console.log(this.recipes);
     console.log("NgOnInitCalled!");
+    console.log("Temporary NgOnInitCalled");
   }
 }
