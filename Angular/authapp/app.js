@@ -24,4 +24,4 @@ require("./config/passport")(passport);
 app.get('/',(req,res)=> {
   res.send("Hello!");
 })
-app.listen(port,console.log("Server started at port 3000"));
+app.listen(port,console.log("Server started! Listening at port 3000"));
