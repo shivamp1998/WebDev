@@ -101,6 +101,7 @@ export class ResumeformComponent implements OnInit {
   }
   save() {
     console.log(this.resumeForm.value);
+    console.log(this.resumeForm);
     this.resumeEvent.emit(this.resumeForm);
   }
 
