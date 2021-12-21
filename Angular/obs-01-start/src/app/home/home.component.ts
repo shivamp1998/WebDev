@@ -10,21 +10,27 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.firstObservable = interval(1000).subscribe(count => {
-      console.log(count);
-    })
-    // let count = 0;
-    // const customObservable = Observable.create(observer => {
-    //
-    //   setInterval( () => {
-    //     observer.next(count);
-    //     count++;
-    //   },1000)
-    // });
-
-    // customObservable.subscribe(data => {
-    //   console.log(data);
+    // this.firstObservable = interval(1000).subscribe(count => {
+    //   console.log(count);
     // })
+    let count = 0;
+    const customObservable = Observable.create(observer => {
+
+      setInterval( () => {
+        observer.next(count);
+        if(count > 3) {
+          observer.error(new Error('Count is greater than 3'));
+        }
+        count++;
+      },1000)
+
+    });
+
+    customObservable.subscribe(data => {
+      console.log(data);
+    }, (error)=>{
+      alert(error.message);
+    })
   }
   ngOnDestroy() {
     this.firstObservable.unsubscribe();
