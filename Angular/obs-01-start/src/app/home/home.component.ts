@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Subscription, Observable } from "rxjs";
 import { map, filter } from "rxjs/operators";
+import { UserService } from "../user.service";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +9,7 @@ import { map, filter } from "rxjs/operators";
 })
 export class HomeComponent implements OnInit {
   firstObservable: Subscription;
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     // this.firstObservable = interval(1000).subscribe(count => {
@@ -19,9 +20,6 @@ export class HomeComponent implements OnInit {
 
       setInterval( () => {
         observer.next(count);
-        if(count > 3) {
-          observer.error(new Error('Count is greater than 3'));
-        }
         count++;
       },1000)
     });
@@ -35,6 +33,9 @@ export class HomeComponent implements OnInit {
     }, (error)=>{
       alert(error.message);
     })
+  }
+  clickActivated() {
+    this.userService.activatedClick.next(true);
   }
   ngOnDestroy() {
     this.firstObservable.unsubscribe();
