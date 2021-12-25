@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <div id="user-data">
+        <div id="user-data" ngModelGroup="userData" #userData = "ngModelGroup">
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" class="form-control" ngModel name='username' required>
@@ -14,13 +14,21 @@
             <span *ngIf="email.dirty && !email.valid"> Please Enter a Valid Email</span>
           </div>
         </div>
+        <span *ngIf="!userData.valid && userData.dirty"> The Entered User Data is not Valid</span>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select id="secret" class="form-control" name="secret" ngModel>
+          <select id="secret" class="form-control" name="secret" [ngModel]="'pet'">
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div class="form-group">
+          <input type="messagearea" class="form-control" cols="3" [(ngModel)]="answer" name="answerQ">
+          <p> Your Answer is: {{answer}}</p>
+        </div>
+        <!-- <div class="form-group" *ngFor="let gender of genders">
+            <input type="radio" class="form-control" [value]="gender" name="gender" ngModel> {{gender}}
+        </div> -->
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
       </form>
     </div>
