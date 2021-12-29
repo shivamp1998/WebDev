@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from './shopping-list.service';
-
+import { Subject } from "rxjs";
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
@@ -10,7 +10,6 @@ import { ShoppingListService } from './shopping-list.service';
 })
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[];
-
   constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
@@ -21,5 +20,8 @@ export class ShoppingListComponent implements OnInit {
           this.ingredients = ingredients;
         }
       );
+  }
+  onEditItem(index: number) {
+    this.slService.startedEditing.next(index);
   }
 }
