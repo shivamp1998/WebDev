@@ -29,10 +29,13 @@ export class ShoppingListService {
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
-  editIngredient(index: number, ingredient: Ingredient) {
-    console.log(ingredient)
-    this.ingredients[index] = ingredient
-
+  updateIngredient(index: number, newIngredient: Ingredient){
+    this.ingredients[index] = newIngredient;
+    this.ingredientsChanged.emit(this.ingredients.slice())
+  }
+  deleteIngredients(index: number) {
+    this.ingredients.splice(index, 1);
+    this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
 }
