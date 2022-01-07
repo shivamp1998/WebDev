@@ -9,7 +9,7 @@ import { map } from "rxjs/operators";
 })
 export class AppComponent implements OnInit {
   loadedPosts = [];
-
+  isFetching = false;
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
     // Send Http request
   }
   private fetchPosts() {
+    this.isFetching = true;
     this.http.get('https://custom-octagon-264317-default-rtdb.firebaseio.com/posts.json').pipe(map(responseData=> {
       const postsArray = [];
       for (const key in responseData) {
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
       return postsArray;
     })).subscribe( posts => {
       this.loadedPosts = posts;
+      this.isFetching = false;
     });
   }
 }
