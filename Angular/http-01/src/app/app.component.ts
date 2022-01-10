@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs/operators";
+import { PostService } from './posts.service';
 
 @Component({
   selector: 'app-root',
@@ -10,40 +11,38 @@ import { map } from "rxjs/operators";
 export class AppComponent implements OnInit {
   loadedPosts = [];
   isFetching = false;
-  constructor(private http: HttpClient) {}
+  error = null;
+  constructor(private http: HttpClient, private postsService: PostService) {}
 
   ngOnInit() {
-    this.fetchPosts();
+    this.isFetching = true;
+    this.postsService.fetchPosts().subscribe((posts) => {
+      this.isFetching = false;
+      this.loadedPosts = posts;
+    }, error=> {
+    this.error = error.message;
+    });
   }
 
   onCreatePost(postData: { title: string; content: string }) {
     // Send Http request
-    this.http.post('https://custom-octagon-264317-default-rtdb.firebaseio.com/posts.json', postData).subscribe( responseData => {
-      console.log(responseData)
-    })
+    this.postsService.createAndStorePosts(postData.title, postData.content);
   }
 
   onFetchPosts() {
-    this.fetchPosts();
+    this.isFetching = true;
+    this.postsService.fetchPosts().subscribe((posts) => {
+      this.isFetching = false;
+      this.loadedPosts = posts;
+    }, error => {
+      this.error = error.message;
+    });
   }
 
   onClearPosts() {
-    // Send Http request
+    this.postsService.deletePosts().subscribe( ()=> {
+      this.loadedPosts = [];
+    })
   }
-  private fetchPosts() {
-    this.isFetching = true;
-    this.http.get('https://custom-octagon-264317-default-rtdb.firebaseio.com/posts.json').pipe(map(responseData=> {
-      const postsArray = [];
-      for (const key in responseData) {
-        if(responseData.hasOwnProperty(key)) {
-          postsArray.push({...responseData[key], id: key});
-        }
-      }
-      return postsArray;
-    })).subscribe( posts => {
-      this.loadedPosts = posts;
-      this.isFetching = false;;
-      console.log(isFetching)
-    });
-  }
+
 }
