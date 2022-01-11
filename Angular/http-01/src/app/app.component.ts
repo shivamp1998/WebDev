@@ -42,12 +42,13 @@ export class AppComponent implements OnInit {
     }, error => {
       this.error = error.message;
     });
-    console.log("true");
+
   }
 
   onClearPosts() {
     this.postsService.deletePosts().subscribe( ()=> {
       this.loadedPosts = [];
+      console.log(this.loadedPosts);
     })
 
   }
