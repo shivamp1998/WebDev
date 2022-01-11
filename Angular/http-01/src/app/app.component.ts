@@ -42,6 +42,7 @@ export class AppComponent implements OnInit {
     }, error => {
       this.error = error.message;
     });
+    console.log("true");
   }
 
   onClearPosts() {
