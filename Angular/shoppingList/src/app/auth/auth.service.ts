@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
-import { throwError, Subject } from 'rxjs';
+import { throwError, Subject, BehaviorSubject } from 'rxjs';
 import { User } from './user.model';
 export interface AuthResponseData{
   idToken: string,
@@ -13,8 +14,8 @@ export interface AuthResponseData{
 }
 @Injectable({providedIn: 'root'})
 export class AuthService {
-  constructor(private http: HttpClient){}
-  user = new Subject<User>();
+  constructor(private http: HttpClient, private route: Router){}
+  user = new BehaviorSubject<User>(null);
   signup(email: string, password: string) {
     return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBOQDJJYFYEE9GxnHkRi873vkfzNP7sQ5E', {
         email: email,
@@ -33,14 +34,37 @@ export class AuthService {
         email: email,
         password: password,
         returnSecureToken: true
-    }).pipe(catchError(this.handleError), tap(resData => this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)
-));
+      }).pipe(catchError(this.handleError), tap(resData => this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn)
+    ));
+  }
+
+  autoLogin() {
+      const userData: {
+        email: string,
+        id: string,
+        _token: string,
+        _tokenExpirationDate: string
+      } = JSON.parse(localStorage.getItem('userData'));
+      if (!userData) {
+        return;
+      }
+      const loadedUser = new User(userData.email,userData.id,userData._token,new Date(userData._tokenExpirationDate));
+
+      if(loadedUser.getToken()) {
+        this.user.next(loadedUser);
+      }
+
+  }
+  logout() {
+    this.user.next(null);
+    this.route.navigate(['auth'])
   }
 
   private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
     const expirationDate = new Date(new Date().getTime() + +expiresIn * 1000);
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
+    localStorage.setItem('userData', JSON.stringify(user));
   }
   private handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'An unknown Error Occurred!';
