@@ -12,5 +12,7 @@ export class AlertComponent {
 
   onClose() {
     this.close.emit();
+    console.log();
+
   }
 }
