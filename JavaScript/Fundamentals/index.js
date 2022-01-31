@@ -191,10 +191,14 @@ const openingHours = {
     close: 24,
   },
 };
-const properties = Object.keys(openingHours);
-for (const item of properties) {
-  console.log(item);
-}
+// console.log(Object.values(openingHours))
+// for(const value of Object.values(openingHours)) {
+//   console.log(value)
+// }
+// const properties = Object.keys(openingHours);
+// for (const item of properties) {
+//   console.log(item);
+// }
 // const days = ['mon','tue','wed','thu','fri','sat'];
 // for(const item of days){
 //   console.log(openingHours[item]?.open && "YES");
@@ -517,6 +521,49 @@ const game = {
 // console.log(newArray);
 
 
-const booking = [];
 
-const createBooing
+// const res = new Map();
+// res.set('name','Taj Mahal Hotel');
+// res.set(1,'Mumbai');
+// res.set(2,'Delhi');
+//
+// console.log(res.get(1));
+// res.has('name') ? console.log(res.get('name')) : 'No!';
+// console.log(res.size)
+
+
+//
+// const res = new Map([
+//   ['question', 'what is the best programming language?'],
+//   [1, 'c++'],
+//   [2, 'Java'],
+//   [true,'The ans you chose is correct'],
+//   [false, 'incorrect ans']
+// ])
+// for( const [key,value] of res) {
+//   if(typeof key  == 'number')
+//   console.log(key,value)
+// }
+
+//convert object to maps
+// const openingHoursMap = new Map(Object.entries(openingHours));
+
+
+//working with strings
+const airline = "Air India";
+console.log(airline.indexOf('i'));
+console.log(airline.lastIndexOf('i'));
+console.log(airline.indexOf('India'));
+
+console.log(airline.slice(1));
+console.log(airline.slice(4,airline.length));
+console.log(airline.slice(airline.lastIndexOf(' ')+1, airline.length));
+
+console.log(airline.includes('India'));
+console.log(airline.startsWith('I'));
+console.log(airline.endsWith('a'));
+
+let a = 'shivam pandey';
+console.log(a.replace('shivam','priyam'))
+console.log('shivam pandey'.split(' '));
+console.log(['shivam', 'pandey'].join(' '))
