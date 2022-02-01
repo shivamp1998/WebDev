@@ -567,3 +567,5 @@ let a = 'shivam pandey';
 console.log(a.replace('shivam','priyam'))
 console.log('shivam pandey'.split(' '));
 console.log(['shivam', 'pandey'].join(' '))
+console.log('shivam pandey'.padStart(30,'+').padEnd(30,'+'));
+console.log(" All is well ".repeat(5));
