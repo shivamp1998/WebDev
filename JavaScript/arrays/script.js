@@ -76,4 +76,30 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /////////////////////////////////////////////////
 
 let arr = ['a','b','c','d','e'];
-console.log(arr.slice(2))
+console.log(arr.slice(2));
+//splice
+console.log(arr.splice(2,1));
+console.log(arr);
+arr.reverse();
+console.log(arr)
+let arr2 = ['a','b','c'];
+let letters = arr2.concat(arr);
+console.log(letters);
+letters.forEach((data,index) => {
+  console.log(index,data)
+});
+
+for(const [index,letter] of letters.entries()) {
+  console.log(`${index} ${letter}`)
+}
+
+
+const currency = new Map([
+  ['India','Rupee'],   
+  ['Japan','Yen'],
+  ['USA','USD']
+]);
+
+currency.forEach((value,key) => {
+  console.log(key,value)
+})
