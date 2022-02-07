@@ -1,6 +1,8 @@
 
 import { NgModule } from '@angular/core';
 @NgModule({
-  
+
 })
-export class RecipesModule {}
+export class RecipesModule {
+  constructor()
+}
