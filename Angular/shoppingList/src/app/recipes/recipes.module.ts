@@ -5,4 +5,5 @@ import { NgModule } from '@angular/core';
 })
 export class RecipesModule {
   constructor()
+  console.log('Working')
 }
