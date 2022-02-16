@@ -27,7 +27,17 @@ const Form = (props) => {
         setAmountChange('');
         setDateChange('')
     }
-    return <form onSubmit={onFormSubmitted}>
+    const [isClicked,setIsClicked] = useState(false);
+    const clickChange  = () => {
+        setIsClicked(true);
+    }    
+    const cancelForm = () => {
+        setIsClicked(false);
+    }
+    let display = null;
+    if(isClicked === true) {
+        display = <form onSubmit={onFormSubmitted}>
+        
         <div>
         <label>Title</label>
             <input type="text" onChange={changeTitle} value={titleChange}/>
@@ -41,7 +51,17 @@ const Form = (props) => {
             <input type="date" min="29-01-01" max="2022-12-31" onChange={changeDate} value={dateChange}/>
         </div>
         <button type="submit"> Submit </button>
-    </form>
+        <button type="button" onClick={cancelForm}> Cancel </button>
+        </form>
+    }else {
+        display =  <button type="button" onClick={clickChange}>Add Expense</button>;
+        console.log(isClicked)
+    }
+    return <div>
+
+        {display}
+        
+    </div>
 }
 
 
