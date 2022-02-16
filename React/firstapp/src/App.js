@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
 import ExpenseItem from './components/ExpenseItem';
 import NewExpense from './components/newExpense/newExpense';
+import ExpenseFilter from './components/newExpense/expenseFilter';
 function App() {
   const expenses = [
     {
@@ -32,10 +34,22 @@ function App() {
     
     
   ]
+  const onExpenseItemAdd = (newExpense) => {
+    console.log('running in appjs');
+    console.log(newExpense);
+  }
+  const handleExpenseFilter = (data) => {
+    console.log('this is running in appjs');
+    console.log(data);
+    setSelectedYear(data);
+  }
+  const [selectedYear,setSelectedYear] = useState('');
+
   return (
     <div className="App">
+      <ExpenseFilter onFilterChange={handleExpenseFilter}/>
       <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date = {expenses[0].date}/>
-      <NewExpense/>
+      <NewExpense onExpenseItem={onExpenseItemAdd}/>
     </div>
   );
 }

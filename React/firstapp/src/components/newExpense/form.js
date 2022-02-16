@@ -1,22 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Form = () => {
+const Form = (props) => {
     const [ titleChange, setTitleChange] = useState('');
     const changeTitle = (event) => {
-        console.log(event.target.value);
         setTitleChange(event.target.value);
         
     }
     const [ amountChange, setAmountChange] = useState('');
     const changeAmount = (event) => {
         setAmountChange(event.target.value);
-        console.log(event.target.value);
     }
     const [dateChange, setDateChange] = useState('');
     const changeDate = (event) => {
         setDateChange(event.target.value);
-        console.log(event.target.value);
     }
     function onFormSubmitted(event) {
         event.preventDefault();
@@ -25,7 +22,7 @@ const Form = () => {
             amount: amountChange,
             date: new Date(dateChange)
         }
-        console.log(expenseData)
+        props.onExpenseData(expenseData);
         setTitleChange('');
         setAmountChange('');
         setDateChange('')

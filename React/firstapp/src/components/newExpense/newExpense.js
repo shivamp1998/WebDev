@@ -1,8 +1,12 @@
 import React from 'react';
 import Form from './form';
-const NewExpense = () => {
+
+const NewExpense = (props) => {
+    const onEnteredNewData = (newData) => {
+       props.onExpenseItem(newData);
+    }
     return <div>
-        <Form/>
+        <Form onExpenseData = {onEnteredNewData}/>
     </div>
 }
 
