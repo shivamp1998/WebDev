@@ -8,7 +8,7 @@ function ExpenseItem(props) {
     }
     return (
         <div>
-           <p> {title} </p>
+           <p> {props.title} </p>
            <p> {props.amount} </p>
            <Calender date={props.date}/>
            <button onClick = {newTitle }>Click</button>

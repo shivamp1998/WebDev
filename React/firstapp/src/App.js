@@ -5,7 +5,7 @@ import ExpenseItem from './components/ExpenseItem';
 import NewExpense from './components/newExpense/newExpense';
 import ExpenseFilter from './components/newExpense/expenseFilter';
 function App() {
-  const expenses = [
+  const dummyexpenses = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -34,9 +34,12 @@ function App() {
     
     
   ]
+  const [ expenses, setExpenses] = useState(dummyexpenses);
   const onExpenseItemAdd = (newExpense) => {
-    console.log('running in appjs');
-    console.log(newExpense);
+    setExpenses(expense => {
+      return [newExpense,...expense];
+    })
+    console.log(expenses[0].date.getFullYear)
   }
   const handleExpenseFilter = (data) => {
     console.log('this is running in appjs');
@@ -48,7 +51,9 @@ function App() {
   return (
     <div className="App">
       <ExpenseFilter onFilterChange={handleExpenseFilter}/>
-      <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date = {expenses[0].date}/>
+      {expenses.filter(data=> data.date.getFullYear().toString() === selectedYear).map(
+        data => <ExpenseItem title={data.title} amount={data.amount} date={data.date}/>
+      )}
       <NewExpense onExpenseItem={onExpenseItemAdd}/>
     </div>
   );
