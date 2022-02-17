@@ -3,24 +3,15 @@ import {useState} from 'react';
 import UserForm from '../userForm/userform';
 import UserList from '../userList/userList';
 const UserView = () => {
-    const [userArray,setUserArray] = useState([{
-        name: 'shivam',
-        age: 12
-    }]);
-    let newArray = [];
-    const createUser = (data) => {
-       newArray = data;
-    //    console.log(newArray)
-       console.log(newArray[1].name)
+    const [userList,addUserList] = useState([]);
+    const createUser = (uname,uage) => {
+        addUserList(prevList => {
+            return [...prevList,{name:uname, age:uage}]
+        })
     }
     return (<div>
         <UserForm addUser={createUser}/>
-        {
-            newArray.map(data => {
-                <UserList name={data.name} age={data.age} />
-            })
-        }
-        {/* <UserList name={newArray[0].name}/> */}
+        <UserList UserList = {userList}/>
     </div>);
 }
 export default UserView;

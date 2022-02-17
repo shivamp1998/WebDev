@@ -1,38 +1,30 @@
 import React, { useState } from 'react';
 
 const UserForm = (props) => {
-    let User = {
-        name: '',
-        age: ''
-    }
-    const [userArray,setUserArray] = useState([{
-        name: '',
-        age: ''
-    }])
-    const onAddUser = (event) => {
-        // console.log(User);
-        event.preventDefault();
-
-        setUserArray( userArray.concat(User));
-        // console.log(userArray);
-    }
+    const [enteredName,setEnteredName] = useState('');
+    const [enteredAge,setEnteredAge] = useState('');
+    
     const onAddName = (event) => {
-        User = {...User, name: event.target.value}
+        setEnteredName(event.target.value);
     }
 
     const onAddAge = (event) => {
-        User =  {...User,age: event.target.value}
+        setEnteredAge(event.target.value);
     }
     
-    props.addUser(userArray);
-
-     
+    const onAddUser = (event) => {
+        event.preventDefault();
+        props.addUser(enteredName,enteredAge);
+        setEnteredName('');
+        setEnteredAge('');
+    }
+    
     return (<div>
         <form onSubmit={onAddUser}>
             <label> UserName </label>
-            <input type="text" name="username" onInput={onAddName}/>
+            <input type="text" name="username" onInput={onAddName} value={enteredName}/>
             <label> Age(Years) </label>
-            <input type="number" name="age" onInput={onAddAge}/>
+            <input type="number" name="age" onInput={onAddAge} value={enteredAge}/>
             <button type="submit">Add</button>
         </form> 
     </div>)

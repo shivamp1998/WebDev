@@ -2,10 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 
 const UserList = (props) => {
+    
     return (<div>
         <ul>
-            <li> {props.name} </li>
-            <li> {props.age} </li>
+            {
+                props.UserList.map(data => {
+                    return `my name is ${data.name} and age is ${data.age}`
+                })
+            }
         </ul>
     </div>)
 }
