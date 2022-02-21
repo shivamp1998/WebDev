@@ -24,8 +24,7 @@ const Login = (props) => {
   const passwordReducer = (state, action) => {
     if(action.type === 'USER_INPUT') {
       return {value: action.val,isValid: action.val.length > 6};
-    }
-    if(action.type === 'INPUT_BLUR') {
+    }    if(action.type === 'INPUT_BLUR') {
       return {value: state.value, isValid: state.value.length > 6}
     }
     return {value: '', isValid: false};
@@ -40,6 +39,7 @@ const Login = (props) => {
     value: '',
     isValid: false
   });
+
 
   useEffect(()=> {
     const identifier = setTimeout(()=> {
@@ -83,6 +83,8 @@ const Login = (props) => {
             emailState.isValid === false ? classes.invalid : ''
           }`}
         >
+        .container
+
           <label htmlFor="email">E-Mail</label>
           <input
             type="email"
