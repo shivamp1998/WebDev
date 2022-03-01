@@ -9,7 +9,7 @@ const UserForm = (props) => {
     }
 
     const onAddAge = (event) => {
-        setEnteredAge(event.target.value);
+         setEnteredAge(event.target.value);
     }
     
     const onAddUser = (event) => {
