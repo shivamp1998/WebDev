@@ -23,29 +23,6 @@ function App(){
         console.log(err);
       })
 
-      // onBackgroundMessageListener().then((payload) => {
-      //   setShow(true);
-      //   setNotification({
-      //     title: payload.notification.title,
-      //     body: payload.notification.body
-      //   })
-      //  self.showNotification(notification.title, notification.body)
-      //   console.log(payload)
-      // })
-      // .catch(err => {
-      //   console.log(err);
-      // })
-
-      // const messaging = getMessaging();
-      // onBackgroundMessage(messaging, (payload) => {
-      //   console.log(payload);
-      //   const notificationTitle = notification.title;
-      //   const notificationOptions = {
-      //     body: 'Background Message Body',
-      //     icon: '/firebase-logo.png'
-      //   };
-      //   self.registration.showNotification(notificationTitle,notificationOptions)
-      // });
       return (
         <div>
           {
