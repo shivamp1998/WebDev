@@ -20,6 +20,19 @@ const Login = (props) => {
     }
     return { value: state.value, isValid: false}
   }
+
+  const newEmail = useEffect(() => {
+    const name = setTimeout(() => {
+      console.log('hi');
+    },500);
+  },[]);
+
+  const name = setTimeout(()=>{
+    return 'shivam';
+  },500);
+  
+
+  console.log(name);
   
   const passwordReducer = (state, action) => {
     if(action.type === 'USER_INPUT') {
