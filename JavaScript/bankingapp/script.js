@@ -97,3 +97,4 @@ const firstWithDrawl = movements.find(move => move > 0)
 
 console.log(firstWithDrawl);
 
+console.log(movements.every(mov => mov > 0));
