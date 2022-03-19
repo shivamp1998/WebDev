@@ -89,3 +89,11 @@ console.log(balance);
 
 
 
+const INR =movements.filter( move => move > 0).map(move => move * 72).reduce((acc,curr) => acc+curr)
+console.log(INR)
+
+
+const firstWithDrawl = movements.find(move => move > 0)
+
+console.log(firstWithDrawl);
+
