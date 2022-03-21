@@ -98,3 +98,22 @@ const firstWithDrawl = movements.find(move => move > 0)
 console.log(firstWithDrawl);
 
 console.log(movements.every(mov => mov > 0));
+
+const arr = [[1,2,3],[2,3,4]];
+console.log(arr.flat());
+
+const arrDeep =  [[[1,2,4],3]];
+console.log(arrDeep.flat());
+
+console.log(arrDeep.flat(2));
+
+const owners = ['Jonas','Zack','Adam'];
+console.log(owners.sort());
+
+
+console.log(movements.sort((a,b)=> {
+  if(a > b)
+  return 1;
+  else return -1;
+}));
+
