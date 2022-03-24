@@ -28,7 +28,7 @@ const Login = (props) => {
   },[]);
 
   const name = setTimeout(()=>{
-    return 'shivam';
+    console.log('running');
   },500);
   
 
