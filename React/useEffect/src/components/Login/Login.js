@@ -29,6 +29,7 @@ const Login = (props) => {
 
   const name = setTimeout(()=>{
     console.log('running');
+    console.log('set timeout not working')
   },500);
   
 
