@@ -4,8 +4,8 @@ import  Classes from './header.module.css';
 import HeaderCartButton from './HeaderCartButton';
 const Header = (props) => {
     return <Fragment>
-        <header>  
-            <h1 className={Classes.header}> React Meals </h1>
+        <header className={Classes.header}>  
+            <h1 > React Meals </h1>
             <HeaderCartButton/>
         </header>
         <div className={Classes['main-image']}>
