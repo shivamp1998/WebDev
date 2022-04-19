@@ -5,6 +5,7 @@ const UserForm = (props) => {
     const [enteredAge,setEnteredAge] = useState('');
     
     const onAddName = (event) => {
+        console.log(enteredName);
         setEnteredName(event.target.value);
     }
 
