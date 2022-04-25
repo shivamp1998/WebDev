@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import CartIcon from '../Cart/CartIcon';
 import Class from './HeaderCart.module.css';
 const HeaderCardButton = (props) => {
     return( 
-    <button className={Class.button}>
+    <button className={Class.button} onClick={props.onClick}>
         <span className={Class.icon}>
             <CartIcon/>
         </span>
