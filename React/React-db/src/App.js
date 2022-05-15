@@ -1,9 +1,12 @@
 import React,{useState} from 'react';
 import MoviesList from './components/MoviesList';
 import './App.css';
+import MovieList from './components/MoviesList';
 function App() {
   const [movies,setMovies] = useState([]);
+  const [isLoading,setIsLoading] = useState(false);
   const fetchMoviesHandler = async() =>  {
+    setIsLoading(true);
     fetch('https://swapi.dev/api/films').then((response) => {
       return response.json();
     }).then((data) => {
@@ -16,6 +19,7 @@ function App() {
         }
       })
       setMovies(transformedMovies);
+      setIsLoading(false);
     })
     // axios.get('https://swapi.dev/api/films').then((response) => {
     //   console.log('axios Response' , response);
@@ -27,7 +31,9 @@ function App() {
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
       <section>
-        <MoviesList movies={movies}  />
+       {!isLoading && movies.length > 0 &&   <MoviesList movies={movies}  />}
+       {!isLoading && movies.length === 0 && <p> No Movies Found! </p>}
+       {isLoading && <p> Loading... </p>}
       </section>
     </React.Fragment>
   );
