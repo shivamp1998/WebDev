@@ -16,11 +16,15 @@ const SimpleInput = (props) => {
     console.log(enteredName)
     setEnteredName('');
   }
+
+  const nameInputBlur = (e) => {
+    console.log('input blurred');
+  }
   return (
     <form>
       <div className={nameIsValid ? 'form-control' : 'form-control invalid'}>
         <label htmlFor='name'>Your Name</label>
-        <input type='text' id='name' onChange = {onChangeHandler} ref={userNameInputReference} value={enteredName}/>
+        <input type='text' id='name' onChange = {onChangeHandler} ref={userNameInputReference} value={enteredName} onBlur = {nameInputBlur}/>
       </div>
       <div className="form-actions">
         <button type="submit" onClick={onFormSubmitHandler}>Submit</button>
