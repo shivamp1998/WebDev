@@ -9,8 +9,16 @@ const useForm = (textValidator) => {
     const valueIsValid = textValidator(text);
     const hasError = !valueIsValid && touched;
 
+    const handleTextChange = (e) => {
+        setText(e.target.value);
+    }
+
+    const handleValueBlur = () => {
+        setTouched(true);
+    } 
+
     return {
-        value: text, hasError
+        value: text, hasError, handleTextChange, handleValueBlur
     }
 
     
