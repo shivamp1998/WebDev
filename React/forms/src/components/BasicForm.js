@@ -15,6 +15,9 @@ const BasicForm = (props) => {
     e.preventDefault();
     if(isEmailValid && isNameValid && isLastNameValid) {
       setIsFormValid(true);
+    }else{
+      setIsFormValid(false);
+      return;
     }
     console.log(firstName,lastName,email);
     
@@ -63,7 +66,7 @@ const BasicForm = (props) => {
         <input type='text' id='name' onChange={e => {setEmail(e.target.value); emailValidator(e)}} onBlur={() => {setIsEmailTouched(true)}}/>
       </div>
       <div className='form-actions'>
-        <button onClick={(e) => formHandler(e)}>Submit</button>
+        <button onClick={(e) => formHandler(e)} className={!isFormValid && 'btn-disabled'}>Submit</button>
       </div>
     </form>
   );
