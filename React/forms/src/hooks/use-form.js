@@ -1,24 +1,34 @@
-import {useState} from 'react';
+import { useReducer } from 'react';
+const initialState = {
+    value: '',
+    isTouched: false
+}
+const inputUseReducer = (state,action) => {
+    if(action.type === 'INPUT') {
+        return {value: action.value, isTouched: state.isTouched}
+    }
+    if(action.type === 'BLUR') {
+        return {value: state.value , isTouched: true}
+    }
 
+    return initialState;
+}
 
 const useForm = (textValidator) => {
-    const [text,setText] = useState('');
-    const [touched,setTouched] = useState(false);
-    
-
-    const valueIsValid = textValidator(text);
-    const hasError = !valueIsValid && touched;
+    const [inputState,dispatch] = useReducer(inputUseReducer,initialState);
+    const valueIsValid = textValidator(inputState.value);
+    const hasError = !valueIsValid && inputState.isTouched;
 
     const handleTextChange = (e) => {
-        setText(e.target.value);
+        dispatch({type: 'INPUT', value: e.target.value})
     }
 
     const handleValueBlur = () => {
-        setTouched(true);
+        dispatch({type: 'BLUR'})
     } 
 
     return {
-        value: text, hasError, handleTextChange, handleValueBlur
+        value: inputState.value, hasError, handleTextChange, handleValueBlur
     }
 
     

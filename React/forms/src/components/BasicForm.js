@@ -31,13 +31,13 @@ const BasicForm = (props) => {
      setIsEmailValid(false)
    }
     if(e.target.value.includes('@') && e.target.value.includes('.')) {
-      setIsEmailValid(true);
+      setIsEmailValid(true); 
     }else{
       setIsEmailValid(false);
     }
   }
 
-  var nameValidator = (e) => {
+  const nameValidator = (e) => {
     if(e.target.value === '') {
       setIsNameValid(false);
     }else{
