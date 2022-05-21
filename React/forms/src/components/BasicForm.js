@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import useForm from '../hooks/use-form';
 const BasicForm = (props) => {
   const [firstName,setFirstName] = useState('');
   const [lastName,setLastName] = useState('');
@@ -11,6 +11,9 @@ const BasicForm = (props) => {
   const [isNameValid,setIsNameValid] = useState(false);
   const [isLastNameValid, setIsLastNameValid] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const { hasError,handleTextChange,handleValueBlur} = useForm(e => e.trim() !== '');
+
+
   const formHandler = (e) => {
     e.preventDefault();
     if(isEmailValid && isNameValid && isLastNameValid) {
@@ -34,7 +37,7 @@ const BasicForm = (props) => {
     }
   }
 
-  const nameValidator = (e) => {
+  var nameValidator = (e) => {
     if(e.target.value === '') {
       setIsNameValid(false);
     }else{
@@ -64,6 +67,10 @@ const BasicForm = (props) => {
       <div className={`form-control ${!isEmailValid && isEmailTouched && 'invalid'}`}>
         <label htmlFor='name'>E-Mail Address</label>
         <input type='text' id='name' onChange={e => {setEmail(e.target.value); emailValidator(e)}} onBlur={() => {setIsEmailTouched(true)}}/>
+      </div>
+      <div className={`form-control ${hasError && 'invalid'}`}>
+        <label htmlFor="new">New Data</label>
+        <input type="text" id="new" onChange={(e) => {handleTextChange(e)}} onBlur={handleValueBlur}/>
       </div>
       <div className='form-actions'>
         <button onClick={(e) => formHandler(e)} className={!isFormValid && 'btn-disabled'}>Submit</button>
