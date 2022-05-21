@@ -21,6 +21,7 @@ const SimpleInput = (props) => {
     console.log('input blurred');
   }
   return (
+
     <form>
       <div className={nameIsValid ? 'form-control' : 'form-control invalid'}>
         <label htmlFor='name'>Your Name</label>
