@@ -9,6 +9,7 @@ import axios from 'axios';
 const AvailableMeals = () => {
   const [meals,setMeals]  = useState();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   useEffect(() => {
     axios.get(`https://push-notifications-20f90-default-rtdb.firebaseio.com/meals.json`).then((response) => {
         let mealsArray = [];
@@ -24,6 +25,9 @@ const AvailableMeals = () => {
         }
         setMeals(mealsArray);
 
+    }).catch((err) => {
+      setLoading(false);
+      setError(true);    
     })
   },[])
   const mealsList = !loading ? meals && meals.map((meal) => (
@@ -39,7 +43,8 @@ const AvailableMeals = () => {
   return (
     <section className={classes.meals}>
       <Card>
-        <ul>{mealsList}</ul>
+      { error && <p className={classes.error}> Some Error has Occurred </p>}
+      { !error && <ul>{mealsList}</ul>}
       </Card>
     </section>
   );
