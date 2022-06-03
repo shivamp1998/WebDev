@@ -168,3 +168,7 @@ const okayAmount = dogs.map((value,index) => {
 })
 
 console.log(okayAmount);
+
+
+const sortedDogs = dogs.sort((a,b) => a.recommendedFood - b.recommendedFood);
+console.log(sortedDogs);
