@@ -1,9 +1,9 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     hidden: false,
 }
-export const cartSlice = createSlice({
+const uiSlice = createSlice({
     name: 'cart',
     initialState: initialState,
     reducers: {
@@ -13,8 +13,4 @@ export const cartSlice = createSlice({
     }
 })
 
-const store = configureStore({
-    reducer: {cart: cartSlice.reducer}
-})
-
-export default store;
+export default uiSlice;
