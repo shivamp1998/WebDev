@@ -3,18 +3,18 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 const initialState = {
     hidden: false,
 }
-const cartSlice = createSlice({
+export const cartSlice = createSlice({
     name: 'cart',
     initialState: initialState,
     reducers: {
-        toggleCart: (state,action) => {
+        toggleCart : (state,action) => {
             state.hidden = !state.hidden;
         }
     }
 })
 
-const redux = configureStore({
-    reducer: cartSlice.reducer
+const store = configureStore({
+    reducer: {cart: cartSlice.reducer}
 })
 
-export default redux;
+export default store;
