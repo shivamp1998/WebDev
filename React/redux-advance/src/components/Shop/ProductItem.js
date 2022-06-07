@@ -6,7 +6,10 @@ const ProductItem = (props) => {
   const { title, price, description } = props;
   const dispatch = useDispatch();
   const onAddItem = () => {
-    dispatch(cartSlice.actions.addtoCart())
+    dispatch(cartSlice.actions.addtoCart({
+      title: props.title,
+      price: props.price
+    }))
   }
 
   return (
