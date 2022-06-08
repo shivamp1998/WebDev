@@ -9,6 +9,7 @@ const CartItem = (props) => {
   }
   const removeItem = () => {
     dispatch(cartSlice.actions.removefromCart({id}));
+    
   }
   return (
     <li className={classes.item}>
