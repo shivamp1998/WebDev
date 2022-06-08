@@ -7,6 +7,7 @@ const ProductItem = (props) => {
   const dispatch = useDispatch();
   const onAddItem = () => {
     dispatch(cartSlice.actions.addtoCart({
+      id: props.id,
       title: props.title,
       price: props.price
     }))
