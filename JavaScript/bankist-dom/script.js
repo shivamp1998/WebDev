@@ -1,7 +1,7 @@
-'use strict';
+// 'use strict';
 
-///////////////////////////////////////
-// Modal window
+// ///////////////////////////////////////
+// // Modal window
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
@@ -20,7 +20,7 @@ const closeModal = function () {
 };
 
 [...btnsOpenModal].forEach((modal) => {
-  modal.addEventListener('click',openModal(e));
+  modal.addEventListener('click',openModal);
 })
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
@@ -30,3 +30,29 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+
+console.log(document.documentElement);
+
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
+
+const allButtons = document.getElementsByTagName('button')
+console.log(allButtons);
+
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+// message.textContent="We use cookies for imporved functionality and analytics."
+message.innerHTML=`we use cookies for improved functionality and analytics.<button class="btn btn--close-cookie">Got it!</button>`
+
+
+const header = document.querySelector('.header');
+// header.append(message);
+header.prepend(message);
+// header.after(message);
+// header.before(message);
+
+const cookieClose = document.querySelector('.btn--close-cookie').addEventListener('click',(e) => {
+  message.remove();
+})
+
