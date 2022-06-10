@@ -96,3 +96,34 @@ btnScrollTo.addEventListener('click', (e) => {
   // })
   section1.scrollIntoView({behavior: 'smooth'})
 })
+
+
+//rgb
+
+// const randomInt = (min,max) => {
+//   return Math.random() * ((max - min + 1) + min);
+// }
+
+// const randomColor = () => {
+//   return `rgb(${randomInt(0,255)}, ${randomInt(0,255)}, ${randomInt(0,255)})`
+// }
+
+// document.querySelector('.nav__link').addEventListener('click',(e) => {
+//   document.querySelector('.nav__link').style.backgroundColor = randomColor();
+//  })
+// document.querySelector('.nav__links').addEventListener('click',(e) => {
+//   document.querySelector('.nav__links').style.backgroundColor = randomColor();
+// })
+// document.querySelector('.nav').addEventListener('click',(e) => {
+//   document.querySelector('.nav').style.backgroundColor = randomColor();
+// })
+
+document.querySelector('.nav__links' ).addEventListener('click',e => {
+  e.preventDefault();
+  const id = e.target.getAttribute('href');
+  if(e.target.classList.contains('nav__link'))
+  document.querySelector(id).scrollIntoView({behavior: 'smooth'})
+})
+
+
+ 
