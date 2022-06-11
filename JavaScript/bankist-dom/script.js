@@ -75,13 +75,12 @@ document.addEventListener('keydown', function (e) {
 
 // console.log(link.dataset.roleVersion)
 
-console.log(document.documentElement.clientHeight);
-console.log(document.documentElement.clientWidth);
+// console.log(document.documentElement.clientHeight);
+// console.log(document.documentElement.clientWidth);
 
 
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
-console.log(section1)
 
 btnScrollTo.addEventListener('click', (e) => {
   console.log(window.pageXOffset,window.pageYOffset);
@@ -162,5 +161,42 @@ operationButton[0].parentElement.addEventListener("click",(e) => {
     mainOperation.forEach((element) => {
       element.classList.remove('operations__content--active');
     })
+    operationButton.forEach((element) => {
+      element.classList.remove('operations__tab--active');
+    })
+    if(!e.target.closest('button')){
+      return;
+    }
+    document.querySelector(`.operations__tab--${e.target.closest('button').dataset.tab}`).classList.add('operations__tab--active')
     document.querySelector(`.operations__content--${e.target.closest('button').dataset.tab}`).classList.add('operations__content--active')
+})
+
+
+const nav = document.querySelector('.nav');
+console.log(nav)
+
+nav.addEventListener('mouseover',(e) => {
+  if(e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+    siblings.forEach((element) => {
+      if(element != link){
+        element.style.opacity = 0.5;
+      }
+    })
+  }
+})
+
+nav.addEventListener('mouseout', (e) => {
+  if(e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+    siblings.forEach((element) => {
+      if(element != link){
+        element.style.opacity = 1;
+      }
+    })
+  }
 })
