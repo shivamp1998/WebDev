@@ -126,19 +126,41 @@ document.querySelector('.nav__links' ).addEventListener('click',e => {
 })
 
 
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
-console.log(h1.childNodes);
-console.log(h1.children);
+// console.log(h1.childNodes);
+// console.log(h1.children);
 
- h1.firstElementChild.style.color = 'black';
-console.log(h1.querySelectorAll('.highlight'));
+//  h1.firstElementChild.style.color = 'black';
+// console.log(h1.querySelectorAll('.highlight'));
 
-h1.firstElementChild.style.color = "white";
-h1.lastElementChild.style.color = "black";
+// h1.firstElementChild.style.color = "white";
+// h1.lastElementChild.style.color = "black";
 
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
 
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
+
+
+const operation = document.querySelector('.operations__content--2');
+const operationButton = document.querySelectorAll('.btn.operations__tab');
+
+// operationButton.forEach((button) => {
+//   button.addEventListener('click', () => {
+    // const mainOperation = document.querySelectorAll('.operations__content');
+    // mainOperation.forEach((element) => {
+    //   element.classList.remove('operations__content--active');
+    // })
+    // const opeartion = document.querySelector(`.operations__content--${button.dataset.tab}`).classList.add('operations__content--active')
+//   })
+// })
+
+operationButton[0].parentElement.addEventListener("click",(e) => {
+  const mainOperation = document.querySelectorAll('.operations__content');
+    mainOperation.forEach((element) => {
+      element.classList.remove('operations__content--active');
+    })
+    document.querySelector(`.operations__content--${e.target.closest('button').dataset.tab}`).classList.add('operations__content--active')
+})
