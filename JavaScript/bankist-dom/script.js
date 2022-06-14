@@ -200,3 +200,15 @@ nav.addEventListener('mouseout', (e) => {
     })
   }
 })
+
+window.addEventListener('scroll', (e) => {
+  const section1 = document.querySelector('#section--1');
+  const top = section1.getBoundingClientRect().top;
+  const nav = document.querySelector('.nav');
+  if(top <= 0) {
+    nav.classList.add('sticky');
+    console.log('working')
+  }else{
+    nav.classList.remove('sticky')
+  }
+})
