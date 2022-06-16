@@ -207,8 +207,61 @@ window.addEventListener('scroll', (e) => {
   const nav = document.querySelector('.nav');
   if(top <= 0) {
     nav.classList.add('sticky');
-    console.log('working')
   }else{
     nav.classList.remove('sticky')
   }
 })
+
+// const observe = new IntersectionObserver((entries,observe) => {
+//   entries.forEach((entry) => {
+//     console.log(entry)
+//   }, {
+//     threshold: 0.1,
+//     root: null
+//   })
+// })
+// observe.observe(section1)
+
+
+const section2 = document.querySelector('#section--2');
+const section3 = document.querySelector('#section--3');
+
+const observe1 = new IntersectionObserver((entries,observe) => {
+    const [entry] = entries;
+    if(entry.isIntersecting) {
+      section1.classList.remove('section--hidden')
+    }
+},{
+  threshold: 0,
+  root: null
+})
+observe1.observe(section1)
+
+
+const observe2 = new IntersectionObserver((entries,observe) => {
+  const [entry] = entries;
+  if(entry.isIntersecting) {
+    section2.classList.remove('section--hidden')
+  }
+}, {
+  root: null,
+  threshold: 0
+})
+
+observe2.observe(section2);
+
+
+const observer3 = new IntersectionObserver((entries,observe) => {
+  const [entry] = entries;
+  if(entry.isIntersecting) {
+    section3.classList.remove('section--hidden');
+  }
+}, {
+  root: null,
+  threshold: 0
+});
+
+observer3.observe(section3)
+
+
+ 
