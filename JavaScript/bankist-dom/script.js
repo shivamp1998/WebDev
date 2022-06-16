@@ -264,13 +264,13 @@ const section3 = document.querySelector('#section--3');
 // observer3.observe(section3)
 
 const allSections  = document.querySelectorAll('.section');
+console.log(allSections)
 const observer = new IntersectionObserver((entries,observer) => {
     const [entry] = entries;
     if(entry.isIntersecting){
       entry.target.classList.remove('section--hidden');
+      observer.unobserve(entry.target)
     }
-    console.log(entry)
-    observer.unobserve(entry.target);
 }, {
   root: null,
   threshold: 0.2
@@ -278,6 +278,29 @@ const observer = new IntersectionObserver((entries,observer) => {
 
 allSections.forEach((section) => {
   observer.observe(section);
+  section.classList.add('section--hidden')
+})
+
+
+const featureImg = document.querySelectorAll('.features__img');
+
+const featureImgObserver = new IntersectionObserver((entries,observe) => {
+  const [entry] = entries;
+  if(entry.isIntersecting) {
+    const mainSource = entry.target.dataset.src;
+    entry.target.setAttribute("src",mainSource);
+    entry.target.classList.remove('lazy-img');
+    observe.unobserve(entry.target)
+  }
+  
+},{
+  threshold: 0.2,
+  root: null
+})
+
+
+featureImg.forEach((img) => {
+  featureImgObserver.observe(img);
 })
 
 
