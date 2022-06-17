@@ -264,7 +264,6 @@ const section3 = document.querySelector('#section--3');
 // observer3.observe(section3)
 
 const allSections  = document.querySelectorAll('.section');
-console.log(allSections)
 const observer = new IntersectionObserver((entries,observer) => {
     const [entry] = entries;
     if(entry.isIntersecting){
@@ -289,13 +288,16 @@ const featureImgObserver = new IntersectionObserver((entries,observe) => {
   if(entry.isIntersecting) {
     const mainSource = entry.target.dataset.src;
     entry.target.setAttribute("src",mainSource);
-    entry.target.classList.remove('lazy-img');
+    entry.target.addEventListener('load', () => {
+      entry.target.classList.remove('lazy-img');
+    })
     observe.unobserve(entry.target)
   }
   
 },{
   threshold: 0.2,
-  root: null
+  root: null,
+  rootMargin: "-200px"
 })
 
 
@@ -304,4 +306,45 @@ featureImg.forEach((img) => {
 })
 
 
- 
+const sliderButtonRight = document.querySelector('.slider__btn--right');
+const slider = document.querySelectorAll('.slide');
+const sliderButtonLeft = document.querySelector('.slider__btn--left');
+
+
+slider.forEach((element,index) => {
+  element.style.transform = `translateX(${index * 100}%)`
+})
+let currSlide = 0;
+sliderButtonRight.addEventListener('click', () => {
+  currSlide++;
+  const slider = document.querySelectorAll('.slide');
+  slider.forEach((element,index) => {
+    element.style.transform = `translateX(${(index-currSlide)*100}%)`;
+  })
+  if(currSlide === 3) {
+    slider.forEach((element,index) => {
+      element.style.transform = `translateX(${index * 100}%)`
+    })
+    currSlide = 0;
+  } 
+})
+sliderButtonLeft.addEventListener('click', () => {
+  currSlide--;
+  const slider = document.querySelectorAll('.slide');
+  slider.forEach((element,index) => {
+    element.style.transform = `translateX(${(index-currSlide)*100}%)`;
+  })
+  if(currSlide <= 0) {
+    slider.forEach((element,index) => {
+      element.style.transform = `translateX(${index * 100}%)`
+    })
+    currSlide = 3;
+  } 
+})
+
+
+sliderButtonLeft.addEventListener('click', () => {
+
+})
+
+
