@@ -373,4 +373,24 @@ document.addEventListener('keydown', (e) => {
 })
 
 
+const dotContainer = document.querySelector('.dots');
 
+slider.forEach((s,i) => {
+  const dotElement = document.createElement('button');
+  dotElement.classList.add('dots__dot');
+  dotElement.setAttribute('data-slide',i);
+  dotContainer.insertAdjacentElement('beforeend',dotElement)
+})
+
+
+dotContainer.addEventListener('click',(e) => {
+  const {slide} = e.target.dataset;
+  slider.forEach((s,i) => {
+    s.style.transform = `translateX(${(i - slide)*100}%)`;
+  })
+  const dots_dot = document.querySelectorAll('.dots__dot');
+  dots_dot.forEach((s,i) => {
+    s.classList.remove('dots__dot--active');
+  })
+  e.target.classList.add('dots__dot--active');
+})
