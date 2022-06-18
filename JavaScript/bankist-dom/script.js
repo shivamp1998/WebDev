@@ -315,36 +315,34 @@ slider.forEach((element,index) => {
   element.style.transform = `translateX(${index * 100}%)`
 })
 let currSlide = 0;
+const maxSlide = slider.length;
 sliderButtonRight.addEventListener('click', () => {
   currSlide++;
   const slider = document.querySelectorAll('.slide');
   slider.forEach((element,index) => {
     element.style.transform = `translateX(${(index-currSlide)*100}%)`;
   })
-  if(currSlide === 3) {
+  if(currSlide === maxSlide) {
     slider.forEach((element,index) => {
       element.style.transform = `translateX(${index * 100}%)`
     })
     currSlide = 0;
   } 
 })
-sliderButtonLeft.addEventListener('click', () => {
-  currSlide--;
+sliderButtonLeft.addEventListener('click', () => {9
   const slider = document.querySelectorAll('.slide');
-  slider.forEach((element,index) => {
-    element.style.transform = `translateX(${(index-currSlide)*100}%)`;
-  })
-  if(currSlide <= 0) {
+  if(currSlide === 0) {
     slider.forEach((element,index) => {
       element.style.transform = `translateX(${index * 100}%)`
     })
     currSlide = 3;
   } 
+    currSlide--;
+  slider.forEach((element,index) => {
+    element.style.transform = `translateX(${(index-currSlide)*100}%)`;
+  })
+  
 })
 
-
-sliderButtonLeft.addEventListener('click', () => {
-
-})
 
 
