@@ -329,7 +329,7 @@ sliderButtonRight.addEventListener('click', () => {
     currSlide = 0;
   } 
 })
-sliderButtonLeft.addEventListener('click', () => {9
+sliderButtonLeft.addEventListener('click', () => {
   const slider = document.querySelectorAll('.slide');
   if(currSlide === 0) {
     slider.forEach((element,index) => {
@@ -342,6 +342,34 @@ sliderButtonLeft.addEventListener('click', () => {9
     element.style.transform = `translateX(${(index-currSlide)*100}%)`;
   })
   
+})
+
+document.addEventListener('keydown', (e) => {
+  const slider = document.querySelectorAll('.slide');
+  if(e.key === 'ArrowRight') {
+    currSlide ++;
+    slider.forEach((s,i) => {
+      s.style.transform = `translateX(${(i - currSlide)*100}%)`
+    })
+    if(currSlide === maxSlide) {
+      slider.forEach((element,index) => {
+        element.style.transform = `translateX(${index * 100}%)`
+      })
+      currSlide = 0;
+    } 
+  }else if(e.key === 'ArrowLeft') {
+    if(currSlide === 0) {
+      slider.forEach((element,index) => {
+        element.style.transform = `translateX(${index * 100}%)`
+      })
+      currSlide = 3;
+    } 
+    currSlide --;
+
+    slider.forEach((s,i) => {
+      s.style.transform = `translateX(${(i - currSlide) * 100}%)`;
+    })
+  }
 })
 
 
