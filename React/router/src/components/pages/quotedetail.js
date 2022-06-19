@@ -4,6 +4,7 @@ import Comments from '../comments/Comments'
 
 const QuoteDetail = () => {
     const id = useParams().quoteId;
+    console.log(id)
     return <Fragment>
         <h1> Quote Detail </h1>
         <p>{id}</p>

@@ -1,9 +1,10 @@
 import { Fragment } from "react"
-
+import QuoteForm from '../quotes/QuoteForm';
 const NewQuote = () => {
-    return <Fragment>
-        <h1> New quote </h1>
-    </Fragment>
+    const onAddQuote = (data) => {
+        console.log(data.author, data.text)
+    }
+    return <QuoteForm onAddQuote={onAddQuote}/>
 }
 
 export default NewQuote;

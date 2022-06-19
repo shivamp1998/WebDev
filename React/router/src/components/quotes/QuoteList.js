@@ -4,6 +4,7 @@ import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
 
 const QuoteList = (props) => {
+  console.log(props.quote)
   return (
     <Fragment>
       <ul className={classes.list}>

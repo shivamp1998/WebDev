@@ -394,3 +394,21 @@ dotContainer.addEventListener('click',(e) => {
   })
   e.target.classList.add('dots__dot--active');
 })
+
+
+//DOM lifecycle events 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Dom content is loaded');
+})
+
+
+window.addEventListener('load', () => {
+  console.log(' Full content Loaded');
+})
+
+// window.addEventListener('beforeunload', (e) => {
+//   // e.preventDefault();
+//   e.returnValue = '';
+// })
