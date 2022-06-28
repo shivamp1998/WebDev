@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 const ExpenseFilter = (props) => {
     const onDropdownChange = (event) => {
-        props.onFilterChange(event.target.value)
+        props.onFilterChange(event.target.value);
+        
     }
     return (
         <div>

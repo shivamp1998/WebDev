@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import ExpenseItem from './components/ExpenseItem';
 import NewExpense from './components/newExpense/newExpense';
 import ExpenseFilter from './components/newExpense/expenseFilter';
@@ -47,6 +47,13 @@ function App() {
     setSelectedYear(data);
   }
   const [selectedYear,setSelectedYear] = useState('');
+  const [name,setName] = useState('');
+  useEffect(() => {
+    
+  },[name])
+  const onDataChange = (e) => {
+    setName(e.target.value)
+  }
 
   return (
     <div className="App">
@@ -55,6 +62,8 @@ function App() {
         data => <ExpenseItem title={data.title} amount={data.amount} date={data.date}/>
       )}
       <NewExpense onExpenseItem={onExpenseItemAdd}/>
+      <input type="text" onChange={(e) => onDataChange(e)}/>
+      <h1> {name} </h1>
     </div>
   );
 }
