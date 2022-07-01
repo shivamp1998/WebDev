@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import ExpenseItem from './components/ExpenseItem';
 import NewExpense from './components/newExpense/newExpense';
 import ExpenseFilter from './components/newExpense/expenseFilter';
+import Form from './components/Form';
 function App() {
   const dummyexpenses = [
     {
@@ -57,13 +58,15 @@ function App() {
 
   return (
     <div className="App">
-      <ExpenseFilter onFilterChange={handleExpenseFilter}/>
+      {/* <ExpenseFilter onFilterChange={handleExpenseFilter}/>
       {expenses.filter(data=> data.date.getFullYear().toString() === selectedYear).map(
         data => <ExpenseItem title={data.title} amount={data.amount} date={data.date}/>
       )}
       <NewExpense onExpenseItem={onExpenseItemAdd}/>
       <input type="text" onChange={(e) => onDataChange(e)}/>
-      <h1> {name} </h1>
+      <h1> {name} </h1> */}
+
+      <Form/>
     </div>
   );
 }
