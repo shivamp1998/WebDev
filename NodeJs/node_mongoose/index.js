@@ -36,3 +36,7 @@ connect.then((db)=> {
     console.log(err);
   })
 });
+
+
+//await async
+const newFunction = await 

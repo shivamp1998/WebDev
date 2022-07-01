@@ -5,6 +5,8 @@ const dboper = require('./operations');
 const url = 'mongodb://localhost:27017/';
 const dbname = 'conFusion';
 
+//mongodb, nodejs, express....cookies, session, jwt, 
+
 MongoClient.connect(url).then((client) => {
 
     console.log('Connected correctly to server');
