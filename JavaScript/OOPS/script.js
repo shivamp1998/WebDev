@@ -70,6 +70,9 @@ class Person {
     get fullname() {
         return this._fullname
     }
+    static hey() {
+        console.log('shivm')
+    }
 }
 
 const shivam = new Person('shivam',2002);
@@ -79,4 +82,20 @@ Person.prototype.greet = function() {
     console.log('hello', this.firstName)
 }
 
+
+Person.hey()
 shivam.greet()
+
+
+const PersonProto = {
+    calcAge() {
+        console.log(2034 - this.birthYear);
+    }
+}
+
+const steven = Object.create(PersonProto);
+steven.name = 'Steven';
+steven.birthYear = 2022;
+
+steven.calcAge();
+console.log(steven);
