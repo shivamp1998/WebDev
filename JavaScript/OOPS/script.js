@@ -1,16 +1,14 @@
 'use strict';
 
-// const Person = function(firstName,birthYear) {
-//     this.firstName = firstName;
-//     this.birthYear = birthYear;
+const Person = function(firstName,birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
     
-// }
+}
 
-// const shivam = new Person('shivam','1989');
-// const priyam = new Person('priyam',2003);
-// Person.prototype.calAge = function() {
-//     console.log(2037 - this.birthYear);
-// }
+Person.prototype.calAge = function() {
+    console.log(2037 - this.birthYear);
+}
 
 // shivam.calAge()
 // priyam.calAge()
@@ -52,28 +50,28 @@
 
 // console.log(bmw.speed)
 
-class Person {
-    constructor (firstName,age) {
-        this.firstName = firstName;
-        this.age = age;
-    }
-    calcAge() {
-        console.log(2037 - this.age);
-    }
-    set fullname(name) {
-        if(name.includes(' ')){
-            this._fullname = name;
-        }else {
-            alert('Please Enter Full name');
-        }
-    }
-    get fullname() {
-        return this._fullname
-    }
-    static hey() {
-        console.log('shivm')
-    }
-}
+// class Person {
+//     constructor (firstName,age) {
+//         this.firstName = firstName;
+//         this.age = age;
+//     }
+//     calcAge() {
+//         console.log(2037 - this.age);
+//     }
+//     set fullname(name) {
+//         if(name.includes(' ')){
+//             this._fullname = name;
+//         }else {
+//             alert('Please Enter Full name');
+//         }
+//     }
+//     get fullname() {
+//         return this._fullname
+//     }
+//     static hey() {
+//         console.log('shivm')
+//     }
+// }
 
 const shivam = new Person('shivam',2002);
 shivam.fullname = 'shivam Pandey'
@@ -83,7 +81,6 @@ Person.prototype.greet = function() {
 }
 
 
-Person.hey()
 shivam.greet()
 
 
@@ -131,3 +128,17 @@ console.log(audi);
 console.log(audi.speedUS);
 audi.speedUS = 111;
 console.log(audi.speed)
+
+
+const Student = function(firstName,birthYear,course) {
+    Person.call(this,firstName,birthYear);
+    this.course = course;
+}
+Student.prototype = Object.create(Person.prototype)
+Student.prototype.introduce = function() {
+    console.log(`hey this is ${this.firstName} and Birth Year is ${this.birthYear}`);
+}
+const priyam = new Student('shivam',1998,'computerScience');
+priyam.introduce();
+priyam.calAge();
+console.log(priyam)
