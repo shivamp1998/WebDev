@@ -99,3 +99,35 @@ steven.birthYear = 2022;
 
 steven.calcAge();
 console.log(steven);
+
+
+
+
+
+class Newcar {
+    constructor(make,speed) {
+        this.make = make;
+        this.speed = speed;
+    }
+    acclerate() {
+        this.speed += 10;
+        console.log(this.speed);
+    }
+    break() {
+        this.speed -= 10;
+        console.log(this.speed);
+    }
+    get speedUS() {
+        return this.speed / 1.6;
+    }
+    set speedUS(speed) {
+        this.speed = speed * 1.6;
+    }
+}
+
+const audi = new Newcar('ford',120);
+audi.break();
+console.log(audi);
+console.log(audi.speedUS);
+audi.speedUS = 111;
+console.log(audi.speed)
