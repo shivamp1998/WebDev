@@ -1,3 +1,4 @@
+
 'use strict';
 
 const btn = document.querySelector('.btn-country');
@@ -33,4 +34,16 @@ const getCountry = function (country) {
 }
 
 getCountry('india');
-getCountry('Britain')
+getCountry('Britain');
+
+
+const whereAmI = (lat,long) => {
+    fetch(`https://geocode.xyz/${long},${lat}?geoit=json`)
+    .then((response) => {
+        return response.json();
+    }).then((data) => {
+        console.log(data);
+    })
+}
+
+whereAmI(111.1,22.1)
