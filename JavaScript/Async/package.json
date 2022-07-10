@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
-  "type":"module",
+  "type": "module",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "cors": "^2.8.5"
   },
   "devDependencies": {},
   "scripts": {
