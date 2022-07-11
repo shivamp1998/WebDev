@@ -59,4 +59,16 @@
 
 // console.log('Test End!');
 
+// navigator.geolocation.getCurrentPosition((position) => console.log(position), err => console.log(err));
 
+
+// const getLocation = () => {
+//     return new Promise((resolve,reject) => {
+//         navigator.geolocation.getCurrentPosition((pos) => resolve(pos), err => reject(err));
+//     })
+// }
+
+
+// getLocation().then((response) => {
+//     console.log('Resposne is ', response);
+// })
