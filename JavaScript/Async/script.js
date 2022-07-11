@@ -72,3 +72,17 @@
 // getLocation().then((response) => {
 //     console.log('Resposne is ', response);
 // })
+
+const images = document.querySelector('.images')
+const img = document.createElement('img');
+const imgArray = ['./img/img-1.jpg','./img/img-2.jpg','./img/img-3.jpg']
+const addImage = images.insertAdjacentElement('beforebegin',img);
+const loadImages = function(imgArray) {
+    return new Promise((resolve,reject) => {
+        setTimeout(resolve, seconds) 
+    })
+}
+loadImages(imgArray).then((data) => {
+    console.log(data)
+    addImage.src = `${data}`
+})
