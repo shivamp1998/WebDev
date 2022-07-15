@@ -73,16 +73,31 @@
 //     console.log('Resposne is ', response);
 // })
 
-const images = document.querySelector('.images')
-const img = document.createElement('img');
-const imgArray = ['./img/img-1.jpg','./img/img-2.jpg','./img/img-3.jpg']
-const addImage = images.insertAdjacentElement('beforebegin',img);
-const loadImages = function(imgArray) {
-    return new Promise((resolve,reject) => {
-        setTimeout(resolve, seconds) 
-    })
+// const images = document.querySelector('.images')
+// const img = document.createElement('img');
+// const imgArray = ['./img/img-1.jpg','./img/img-2.jpg','./img/img-3.jpg']
+// const addImage = images.insertAdjacentElement('beforebegin',img);
+// const loadImages = function(imgArray) {
+//     return new Promise((resolve,reject) => {
+//         setTimeout(resolve, seconds) 
+//     })
+// }
+// loadImages(imgArray).then((data) => {
+//     console.log(data)
+//     addImage.src = `${data}`
+// })
+
+
+const get3Countries = async function(c1,c2,c3) {
+    try {
+        const data1 = await (await fetch(`https://restcountries.com/v2/name/${c1}`)).json();
+        const data2 = await (await fetch(`https://restcountries.com/v2/name/${c2}`)).json();
+        const data3 = await (await fetch(`https://restcountries.com/v2/name/${c3}`)).json();
+        console.log(data1.capital,data2.capital,data3.capital);
+
+    }catch(err) {
+        console.error(err);
+    }
 }
-loadImages(imgArray).then((data) => {
-    console.log(data)
-    addImage.src = `${data}`
-})
+
+get3Countries('portugal','canada','tanzania');
