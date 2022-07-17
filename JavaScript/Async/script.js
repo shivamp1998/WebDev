@@ -88,16 +88,24 @@
 // })
 
 
-const get3Countries = async function(c1,c2,c3) {
-    try {
-        const data1 = await (await fetch(`https://restcountries.com/v2/name/${c1}`)).json();
-        const data2 = await (await fetch(`https://restcountries.com/v2/name/${c2}`)).json();
-        const data3 = await (await fetch(`https://restcountries.com/v2/name/${c3}`)).json();
-        console.log(data1.capital,data2.capital,data3.capital);
+// const get3Countries = async function(c1,c2,c3) {
+//     try {
+//         const data1 = await (await fetch(`https://restcountries.com/v2/name/${c1}`)).json();
+//         const data2 = await (await fetch(`https://restcountries.com/v2/name/${c2}`)).json();
+//         const data3 = await (await fetch(`https://restcountries.com/v2/name/${c3}`)).json();
+//         console.log(data1.capital,data2.capital,data3.capital);
 
-    }catch(err) {
-        console.error(err);
-    }
+//     }catch(err) {
+//         console.error(err);
+//     }
+// }
+
+// get3Countries('portugal','canada','tanzania');
+
+
+const loadAll = async (imgsArr) => {
+    const imgPro = imgsArr.map(async (img) => await createImage(img));
+    const imgEl  = await Promise.all(imgPro);
+    console.log(imgEl);
 }
 
-get3Countries('portugal','canada','tanzania');
