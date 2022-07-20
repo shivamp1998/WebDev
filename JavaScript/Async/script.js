@@ -103,9 +103,11 @@
 // get3Countries('portugal','canada','tanzania');
 
 
-const loadAll = async (imgsArr) => {
-    const imgPro = imgsArr.map(async (img) => await createImage(img));
-    const imgEl  = await Promise.all(imgPro);
-    console.log(imgEl);
-}
+// const loadAll = async (imgsArr) => {
+//     const imgPro = imgsArr.map(async (img) => await createImage(img));
+//     const imgEl  = await Promise.all(imgPro);
+//     console.log(imgEl);
+// }
 
+
+loadAll();
