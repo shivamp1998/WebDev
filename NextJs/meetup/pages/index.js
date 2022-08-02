@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import Layout from '../components/layout/Layout';
 import MeetupList from '../components/meetups/MeetupList';
 
 const DUMMY_LIST = [
@@ -20,9 +19,9 @@ const DUMMY_LIST = [
 ]
 const Home = () => {
     return <Fragment>
-        <Layout>
+
             <MeetupList meetups={DUMMY_LIST}/>
-        </Layout>
+
     </Fragment>
 }
 
