@@ -17,12 +17,27 @@ const DUMMY_LIST = [
         description: "let's meet up for the another time"
     }
 ]
-const Home = () => {
+const Home = (props) => {
     return <Fragment>
-
-            <MeetupList meetups={DUMMY_LIST}/>
-
+            <MeetupList meetups={props.meetups}/>
     </Fragment>
 }
+export async function getStaticProps() {
+    return {
+        props: {
+            meetups: DUMMY_LIST
+        },
+        revalidate: 1
+    }
+}
 
+// export async function getServerSideProps(context) {
+//     const req = context.req;
+//     const res = context.res;
+//     return {
+//         props: {
+//             meetups: DUMMY_LIST
+//         }
+//     }
+// }
 export default Home;
