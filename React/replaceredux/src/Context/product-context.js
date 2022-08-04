@@ -26,7 +26,8 @@ export const ProductsContext = createContext({
           description: 'Street style! An orange hat.',
           isFavorite: false
         }
-      ]
+      ],
+      toggleFavourite: (id) => {}
 })
 
 
@@ -57,8 +58,24 @@ export default props => {
           isFavorite: false
         }
       ]);
+
+      const toggleFavourite = (productId) => {
+        setProductsList(prev => { 
+          const prodIndex = prev.findIndex(
+            p => p.id === productId
+          );
+          console.log('not working',prodIndex, prev)
+          const newFavStatus = !prev[prodIndex].isFavorite;
+          const updatedProducts = [...prev];
+          updatedProducts[prodIndex] = {
+            ...prev[prodIndex],
+            isFavorite: newFavStatus
+          };
+          return updatedProducts
+        })
+      }
     return (
-        <ProductsContext.Provider value={{products: productsList}}>
+        <ProductsContext.Provider value={{products: productsList, toggleFavourite: toggleFavourite}}>
             {props.children}
         </ProductsContext.Provider>
     )
