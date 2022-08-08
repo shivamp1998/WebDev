@@ -1,0 +1,1 @@
+{"ast":null,"code":"var News = function News() {};\n\n_c = News;\n\nvar _c;\n\n$RefreshReg$(_c, \"News\");","map":{"version":3,"sources":["C:/Users/ASUS/Desktop/git/WebDev/NextJs/NextApp/pages/news.js"],"names":["News"],"mappings":"AAAA,IAAMA,IAAI,GAAG,SAAPA,IAAO,GAAM,CAElB,CAFD;;KAAMA,I","sourcesContent":["const News = () => {\r\n    \r\n}"]},"metadata":{},"sourceType":"script"}
