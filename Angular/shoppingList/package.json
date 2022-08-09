@@ -25,6 +25,7 @@
     "express": "^4.17.3",
     "firebase": "^9.6.8",
     "nodemon": "^2.0.19",
+    "parcel": "^2.7.0",
     "react-facebook-login": "^4.1.1",
     "rxjs": "^6.6.3",
     "rxjs-compat": "^6.0.0",
