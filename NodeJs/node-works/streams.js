@@ -7,17 +7,21 @@ server.on('request', (req,res) => {
     // })
 
 
+    // const readable = fs.createReadStream('test-file.txt');
+    // readable.on('data', chunk => {
+    //     res.write(chunk);
+    // })
+    // readable.on('end', () => {
+    //     res.end();
+    // })
+    // readable.on('error', () => {
+    //     res.statusCode(500);
+    //     res.end('File Not found')
+    // })
+
     const readable = fs.createReadStream('test-file.txt');
-    readable.on('data', chunk => {
-        res.write(chunk);
-    })
-    readable.on('end', () => {
-        res.end();
-    })
-    readable.on('error', () => {
-        res.statusCode(500);
-        res.end('File Not found')
-    })
+    readable.pipe(res);
+    
      
 })
 
