@@ -20,7 +20,7 @@ const replaceTemplate = (temp,product) => {
     return output;
 }
 const server = http.createServer((req,res) => {
-    const pathname = req.url;
+    const {pathname,query} = url.parse(req.url, true);
     if(pathname === '/' || pathname === '/overview') {
         res.writeHead(200, {
             'Content-Type' : 'text/html'
@@ -29,7 +29,13 @@ const server = http.createServer((req,res) => {
         const newtempOverview = tempOverview.replace(/{%OVERVIEW%}/g, cardHTML)
         res.end(newtempOverview);
     }else if(pathname === '/product') {
-        res.end('This is product');
+        console.log(query.id)
+        const product = dataObj.find((product) => product.id == query.id );
+        const output = replaceTemplate(tempProduct,product);
+        res.writeHead(200, {
+            'Content-Type' : 'text/html'
+        })
+        res.end(output)
     }else if (pathname === '/api') {
         res.writeHead(200, {
             'Content-Type' : 'application/json'
@@ -45,6 +51,6 @@ const server = http.createServer((req,res) => {
 });
 
 
-server.listen(3000,() => {
+server.listen(3001,() => {
     console.log(`Server Running on PORT 3000`)
 }) 
