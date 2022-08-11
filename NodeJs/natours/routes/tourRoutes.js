@@ -1,22 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const tourController = require('../controllers/tourController')
 
-const getAllTours = (req, res) => {
-  res.status(200).send({ status: 'success' });
-};
-const createTour = (req, res) => {
-  res.status(200).send({ status: 'success' });
-};
-const getTour = (req, res) => {
-  res.status(200).send({ status: 'success' });
-};
-const updateTour = (req, res) => {
-  res.status(200).send({ status: 'success' });
-};
-const deleteTour = (req, res) => {
-  res.status(200).send({ status: 'success' });
-};
-router.route('/').get(getAllTours).post(createTour);
-router.route('/:id').get(getTour).post(updateTour).delete(deleteTour);
+
+router.route('/').get(tourController.getAllTours).post(tourController.createTour);
+router.route('/:id').get(tourController.getTour).post(tourController.updateTour).delete(tourController.deleteTour);
 
 module.exports = router;

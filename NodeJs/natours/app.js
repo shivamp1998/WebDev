@@ -11,7 +11,4 @@ app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/tours',tourRoutes)
 
 
-
-app.listen(3001, () => {
-  console.log('Server Started on port 3001');
-});
+module.exports = app;
