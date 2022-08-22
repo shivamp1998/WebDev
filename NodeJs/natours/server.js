@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const app = require('./app');
 const mongoose = require('mongoose');
 dotenv.config({path: './config.env'})
-const toursModel = require('./models/tours');
+const toursModel = require('./models/tourModel');
 
 
 mongoose.connect(process.env.MONGO_URL,{useNewUrlParser: true,useUnifiedTopology: true})

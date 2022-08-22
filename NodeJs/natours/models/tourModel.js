@@ -3,6 +3,7 @@ const { model, Schema }  = require('mongoose')
 const toursSchema = new Schema({
     name: {
         type: String,
+        unique: true
     },
     rating: {
         type: Number,
