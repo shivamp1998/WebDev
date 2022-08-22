@@ -3,8 +3,17 @@ const Tour = require('../models/tourModel')
 exports.getAllTours = (req, res) => { 
   res.status(200).send({ status: 'success' });
 };
-exports.createTour = (req, res) => {
-  res.status(200).send({ status: 'success' });
+exports.createTour = async (req, res) => {
+  try {
+    const newTour = await Tour.create({
+      ...req.body
+    })
+    res.status(201).json({ status: 'success' ,data:{
+      newTour
+    }});
+  }catch(err)  {
+    console.log(err);
+  }
 };
 exports.getTour = (req, res) => {
   res.status(200).send({ status: 'success' });
