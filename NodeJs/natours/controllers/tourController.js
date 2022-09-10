@@ -16,6 +16,7 @@ exports.createTour = async (req, res) => {
     });
   } catch (err) {
     console.log(err);
+    res.send({success: false, message: err.message})
   }
 };
 exports.getAllTours = async (req, res) => {
