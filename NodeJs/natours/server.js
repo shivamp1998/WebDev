@@ -10,15 +10,6 @@ mongoose.connect(process.env.MONGO_URL,{useNewUrlParser: true,useUnifiedTopology
     console.log('Connection established! ',process.env.MONGO_URL);
 })
 
-const saveTour = async () => {
-    const toursData = await new toursModel({
-        name: 'new Tour',
-        price: 299,
-        rating: 2.5
-    }).save();
-}
-
-saveTour();
 
 
 
