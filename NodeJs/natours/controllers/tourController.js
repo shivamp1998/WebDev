@@ -16,7 +16,7 @@ exports.createTour = async (req, res) => {
     });
   } catch (err) {
     console.log(err);
-    res.send({success: false, message: err.message})
+    res.send({ success: false, message: err.message });
   }
 };
 exports.getAllTours = async (req, res) => {
@@ -29,21 +29,34 @@ exports.getAllTours = async (req, res) => {
     res.status(400).json({ message: 'Some Error occurred' });
   }
 };
-exports.getTour = async (req,res) => {
+exports.getTour = async (req, res) => {
   try {
     const id = req.params.id;
     const tour = await Tour.findById(id);
-    res.status(200).json({message: 'tour',data: tour})
+    res.status(200).json({ message: 'tour', data: tour });
   } catch (err) {
     console.log(err);
-    res.status(400).json({message: 'wrong id'})
+    res.status(400).json({ message: 'wrong id' });
   }
-}
-exports.updateTour = (req, res) => {
-  res.status(200).send({ status: 'success' });
 };
-exports.deleteTour = (req, res) => {
-  res.status(200).send({ status: 'success' });
+exports.updateTour = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const updatedTour = await Tour.findByIdAndUpdate(id, req.body, { new: true, runValidators: true });
+    res.status(200).send({ status: 'success', data: updatedTour });
+  } catch (err) {
+    console.log(err);
+    return res.status(400).send({ message: err.message });
+  }
+};
+exports.deleteTour = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await Tour.findByIdAndDelete(id)
+    res.status(200).send({ status: 'success' });
+  } catch (err) {
+    return res.status(400).send({ message: err.message });
+  }
 };
 
 exports.checkBody = (req, res, next) => {
