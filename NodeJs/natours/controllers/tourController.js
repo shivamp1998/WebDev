@@ -29,11 +29,6 @@ exports.getAllTours = async (req, res) => {
     console.log(JSON.parse(queryString))
     queryString = JSON.parse(queryString);
     
-    if(headers) {
-      headers['user-id'] = req.header('userid');
-      headers['Authorization'] = req.header('controltoken');
-      settings["headers"] = headers;
-    }
     //querying
     let query = Tour.find(queryObj);
     
@@ -46,14 +41,20 @@ exports.getAllTours = async (req, res) => {
     //pagination
     const page = req.query.page;
     const limit = req.query.limit;
+    const skip = (page - 1) * limit;
     query = query.skip((page - 1)*limit).limit(limit);
-
+    if(req.query.page) {
+      const count = await query.countDocuments();
+      if(skip >= count) {
+        throw new Error("No more documents to show")
+      } 
+    }
     //executing query
     const tour = await query;
     res.status(200).send({ status: 'success', data: tour });
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: 'Some Error occurred' });
+    res.status(400).json({ message: err.message });
   }
 };
 exports.getTour = async (req, res) => {
