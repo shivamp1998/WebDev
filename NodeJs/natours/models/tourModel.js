@@ -6,17 +6,18 @@ const toursSchema = new Schema({
         required: [true, 'A tour must have name'],
         unique: true
     },
-    rating: {
-        type: Number,
-        default: 1
+    difficulty: {
+        type: String,
+        required: [true, 'Difficulty is required'],
+        enum: ['easy', 'medium', 'difficult']
     },
     duration: {
         type: Number, 
         required: [true, 'A tour must have a duration']
     },
-    ratingAverage: {
+    ratingsAverage: {
         type: Number,
-        default: 0
+        default: 0.0
     },
     ratingsQuantity: {
         type: Number,

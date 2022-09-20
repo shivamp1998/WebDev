@@ -1,17 +1,45 @@
 const Tour = require('../models/tourModel');
-
-exports.getAllTours = (req, res) => {
+// const fs = require('fs');
+// const file = fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`);
+// const data = JSON.parse(file);
+// const fun   = async () => {
+//   Tour.create(data)
+// }
+// fun();
+exports.getAllTours =  (req, res) => {
   res.status(200).send({ status: 'success' });
 };
 
 exports.topTours = async (req,res,next) => {
-  try {
     req.query.sort = 'price,ratingAverage';
     next();
-  }catch(err) {
-
+}
+exports.getTourStats = async (req,res) => {
+  try {
+      const tourStats = await Tour.aggregate([
+        {
+          $match : {
+            ratingsAverage: {
+              $gt: 2.0
+            }
+          }
+        },
+        {
+          $group: {
+            _id: '$difficulty',
+            averageRatings: { $avg : '$ratingsAverage'},
+            maxPrice: { $max : '$price'},
+            minPrice: { $min : '$price'}
+          }
+        }
+      ])
+      return res.status(200).send({length: tourStats.length,data: tourStats})
+  }catch (err) {
+    console.log(err);
+    return res.status(400).send({message: err.message})
   }
 }
+
 exports.createTour = async (req, res) => {
   try {
     const newTour = await Tour.create({
