@@ -6,9 +6,30 @@ const Tour = require('../models/tourModel');
 //   Tour.create(data)
 // }
 // fun();
-exports.getAllTours =  (req, res) => {
-  res.status(200).send({ status: 'success' });
-};
+
+
+exports.getToursByMonth = async (req,res) => {
+  try {
+    const year = req.query.year * 1;
+    const tourMonth = await Tour.aggregate([
+      {
+        $unwind: '$startDates'
+      },
+      {
+        $match: {
+          startDates: {
+            $gte: new Date(`${year}-01-01`),
+            $lt: new Date(`${year}-12-31`)
+          }
+        }
+      }
+    ]);
+    return res.status(200).send({data: tourMonth})
+  }catch(err) {
+    console.log(err);
+    return res.status(400).send({message: err.message})
+  }
+}
 
 exports.topTours = async (req,res,next) => {
     req.query.sort = 'price,ratingAverage';
