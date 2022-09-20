@@ -3,6 +3,15 @@ const Tour = require('../models/tourModel');
 exports.getAllTours = (req, res) => {
   res.status(200).send({ status: 'success' });
 };
+
+exports.topTours = async (req,res,next) => {
+  try {
+    req.query.sort = 'price,ratingAverage';
+    next();
+  }catch(err) {
+
+  }
+}
 exports.createTour = async (req, res) => {
   try {
     const newTour = await Tour.create({
