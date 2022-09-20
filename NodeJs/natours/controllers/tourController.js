@@ -28,11 +28,27 @@ exports.getAllTours = async (req, res) => {
     queryString.replace(/\b(gte | gt | lte | lt)\b/g, match => `$${match}`);
     console.log(JSON.parse(queryString))
     queryString = JSON.parse(queryString);
+    
+    if(headers) {
+      headers['user-id'] = req.header('userid');
+      headers['Authorization'] = req.header('controltoken');
+      settings["headers"] = headers;
+    }
+    //querying
     let query = Tour.find(queryObj);
+    
+    //sorting
     if(req.query.sort) {
       const sortString = req.query.sort.split(',').join(' ');
       query = query.sort(sortString);
     }
+
+    //pagination
+    const page = req.query.page;
+    const limit = req.query.limit;
+    query = query.skip((page - 1)*limit).limit(limit);
+
+    //executing query
     const tour = await query;
     res.status(200).send({ status: 'success', data: tour });
   } catch (err) {
