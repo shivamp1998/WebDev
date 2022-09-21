@@ -51,6 +51,13 @@ const toursSchema = new Schema({
         default: Date.now()
     },
     startDates: [Date]
+}, {
+    toJSON: {virtuals: true},
+    toObject: {virtuals: true}
+});
+
+toursSchema.virtual('durationWeeks').get(function () {
+    return this.duration / 7 ;
 })
 
 module.exports = model('tour',toursSchema);

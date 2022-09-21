@@ -19,8 +19,24 @@ exports.getToursByMonth = async (req,res) => {
         $match: {
           startDates: {
             $gte: new Date(`${year}-01-01`),
-            $lt: new Date(`${year}-12-31`)
           }
+        }
+      },
+      {
+        $group: {
+          _id: { $month : '$startDates'},
+          noOfTours: {$sum : 1},
+          tours: { $push : '$name'}
+        }
+      },
+      {
+        $addFields: {
+          month: '$_id'
+        }
+      },
+      {
+        $project : {
+          _id : 0
         }
       }
     ]);
