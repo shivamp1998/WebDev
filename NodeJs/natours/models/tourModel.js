@@ -1,5 +1,5 @@
 const { model, Schema }  = require('mongoose')
-
+const slugify = require('slugify');
 const toursSchema = new Schema({
     name: {
         type: String,
@@ -58,6 +58,11 @@ const toursSchema = new Schema({
 
 toursSchema.virtual('durationWeeks').get(function () {
     return this.duration / 7 ;
+})
+
+toursSchema.pre('save', function() {
+    this.slug = slugify(this.name, {lower: true});
+    next();
 })
 
 module.exports = model('tour',toursSchema);
