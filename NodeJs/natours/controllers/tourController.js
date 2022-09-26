@@ -70,6 +70,7 @@ exports.getTourStats = async (req,res) => {
           }
         }
       ])
+      console.log('working')
       return res.status(200).send({length: tourStats.length,data: tourStats})
   }catch (err) {
     console.log(err);
