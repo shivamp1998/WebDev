@@ -136,6 +136,9 @@ exports.getTour = async (req, res) => {
   try {
     const id = req.params.id;
     const tour = await Tour.findById(id);
+    if(!tour) {
+      res.status(400).send({message: 'No tour Found with this Id'});
+    }
     res.status(200).json({ message: 'tour', data: tour });
   } catch (err) {
     console.log(err);
@@ -155,10 +158,13 @@ exports.updateTour = async (req, res) => {
 exports.deleteTour = async (req, res) => {
   try {
     const id = req.params.id;
-    await Tour.findByIdAndDelete(id)
+    const tour  = await Tour.findByIdAndDelete(id);
+    if(!tour) {
+      throw new Error({message: "No Tour Found", statusCode: 404})
+    }
     res.status(200).send({ status: 'success' });
   } catch (err) {
-    return res.status(400).send({ message: err.message });
+    return res.status(404).send({ message: err.message });
   }
 };
 
