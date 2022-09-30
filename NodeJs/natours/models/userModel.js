@@ -1,4 +1,5 @@
 const { Schema, Model, model }  = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 
 const userSchema = new Schema({
@@ -28,9 +29,22 @@ const userSchema = new Schema({
     confirmPassword : {
         type: String,
         required: [true,'Confirm password is required'],
-        minlength: 8
+        minlength: 8,
+        validate: {
+            validator: (value) => {
+                return value === this.password;
+            },
+            message: 'Confirm password and Password do not match'
+        }
     },
     photo: String
+})
+
+userSchema.pre('save', function(next){
+    if(this.isModified('password')) return next();
+    bcrypt.genSalt(10, function(err,salt){
+        
+    })
 })
 
 const userModel = model('user',userSchema)
