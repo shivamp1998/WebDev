@@ -40,12 +40,10 @@ const userSchema = new Schema({
     photo: String
 })
 
-userSchema.pre('save', function(next){
+userSchema.pre('save', async function (next){
     if(this.isModified('password')) return next();
-    bcrypt.genSalt(10, function(err,salt){
-        
-    })
+    this.password = await bcrypt.hash(this.password, 12);
+    this.confirmPassword = undefined;
 })
-
-const userModel = model('user',userSchema)
-module.exports =  userModel;
+const userModel = model('user',userSchema);
+module.exports = userModel;
