@@ -35,3 +35,18 @@ exports.login = async (req,res,next) => {
         return res.status(401).send({message: 'unauthorized'})
     }
 }
+
+exports.protect = (req,res,next) => {
+    try {
+        const token = req.headers.token;
+        if(!token) {
+            throw new Error('please enter token in headers');
+        }
+        const jwtData = jwt.verify(token, process.env.SECRET);
+        next();
+
+    }catch(err) {
+        console.log(err);
+        next(err);
+    }
+}
