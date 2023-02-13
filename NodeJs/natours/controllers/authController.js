@@ -27,7 +27,7 @@ exports.login = async (req,res,next) => {
     }
     const check = await bcrypt.compare(password, user.password)
     if(check) {
-        const token = await jwt.sign({userId: user._id}, process.env.SECRET, {
+        const token = jwt.sign({userId: user._id}, process.env.SECRET, {
             expirseIn: "7d"
         })
         return res.status(200).send({token: token})
@@ -36,15 +36,21 @@ exports.login = async (req,res,next) => {
     }
 }
 
-exports.protect = (req,res,next) => {
+exports.protect = async (req,res,next) => {
     try {
         const token = req.headers.token;
         if(!token) {
             throw new Error('please enter token in headers');
         }
         const jwtData = jwt.verify(token, process.env.SECRET);
+        const user = await User.findOneById(jwtData.userId);
+        if(!user) {
+            throw new Error('User does not exists');
+        }
+        if(!jwtData) {
+            throw new Error('token expired!');
+        }
         next();
-
     }catch(err) {
         console.log(err);
         next(err);
