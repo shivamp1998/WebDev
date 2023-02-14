@@ -43,7 +43,7 @@ exports.protect = async (req,res,next) => {
             throw new Error('please enter token in headers');
         }
         const jwtData = jwt.verify(token, process.env.SECRET);
-        const user = await User.findOneById(jwtData.userId);
+        const user = await User.findOneById(jwtData.userId); 
         if(!user) {
             throw new Error('User does not exists');
         }
@@ -55,4 +55,26 @@ exports.protect = async (req,res,next) => {
         console.log(err);
         next(err);
     }
+}
+
+exports.restrictTo = (...roles) => {
+    return (req,res,next) => {
+        if(!roles.includes(req.user.role)) {
+            next(new AppError('permission does not exists'));
+        }
+        next();
+    }
+}
+
+exports.forgotPassword = async(req,res,next) => {
+    try {
+        const user = await User.findOne({email: req.body.email});
+         
+    }catch(err) {
+        next(err);
+    }
+}
+
+exports.resetPasswored = async(req,res,next) => {
+    
 }

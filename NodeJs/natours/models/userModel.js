@@ -26,6 +26,11 @@ const userSchema = new Schema({
         required: [true, 'Password is required'],
         minlength: 8
     },
+    role: {
+        type: String,
+        enum: ['admin','user','guide','lead-guide'],
+        default: 'user'
+    },
     confirmPassword : {
         type: String,
         required: [true,'Confirm password is required'],
