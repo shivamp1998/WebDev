@@ -135,7 +135,8 @@ exports.getAllTours = async (req, res) => {
 exports.getTour = async (req, res) => {
   try {
     const id = req.params.id;
-    const tour = await Tour.findById(id);
+    // const tour = await Tour.findById(id);
+    const tour = await Tour.findById(req.params.id).populate('guides');
     if(!tour) {
       res.status(400).send({message: 'No tour Found with this Id'});
     }
