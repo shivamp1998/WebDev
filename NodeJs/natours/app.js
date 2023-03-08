@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const userRoutes = require('./routes/userRoutes');
 const tourRoutes = require('./routes/tourRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
 const app = express();
 
 const limiter = rateLimit({
@@ -18,6 +19,7 @@ app.use(morgan('dev'))
 app.use(express.static('public'))
 app.use(express.json());
 app.use('/api/v1/users', userRoutes);
-app.use('/api/v1/tours',tourRoutes)
+app.use('/api/v1/tours',tourRoutes);
+app.use('/api/v1/review',reviewRoutes)
 
 module.exports = app;

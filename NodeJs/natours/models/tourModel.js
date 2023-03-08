@@ -98,4 +98,12 @@ toursSchema.pre('save', function() {
     next();
 })
 
+toursSchema.pre(/^find/, function() {
+    this.populate({
+        path: 'guides',
+        select: '-__v -passwordChangedAt'
+    })
+    next()
+})
+
 module.exports = model('tour',toursSchema);
