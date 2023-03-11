@@ -26,6 +26,18 @@ const reviewSchema = new mongoose.Schema({
     timestamps: true
 })
 
+reviewSchema.statics.calcAverageRatings = async function(tourId) {
+    const stats = await this.aggregate([
+        {$match: {tour: tourId}},
+        {$group: {
+            _id: '$tour',
+            nRating: { $sum : 1 },
+            avgRating: { $avg : '$rating'}
+        }}
+    ])
+    return stats;
+}
+
 const reviewModel = mongoose.model('review',reviewSchema);
 
 module.exports = reviewModel;
