@@ -169,6 +169,27 @@ exports.deleteTour = async (req, res) => {
   }
 };
 
+exports.getDistance = async (req,res) => {
+   const [lat, long] = req.body;
+   if(!lat || !long) {
+    throw new Error('Latitude and Longitude are required properties');
+   }
+   const distances = await Tour.aggregate([
+    {
+      $geoNear: {
+        near: {
+          type: 'Point',
+          coordinates: [long  * 1, lat * 1],
+          distanceField: 'distance',
+          distanceMultiplier: 0.001,
+        }
+      },
+    },
+   
+   ])
+   return res.status(200).send({success: true, distance: distances});
+}
+
 exports.checkBody = (req, res, next) => {
   if (req.body.name === undefined || req.body.price === undefined) {
     return res.status(500).json({ status: 'error', message: 'Please defined the name and price' });
