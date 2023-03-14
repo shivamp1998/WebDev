@@ -1,0 +1,35 @@
+body {
+    margin: 0px;
+}
+
+#body-header {
+    height: 65vh;
+    background-image: url('https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2022/11/Naruto.jpg?ssl=1&quality=80&w=f');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    background-attachment: fixed;
+}
+
+
+.horizontal-list {
+    list-style: none;
+    padding-left: 0px;
+    text-align: center;
+}
+
+.horizontal-list li {
+    display: inline-block;
+    margin: 0px 8px;
+}
+
+.horizontal-list a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.8s, border-bottom 4s;
+}
+
+.horizontal-list a:hover {
+    color: lightgrey; 
+    border-bottom: 1px solid white;
+}
