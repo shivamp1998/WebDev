@@ -185,7 +185,12 @@ exports.getDistance = async (req,res) => {
         }
       },
     },
-   
+    {
+      $project : {
+        distance: 1,
+        name: 1
+      }
+    }
    ])
    return res.status(200).send({success: true, distance: distances});
 }
