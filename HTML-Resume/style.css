@@ -33,3 +33,37 @@ body {
     color: lightgrey; 
     border-bottom: 1px solid white;
 }
+
+#container {
+    height: 75vh;
+    width: 75vw;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#container div{
+    height: 200px;
+    width: 200px;
+}
+
+#div1 {
+    background-color : cyan;
+}
+
+#div2 {
+    background-color: red;
+}
+
+#div3 {
+    background-color: grey;
+}
+
+#div4 {
+    background-color : brown
+}
+
+#div5 {
+    background-color: yellow
+}
