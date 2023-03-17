@@ -35,20 +35,22 @@ body {
 }
 
 #container {
-    height: 75vh;
-    width: 75vw;
-    background-color: lightgrey;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 300px;
+    flex-wrap: nowrap;
+    height: 200px
 }
+
+
 
 #container div{
-    height: 200px;
-    width: 200px;
+    background-color: red;
+    width: 50px;
+    margin: 10px;
 }
 
-#div1 {
+/* #div1 {
     background-color : cyan;
 }
 
@@ -66,4 +68,4 @@ body {
 
 #div5 {
     background-color: yellow
-}
+} */
