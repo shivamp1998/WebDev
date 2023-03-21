@@ -34,20 +34,20 @@ body {
     border-bottom: 1px solid white;
 }
 
-#container {
-    display: flex;
-    justify-content: space-between;
+
+
+#div5 {
+    height: 150px;
     width: 300px;
-    flex-wrap: nowrap;
-    height: 200px
+    background-image: repeating-linear-gradient(45deg, #9e6df9, #f77656 25%, #5ffc87 50%);
 }
 
+a
 
 
-#container div{
-    background-color: red;
-    width: 50px;
-    margin: 10px;
+
+p::first-line {
+    color: red;
 }
 
 /* #div1 {
