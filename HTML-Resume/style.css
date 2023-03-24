@@ -1,6 +1,19 @@
 body {
     margin: 0px;
 }
+body {
+    background-color: lightgrey;
+}
+@media only screen and (min-width: 768px) {
+    body {
+        background-color: lightblue;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    body {
+        background-color: lightgreen;
+    }
+}
 
 #body-header {
     height: 65vh;
@@ -34,15 +47,17 @@ body {
     border-bottom: 1px solid white;
 }
 
-
-
-#div5 {
-    height: 150px;
-    width: 300px;
-    background-image: repeating-linear-gradient(45deg, #9e6df9, #f77656 25%, #5ffc87 50%);
+#container div {
+    display: flex;
+    height: 200px;
+    width: 20px;
+    background-color: red;
 }
 
-a
+@media only screen  {
+
+}
+
 
 
 
