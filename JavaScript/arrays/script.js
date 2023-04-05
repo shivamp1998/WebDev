@@ -104,71 +104,79 @@ const accounts = [account1, account2, account3, account4];
 //   console.log(key,value)
 // })
 
-let dogs = [
-  {
-    weight: 22,
-    curFood: 250,
-    owners: ['Alice','Bob']
-  },
-  {
-    weight: 8,
-    curFood: 200,
-    owners: ['Matilda']
-  },
-  {
-    weight: 13,
-    curFood: 275,
-    owners: ['Sarah','John']
-  },
-  {
-    weigth: 32,
-    curFood: 340,
-    owners: ['Micheal']
-  }
-]
+// let dogs = [
+//   {
+//     weight: 22,
+//     curFood: 250,
+//     owners: ['Alice','Bob']
+//   },
+//   {
+//     weight: 8,
+//     curFood: 200,
+//     owners: ['Matilda']
+//   },
+//   {
+//     weight: 13,
+//     curFood: 275,
+//     owners: ['Sarah','John']
+//   },
+//   {
+//     weigth: 32,
+//     curFood: 340,
+//     owners: ['Micheal']
+//   }
+// ]
 
-dogs = dogs.map((value,index) => {
-  return {
-    ...value,
-    recommendedFood: Number((value.weight ** 0.75) * 28)
-  }
-})
-console.log(dogs)
+// dogs = dogs.map((value,index) => {
+//   return {
+//     ...value,
+//     recommendedFood: Number((value.weight ** 0.75) * 28)
+//   }
+// })
+// console.log(dogs)
 
-dogs.map((value,index) => {
-    if(value.owners.includes('Sarah')) {
-      if(value.recommendedFood > value.curFood) {
-        console.log('Eating Too little');
-      }else{
-        console.log('Eating too much');
-      }
-    }
-})
+// dogs.map((value,index) => {
+//     if(value.owners.includes('Sarah')) {
+//       if(value.recommendedFood > value.curFood) {
+//         console.log('Eating Too little');
+//       }else{
+//         console.log('Eating too much');
+//       }
+//     }
+// })
 
-let ownersEatTooMuch = [];
-let ownersEatTooLittle = [];
+// let ownersEatTooMuch = [];
+// let ownersEatTooLittle = [];
 
-dogs.map((value,index) => {
-  if(value.recommendedFood < value.curFood){
-    ownersEatTooMuch.push(value.owners);
-  }else{
-    ownersEatTooLittle.push(value.owners)
-  }
-})
+// dogs.map((value,index) => {
+//   if(value.recommendedFood < value.curFood){
+//     ownersEatTooMuch.push(value.owners);
+//   }else{
+//     ownersEatTooLittle.push(value.owners)
+//   }
+// })
 
-console.log(ownersEatTooMuch.flat(),'-',ownersEatTooLittle.flat());
+// console.log(ownersEatTooMuch.flat(),'-',ownersEatTooLittle.flat());
 
-console.log(dogs.some((value) => value.curFood > value.recommendedFood * 0.09 && value.curFood < (value.recommendedFood * 1.10)))
-
-
-const okayAmount = dogs.map((value,index) => {
-  if( value.curFood > value.recommendedFood * 0.09 && value.curFood < (value.recommendedFood * 1.10)){
-    return value.weight;
-  }
-})
-
-console.log(okayAmount);
+// console.log(dogs.some((value) => value.curFood > value.recommendedFood * 0.09 && value.curFood < (value.recommendedFood * 1.10)))
 
 
-const sortedDogs = dogs.sort((a,b) => a.recommendedFood - b.recommendedFood);
-console.log(sortedDogs);
+// const okayAmount = dogs.map((value,index) => {
+//   if( value.curFood > value.recommendedFood * 0.09 && value.curFood < (value.recommendedFood * 1.10)){
+//     return value.weight;
+//   }
+// })
+
+// console.log(okayAmount);
+
+
+// const sortedDogs = dogs.sort((a,b) => a.recommendedFood - b.recommendedFood);
+// console.log(sortedDogs);
+
+var a;
+if( typeof(a) ) {
+    console.log("true")
+}
+else {
+    console.log("false")
+}
