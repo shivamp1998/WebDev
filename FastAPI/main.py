@@ -25,18 +25,9 @@ def show(id : int):
     }
 
 @app.get('/blog/{id}/comments') 
-def comments():
+def comments(id: int):
     return {}
 
-
-class Blog(BaseModal) : 
-    title: str
-    body: str
-    published_at: Optional[bool]
-
-
-@app.post('/blog')
-def createPost(request: Blog) :
-    return "post"
-
-
+@app.get('/get-name')
+def name(name: Optional[str]) :
+    return {"name" : name}
