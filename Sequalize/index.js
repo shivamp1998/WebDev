@@ -1,0 +1,2 @@
+const sequalize = require('sequelize')
+
