@@ -1,2 +1,9 @@
-const sequalize = require('sequelize')
+const Sequalize = require('sequelize')
+
+
+const sequalize = new Sequalize('sequelize','root', 'admin', {
+    dilect: 'mysql',
+    
+});
+
 
