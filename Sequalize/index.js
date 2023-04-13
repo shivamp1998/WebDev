@@ -30,8 +30,11 @@ const User = sequalize.define('user', {
             }            
         }
    },
+   paranoid: true,
+   deleteAt: 'timeDestoryed'
 }, {
-    freezeTableName: true
+    freezeTableName: true,
+    timestamps: true,
 })
 
 
@@ -77,7 +80,14 @@ User.sync({alter: true})
 .then((data) => {
     data.forEach((val) => {
         console.log(val.toJSON())
+        
     })
+    return User.destroy({where: {
+        user_id: 25
+    }})
+})
+.then((data) => {
+    console.log(data);
 })
 .catch((err) => {
     console.log(err)
