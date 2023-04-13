@@ -82,3 +82,4 @@ User.sync({alter: true})
 .catch((err) => {
     console.log(err)
 })
+
