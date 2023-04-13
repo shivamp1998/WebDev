@@ -17,7 +17,7 @@ const User = sequalize.define('user', {
         allowNull: false
    },
    password: {
-        type: Sequalize.DataTypes.STRING
+        type: Sequalize.DataTypes.STRING  
    },
    age: {
         type: Sequalize.DataTypes.INTEGER,
