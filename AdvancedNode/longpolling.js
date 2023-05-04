@@ -15,7 +15,7 @@ setInterval(() => {
 }, DELAY)
 
 app.get('/', (req,res) => {
-    console.log('hitting on this route')
+  
     res.setHeader('Content-Type', 'text/html');
     res.setHeader('Transfer-Encoding', 'chunked');
     connections.push(res);
