@@ -4,6 +4,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+const client = require('./config/redisConfig');
 
 require('./models/User');
 require('./models/Blog');
