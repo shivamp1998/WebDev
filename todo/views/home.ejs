@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://kit.fontawesome.com/baa7d5937a.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main>
+      <div id="header-box">
+        <div id="header">
+          <h1>TODO</h1>
+        </div>
+
+        <div id="form-box">
+          <form action="/add" method="post">
+            <div id="description1">
+              <label for="add">Description</label>
+              <input id="add" type="text" name="task" placeholder="Add Tasks..." required />
+            </div>
+
+            <div id="description2">
+              <div class="category-box">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                  <option>Personal</option>
+                  <option>Work</option>
+                  <option>Collage</option>
+                  <option>Course</option>
+                </select>
+              </div>
+              <div class="duedate-box">
+                <label for="date">Due Date</label>
+                <input id="date" type="date" name="date" required />
+              </div>
+            </div>
+            <button id="add-btn" type="submit">ADD TASK</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="list-box">
+        <ul>
+          <% for(let i of taskslist){ %> <% let d = new Date(); %> <% let full_date = `${d.getFullYear()}-${"0" + (d.getMonth() +
+          1)}-${d.getDate()}`; %> <% if (i.date >= full_date) {%>
+          <li id="<%= i._id %>">
+            <div class="list">
+              <div id="list-body">
+                <input type="checkbox" class="checkbox" name="check" id="<%= i._id %>" data-value="true" />
+                <div id="list-title">
+                  <div class="list-val" id="<%= i._id %>">
+                    <span><%= i.task %></span>
+                  </div>
+                  <small><i class="fa-regular fa-clock"></i> <%= i.date %></small>
+                </div>
+              </div>
+
+              <div id="list-category">
+                <h5><%= i.category %></h5>
+              </div>
+              <p id="cross">
+                <a href="/del/?id=<%= i._id %>">
+                  <i class="fa-solid fa-xmark"></i>
+                </a>
+              </p>
+            </div>
+          </li>
+          <% } %> <% } %>
+        </ul>
+      </div>
+    </main>
+    <script type="text/javascript" src="/home.js"></script>
+  </body>
+</html>
