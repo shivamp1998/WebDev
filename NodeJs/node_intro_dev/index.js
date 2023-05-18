@@ -1,13 +1,9 @@
-const express = require('express');
-const app = express();
+const cron = require('node-cron');
+let secondsTimer = 1;
+let minutesTimer = 1;
 
-app.get('/',(req,res,next) => {
-    res.send({message: "hello"});
-})
-app.get('/hello',(req,res,next)=>{
-    res.send({success: true})
-})
 
-app.listen(1000,() => {
-    console.log('server started at port 1000');
+cron.schedule('*/2 * * * *', () => {
+    console.log('runing every 2 seconds', secondsTimer)
+    secondsTimer++;
 })
