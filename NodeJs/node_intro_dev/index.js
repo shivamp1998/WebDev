@@ -13,10 +13,6 @@ cron.schedule('*/2 * * * *', () => {
 const audioQueue = Queue.create('audioQueue');
 
 audioQueue.process((job, done) => {
-    if(job) {
-        console.log(job);
-    }else{
-        console.log(err);
-    }
+    console.log(job)
     return done()
 }) 
