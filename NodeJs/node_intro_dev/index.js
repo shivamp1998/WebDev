@@ -4,11 +4,6 @@ let minutesTimer = 1;
 const Queue = require('bull');
 
 
-cron.schedule('*/2 * * * *', () => {
-    console.log('runing every 2 seconds', secondsTimer)
-    secondsTimer++;
-})
-
 
 const audioQueue = Queue.create('audioQueue');
 
