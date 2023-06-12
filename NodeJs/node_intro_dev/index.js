@@ -1,13 +1,18 @@
-const cron = require('node-cron');
-let secondsTimer = 1;
-let minutesTimer = 1;
-const Queue = require('bull');
 
 
+//IIFE
+const IIFE = (function() {
+    console.log('this function is going to be immediately invoked')
+})();
 
-const audioQueue = Queue.create('audioQueue');
+// closures
 
-audioQueue.process((job, done) => {
-    console.log(job)
-    return done()
-}) 
+const count = (function() {
+    let _count = 0;
+    return function() {return _count++; }
+})();
+
+
+for(let i=0; i<5; i++) {
+    console.log(count());
+}
