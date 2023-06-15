@@ -53,3 +53,4 @@ const arrayLike = {
 }
 ;
 console.log(Array.prototype.at.call(arrayLike, -1)); // "b"
+//array prototype returns undefined
