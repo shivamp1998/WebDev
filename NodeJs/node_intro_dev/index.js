@@ -46,7 +46,7 @@ iterationFunction(123)//it is not iterable
 const nArr = Array(1,2,4);
 console.log(nArr.at(-1))
 
-const arrayLike = {
+let arrayLike = {
     length: 2,
     0: 1,
     1: 2,
@@ -56,5 +56,5 @@ console.log(Array.prototype.at.call(arrayLike, -1)); // "b"
 //array prototype returns undefined
 console.log(Array.prototype.concat.call({}, 1, 2, 3)); // [{}, 1, 2, 3]
 console.log(Array.prototype.concat.call(1, 2, 3)); // [ [Number: 1], 2, 3 ]
-const arrayLike = { [Symbol.isConcatSpreadable]: true, length: 2, 0: 1, 1: 2 };
+arrayLike = { [Symbol.isConcatSpreadable]: true, length: 2, 0: 1, 1: 2 };
 console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
