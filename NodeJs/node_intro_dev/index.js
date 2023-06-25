@@ -1,5 +1,3 @@
-
-
 //IIFE
 const IIFE = (function() {
     console.log('this function is going to be immediately invoked')
@@ -60,7 +58,7 @@ arrayLike = { [Symbol.isConcatSpreadable]: true, length: 2, 0: 1, 1: 2 };
 console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
 
 
-
+//copy within
 const array1 = ['a', 'b', 'c', 'd', 'e'];
 
 console.log(array1.copyWithin(0, 3, 4));
