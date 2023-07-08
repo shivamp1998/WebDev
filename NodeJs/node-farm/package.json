@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "bullmq": "^4.2.0"
+  }
+}
