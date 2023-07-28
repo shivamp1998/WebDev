@@ -59,12 +59,12 @@ console.log(Array.prototype.concat.call(arrayLike, 3, 4)); // [1, 2, 3, 4]
 
 
 //copy within
-const array1 = ['a', 'b', 'c', 'd', 'e'];
+// const array1 = ['a', 'b', 'c', 'd', 'e'];
 
-console.log(array1.copyWithin(0, 3, 4));
-console.log(array1.copyWithin(1, 3));
-let target, start, end;
-console.log(array1.copyWithin(target, start, end));
+// console.log(array1.copyWithin(0, 3, 4));
+// console.log(array1.copyWithin(1, 3));
+// let target, start, end;
+// console.log(array1.copyWithin(target, start, end));
 
 console.log([1,2,3,4,5].copyWithin(-2));
 console.log([1, 2, 3, 4, 5].copyWithin(0, 3));
