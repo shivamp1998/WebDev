@@ -35,19 +35,23 @@ const ctx = canvas.getContext("2d")
 //     ctx.stroke();
 
 // }
-let x = 0, y = 0
+let x = window.innerHeight / 2 , y = window.innerWidth / 2 ;
 const moveElement = (e) => {
     ctx.beginPath();
-    document.addEventListener('keyup', (e) => {
-        console.log(e.key)
-        if(e.key == 'ArrowUp') y = y + 1
-        if(e.key == 'ArrowDown') y = y - 1
-    })
     ctx.arc(x, y, 30, 0 , Math.PI * 2)
     ctx.strokeStyle = 'red'
     ctx.stroke();
     console.log(x,y)
     requestAnimationFrame(moveElement)
 }
-moveElement(ctx, 0, 0)
+moveElement(ctx, x, y)
+
+document.addEventListener('keydown', (e) => {
+    switch(e.key) {
+        case "ArrowUp" : y = y - 5; break;
+        case "ArrowDown" : y = y + 5;break;
+        case "ArrowRight": x = x + 5; break;
+        case "ArrowLeft": x = x - 5; break;
+    }
+})
 
